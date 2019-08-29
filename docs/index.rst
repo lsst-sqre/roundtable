@@ -22,7 +22,10 @@ Documentation on the way!
 Roundtable deployment and operations guide
 ==========================================
 
-Documentation on the way!
+.. toctree::
+   :maxdepth: 2
+
+   ops/index
 
 Project information
 ===================
