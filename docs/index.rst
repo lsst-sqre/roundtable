@@ -1,6 +1,3 @@
-.. image:: https://img.shields.io/badge/roundtable-lsst.io-brightgreen.svg
-   :target: https://roundtable.lsst.io
-
 ##########
 Roundtable
 ##########
@@ -8,17 +5,31 @@ Roundtable
 A microservice platform by SQuaRE
 =================================
 
-At SQuaRE, we love building microservices that solve problems for the `LSST Project`_.
+At SQuaRE, we love building microservices and applications that help the `LSST Project`_.
 Roundtable is a new initiative to bring many of these services under one roof to leverage common resources, like a Kubernetes cluster, HTTP ingress for APIs, Kafka for event-based apps, monitoring and logging, and continuous deployment patterns.
 At the same time, applications in the Roundtable are decentralized, and have a large amount of latitude to be developed and deployed independently.
 
-Read the docs at https://roundtable.lsst.io.
+Overview
+========
+
+Documentation on the way!
+
+Application developer guide
+===========================
+
+Documentation on the way!
+
+Roundtable deployment and operations guide
+==========================================
+
+Documentation on the way!
 
 Project information
 ===================
 
-Roundtable is developed and operated for the `LSST Project`_.
+Roundtable is created for the `LSST Project`_.
+The main Git repository for this documentation and the Roundtable deployment is https://github.com/lsst-sqre/roundtable.
 See the LICENSE_ file for licensing information.
 
 .. _LSST Project: https://www.lsst.org
-.. _LICENSE: ./LICENSE
+.. _LICENSE: https://github.com/lsst-sqre/roundtable/blob/master/LICENSE
