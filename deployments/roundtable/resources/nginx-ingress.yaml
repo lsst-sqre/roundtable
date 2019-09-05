@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-ingress
+spec:
+  destination:
+    namespace: nginx-ingress
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: deployments/nginx-ingress
+    repoURL: https://github.com/lsst-sqre/roundtable
+    targetRevision: HEAD
