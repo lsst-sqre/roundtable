@@ -11,3 +11,8 @@ spec:
     path: deployments/cert-manager-crd
     repoURL: https://github.com/lsst-sqre/roundtable
     targetRevision: HEAD
+  ignoreDifferences:
+  - group: ""
+    kind: CustomResourceDefinition
+    jsonPointers:
+    - status
