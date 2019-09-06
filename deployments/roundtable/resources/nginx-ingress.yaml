@@ -11,6 +11,9 @@ spec:
     path: deployments/nginx-ingress
     repoURL: https://github.com/lsst-sqre/roundtable
     targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
   ignoreDifferences:
   - group: ""
     kind: Service
