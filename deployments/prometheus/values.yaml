@@ -1,3 +1,4 @@
-prometheusOperator:
-  admissionWebhooks:
-    enabled: false
+prometheus-operator:
+  prometheusOperator:
+    admissionWebhooks:
+      enabled: false
