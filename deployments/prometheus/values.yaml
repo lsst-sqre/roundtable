@@ -2,3 +2,5 @@ prometheus-operator:
   prometheusOperator:
     admissionWebhooks:
       enabled: false
+    tlsProxy:
+      enabled: false
