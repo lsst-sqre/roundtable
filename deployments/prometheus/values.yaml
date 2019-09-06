@@ -1,0 +1,3 @@
+prometheusOperator:
+  admissionWebhooks:
+    enabled: false
