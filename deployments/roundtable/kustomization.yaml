@@ -3,4 +3,5 @@ kind: Kustomization
 
 resources:
   - resources/nginx-ingress-ns.yaml
+  - resources/argo-cd.yaml
   - resources/nginx-ingress.yaml
