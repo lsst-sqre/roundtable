@@ -9,3 +9,4 @@ resources:
   - resources/nginx-ingress.yaml
   - resources/cert-manager-crd.yaml
   - resources/cert-manager.yaml
+  - resources/prometheus.yaml
