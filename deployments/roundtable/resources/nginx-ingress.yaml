@@ -11,3 +11,14 @@ spec:
     path: deployments/nginx-ingress
     repoURL: https://github.com/lsst-sqre/roundtable
     targetRevision: HEAD
+  ignoreDifferences:
+  - group: ""
+    kind: Service
+    jsonPointers:
+    # The Cluster IP is immutable; so we shouldn't look at differences there.
+    # If left out, we see the error message:
+    #   kubectl failed exit status 1: The Service
+    #   "nginx-ingress-controller-metrics" is invalid: spec.clusterIP: Invalid
+    #   value: "": field is immutable
+    # Credit: https://gist.github.com/kyohmizu/8ebc9c3dcadad6f22dd0246caad9b951
+    - /spec/clusterIP
