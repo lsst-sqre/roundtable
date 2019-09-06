@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - resources/nginx-ingress-ns.yaml
   - resources/cert-manager-ns.yaml
+  - resources/prometheus-ns.yaml
   - resources/argo-cd.yaml
   - resources/nginx-ingress.yaml
   - resources/cert-manager-crd.yaml
