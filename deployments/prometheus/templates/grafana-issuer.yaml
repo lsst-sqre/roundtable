@@ -1,7 +1,7 @@
 apiVersion: certmanager.k8s.io/v1alpha1
 kind: Issuer
 metadata:
-  name: grafana-issuer
+  name: grafana-letsencrypt
 spec:
   acme:
     # The ACME server URL
