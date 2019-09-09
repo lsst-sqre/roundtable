@@ -13,4 +13,3 @@ spec:
         - --insecure
         - --staticassets
         - /shared/app
-        - argocd
