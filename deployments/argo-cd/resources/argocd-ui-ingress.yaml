@@ -11,7 +11,7 @@ spec:
   tls:
     - hosts:
       - cd.roundtable.lsst.codes
-      secretName: grafana-ingress-tls
+      secretName: argocd-ui-ingress-tls
   rules:
     - host: cd.roundtable.lsst.codes
       http:
