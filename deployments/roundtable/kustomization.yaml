@@ -7,6 +7,5 @@ resources:
   - resources/prometheus-ns.yaml
   - resources/argo-cd.yaml
   - resources/nginx-ingress.yaml
-  - resources/cert-manager-crd.yaml
   - resources/cert-manager.yaml
   - resources/prometheus.yaml
