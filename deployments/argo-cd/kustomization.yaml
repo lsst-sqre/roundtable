@@ -4,7 +4,9 @@ kind: Kustomization
 resources:
 - github.com/argoproj/argo-cd//manifests/cluster-install?ref=v1.2.0
 - resources/argocd-ui-issuer.yaml
+- resources/argocd-grpc-issuer.yaml
 - resources/argocd-ui-ingress.yaml
+- resources/argocd-grpc-ingress.yaml
 
 patchesStrategicMerge:
 - patches/repositories.yaml
