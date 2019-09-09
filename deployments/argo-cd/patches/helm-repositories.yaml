@@ -1,5 +1,6 @@
 kind: ConfigMap
-name: argocd-cm
+metadata:
+  name: argocd-cm
 namespace: argocd
 data:
   helm.repositories: |

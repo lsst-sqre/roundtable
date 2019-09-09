@@ -1,7 +1,9 @@
 kind: ConfigMap
-name: argocd-cm
+metadata:
+  name: argocd-cm
 namespace: argocd
 data:
   repositories: |
     - url: https://github.com/argoproj/argocd-example-apps.git
     - url: https://github.com/lsst-sqre/roundtable.git
+    - url: https://github.com/argoproj/argo-cd.git
