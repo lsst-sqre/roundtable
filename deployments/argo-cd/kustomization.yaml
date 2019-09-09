@@ -3,10 +3,14 @@ kind: Kustomization
 
 resources:
 - github.com/argoproj/argo-cd//manifests/cluster-install?ref=v1.2.0
+- resources/argocd-ui-issuer.yaml
+- resources/argocd-ui-ingress.yaml
 
 patchesStrategicMerge:
 - patches/repositories.yaml
 - patches/helm-repositories.yaml
+- patches/argocd-server-service.yaml
+- patches/argocd-server-deployment.yaml
 
 # Adds the argocd namespace to all resources, which is required anyhow.
 namespace: argocd

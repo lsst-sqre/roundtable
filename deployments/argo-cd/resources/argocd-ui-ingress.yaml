@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: argocd-ui
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    ingress.kubernetes.io/proxy-body-size: 100M
+    ingress.kubernetes.io/app-root: "/"
+    certmanager.k8s.io/issuer: "argocd-ui-letsencrypt"
+spec:
+  tls:
+    - hosts:
+      - cd.roundtable.lsst.codes
+      secretName: grafana-ingress-tls
+  rules:
+    - host: cd.roundtable.lsst.codes
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: argocd-server
+              servicePort: http
