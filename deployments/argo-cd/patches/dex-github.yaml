@@ -4,6 +4,7 @@ metadata:
   name: argocd-cm
 data:
   dex.config: |
+    url: https://cd.roundtable.lsst.codes
     connectors:
       - type: github
         id: github
