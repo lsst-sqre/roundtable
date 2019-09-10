@@ -4,3 +4,9 @@ prometheus-operator:
       enabled: false
     tlsProxy:
       enabled: false
+  grafana:
+    sidecar:
+      dashboards:
+        enabled: true
+        label: "grafana_dashboard"
+        searchNamespace: "ALL"
