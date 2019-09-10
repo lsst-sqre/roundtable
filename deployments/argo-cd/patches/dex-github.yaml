@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+data:
+  dex.config: |
+    connectors:
+      - type: github
+        id: github
+        name: GitHub
+        config:
+          clientID: 2595f4cc1c9547209007
+          # Reference to key in argo-secret Kubernetes resource
+          clientSecret: $dex.github.clientSecret
+          orgs:
+            - name: lsst-sqre

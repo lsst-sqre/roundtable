@@ -11,6 +11,7 @@ resources:
 patchesStrategicMerge:
 - patches/repositories.yaml
 - patches/helm-repositories.yaml
+- patches/dex-github.yaml
 - patches/argocd-server-service.yaml
 - patches/argocd-server-deployment.yaml
 
