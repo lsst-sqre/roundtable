@@ -7,6 +7,9 @@ resources:
 - resources/argocd-grpc-issuer.yaml
 - resources/argocd-ui-ingress.yaml
 - resources/argocd-grpc-ingress.yaml
+- resources/argocd-metrics.yaml
+- resources/argocd-server-metrics.yaml
+- resources/argocd-repo-server-metrics.yaml
 
 patchesStrategicMerge:
 - patches/argocd-cm.yaml
