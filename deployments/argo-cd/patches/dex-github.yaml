@@ -3,8 +3,8 @@ kind: ConfigMap
 metadata:
   name: argocd-cm
 data:
+  url: https://cd.roundtable.lsst.codes
   dex.config: |
-    url: https://cd.roundtable.lsst.codes
     connectors:
       - type: github
         id: github
