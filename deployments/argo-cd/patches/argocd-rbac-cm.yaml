@@ -5,3 +5,6 @@ metadata:
 data:
   # Default policy allows read-only access.
   policy.default: role:readonly
+  # Make members of the lsst-sqre/roundtable-ops team administrators
+  policy.csv: |
+      g, lsst-sqre:roundtable-ops, role:admin
