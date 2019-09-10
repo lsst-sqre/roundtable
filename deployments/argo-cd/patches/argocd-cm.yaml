@@ -4,6 +4,7 @@ metadata:
   name: argocd-cm
 data:
   url: https://cd.roundtable.lsst.codes
+  statusbadge.enabled: 'true'
   # Dex handles OAuth single-sign-on (SSO).
   dex.config: |
     connectors:
