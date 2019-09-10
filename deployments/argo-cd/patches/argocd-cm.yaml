@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+data:
+  url: https://cd.roundtable.lsst.codes
+  # Dex handles OAuth single-sign-on (SSO).
+  dex.config: |
+    connectors:
+      # Auth using GitHub.
+      # See https://github.com/dexidp/dex/blob/master/Documentation/connectors/github.md
+      # For example, we can authorize only members of certain teams in orgs.
+      - type: github
+        id: github
+        name: GitHub
+        config:
+          clientID: 2595f4cc1c9547209007
+          # Reference to key in argo-secret Kubernetes resource
+          clientSecret: $dex.github.clientSecret
+          orgs:
+            - name: lsst-sqre
+  # Git repositories that Argo CD monitors.
+  repositories: |
+    - url: https://github.com/argoproj/argocd-example-apps.git
+    - url: https://github.com/lsst-sqre/roundtable.git
+    - url: https://github.com/argoproj/argo-cd.git
+  # Non-standard Helm chart repositories.
+  helm.repositories: |
+    # For the cert-manager chart
+    - url: https://charts.jetstack.io
+      name: jetstack

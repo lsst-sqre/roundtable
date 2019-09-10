@@ -9,9 +9,7 @@ resources:
 - resources/argocd-grpc-ingress.yaml
 
 patchesStrategicMerge:
-- patches/repositories.yaml
-- patches/helm-repositories.yaml
-- patches/dex-github.yaml
+- patches/argocd-cm.yaml
 - patches/argocd-server-service.yaml
 - patches/argocd-server-deployment.yaml
 
