@@ -15,6 +15,24 @@ prometheus-operator:
       enabled: true
       size: "10Gi"
       storageClassName: "standard"
+    # Secret resource that contains environment variables for e.g.
+    # the GitHub auth client secret.
+    envFromSecret: "grafana-env"
+    grafana.ini:
+      root_url: "https://monitoring.roundtable.lsst.codes"
+      auth.github:
+        enabled: true
+        allow_sign_up: true
+        client_id: "73863e794667b769be29"
+        scopes: "user:email,read:org"
+        auth_url: "https://github.com/login/oauth/authorize"
+        token_url: "https://github.com/login/oauth/access_token"
+        api_url: "https://api.github.com/user"
+        # Comma-delimited list to GitHub teams
+        # 3408969: @lsst-sqre/roundtable-ops
+        team_ids: "3408969"
+        # Space-delimited list of GitHub organization
+        allowed_organizations: "lsst-sqre"
   prometheus:
     prometheusSpec:
       storageSpec:
