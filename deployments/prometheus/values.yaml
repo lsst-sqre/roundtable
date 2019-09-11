@@ -15,3 +15,14 @@ prometheus-operator:
       enabled: true
       size: "10Gi"
       storageClassName: "standard"
+  prometheus:
+    prometheusSpec:
+      storageSpec:
+        volumeClaimTemplate:
+          # Request SSD persistent volume for Prometheus data.
+          spec:
+            storageClassName: "faster"
+            accessModes: ["ReadWriteOnce"]
+            resources:
+              requests:
+                storage: "10Gi"
