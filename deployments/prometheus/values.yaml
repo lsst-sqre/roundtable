@@ -10,3 +10,6 @@ prometheus-operator:
         enabled: true
         label: "grafana_dashboard"
         searchNamespace: "ALL"
+    persistence:
+      enabled: true
+      size: "10Gi"
