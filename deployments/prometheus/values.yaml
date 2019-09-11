@@ -19,7 +19,8 @@ prometheus-operator:
     # the GitHub auth client secret.
     envFromSecret: "grafana-env"
     grafana.ini:
-      root_url: "https://monitoring.roundtable.lsst.codes"
+      server:
+        root_url: "https://monitoring.roundtable.lsst.codes"
       auth.github:
         enabled: true
         allow_sign_up: true
