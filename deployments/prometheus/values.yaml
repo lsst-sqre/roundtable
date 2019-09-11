@@ -5,6 +5,7 @@ prometheus-operator:
     tlsProxy:
       enabled: false
   grafana:
+    defaultDashboardsEnabled: true
     sidecar:
       dashboards:
         enabled: true
