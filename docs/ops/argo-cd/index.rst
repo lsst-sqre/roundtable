@@ -13,7 +13,18 @@ argo-cd app deployment guide
      - Kustomize_
    * - Parent app
      - :doc:`roundtable <../roundtable/index>`
+   * - Dashboard
+     - https://cd.roundtable.lsst.codes
 
 .. rubric:: Overview
 
 This Argo CD Application deploys `Argo CD`_ itself.
+The web dashboard for Roundtable's Argo CD is https://cd.roundtable.lsst.codes.
+
+.. rubric:: Guides
+
+.. toctree::
+
+   argocd-github-sso
+   argocd-rbac
+   github-webhook

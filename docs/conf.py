@@ -122,7 +122,8 @@ linkcheck_ignore = [
     r'^https://console.cloud.google.com',
     r'^https://cd.roundtable.lsst.codes',
     r'^https://monitoring.roundtable.lsst.codes',
-    r'^https://github.com/organizations/lsst-sqre/settings/'
+    r'^https://github.com/organizations/lsst-sqre/settings/',
+    r'^https://github.com/lsst-sqre/roundtable/settings/',
 ]
 
 # -- Options for HTML output ----------------------------------------------
