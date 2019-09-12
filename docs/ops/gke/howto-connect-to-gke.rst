@@ -25,7 +25,7 @@ You can use the ``kubectl`` command-line tool to access the Roundtable cluster.
 Follow Google's `Configuring cluster access for kubectl <https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl>`_ page.
 Briefly, the steps are:
 
-1. Install the `Cloud SDK <https://cloud.google.com/sdk/downloads>`_.
+1. Install the `Cloud SDK <https://cloud.google.com/sdk/install>`_.
 
 2. Set the project:
 
