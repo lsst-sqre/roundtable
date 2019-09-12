@@ -84,6 +84,31 @@ intersphinx_mapping = {
 
 rst_epilog = """
 
+.. |roundtable-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=roundtable
+   :target: https://cd.roundtable.lsst.codes/applications/roundtable
+   :alt: Roundtable app status
+
+.. |argo-cd-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=argo-cd
+   :target: https://cd.roundtable.lsst.codes/applications/argo-cd
+   :alt: Argo CD app status
+
+.. |nginx-ingress-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=nginx-ingress
+   :target: https://cd.roundtable.lsst.codes/applications/nginx-ingress
+   :alt: nginx-ingress app status
+
+.. |cert-manager-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=cert-manager
+   :target: https://cd.roundtable.lsst.codes/applications/cert-manager
+   :alt: cert-manager app status
+
+.. |prometheus-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=prometheus
+   :target: https://cd.roundtable.lsst.codes/applications/prometheus
+   :alt: Prometheus app status
+
+.. _Helm: https://helm.sh
+.. _Kustomize: https://kustomize.io
+.. _Argo CD: https://argoproj.github.io/argo-cd/
+.. _Prometheus: https://prometheus.io
+.. _Grafana: https://grafana.com/grafana
 """
 
 # -- Options for linkcheck builder ----------------------------------------
@@ -91,7 +116,9 @@ rst_epilog = """
 linkcheck_retries = 2
 linkcheck_timeout = 5  # seconds
 linkcheck_ignore = [
-    r'^https://console.cloud.google.com'
+    r'^https://console.cloud.google.com',
+    r'^https://cd.roundtable.lsst.codes',
+    r'https://monitoring.roundtable.lsst.codes',
 ]
 
 # -- Options for HTML output ----------------------------------------------

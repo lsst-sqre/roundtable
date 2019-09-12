@@ -9,3 +9,8 @@ Although this documentation is openly available, application developers shouldn'
    :maxdepth: 2
 
    gke/index
+   roundtable/index
+   argo-cd/index
+   nginx-ingress/index
+   cert-manager/index
+   prometheus/index
