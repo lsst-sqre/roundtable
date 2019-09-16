@@ -1,4 +1,4 @@
-strimzi:
+strimzi-kafka-operator:
   # Namespaces with a Kafka deployment
   watchNamespaces:
     - "events"
