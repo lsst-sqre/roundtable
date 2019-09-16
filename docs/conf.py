@@ -104,6 +104,10 @@ rst_epilog = """
    :target: https://cd.roundtable.lsst.codes/applications/prometheus
    :alt: Prometheus app status
 
+.. |strimzi-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=strimzi
+   :target: https://cd.roundtable.lsst.codes/applications/strimzi
+   :alt: Strimzi app status
+
 .. _Helm: https://helm.sh
 .. _Kustomize: https://kustomize.io
 .. _Argo CD: https://argoproj.github.io/argo-cd/
@@ -112,6 +116,7 @@ rst_epilog = """
 .. _lsst-sqre GitHub organization: https://github.com/lsst-sqre
 .. _roundtable-ops team: https://github.com/orgs/lsst-sqre/teams/roundtable-ops
 .. _httpie: https://httpie.org
+.. _Strimzi: https://strimzi.io
 """
 
 # -- Options for linkcheck builder ----------------------------------------
