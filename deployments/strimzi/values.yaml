@@ -1,0 +1,5 @@
+strimzi:
+  # Namespaces with a Kafka deployment
+  watchNamespaces:
+    - "events"
+    - "events-dev"
