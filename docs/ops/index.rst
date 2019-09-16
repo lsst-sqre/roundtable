@@ -14,3 +14,4 @@ Although this documentation is openly available, application developers shouldn'
    nginx-ingress/index
    cert-manager/index
    prometheus/index
+   strimzi/index
