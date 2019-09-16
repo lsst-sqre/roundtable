@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: stimzi
+  name: strimzi
 spec:
   finalizers:
     - kubernetes
