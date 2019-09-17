@@ -17,4 +17,5 @@ resources:
   - resources/cert-manager.yaml
   - resources/prometheus.yaml
   - resources/strimzi.yaml
+  - resources/events-dev.yaml
   - resources/events.yaml
