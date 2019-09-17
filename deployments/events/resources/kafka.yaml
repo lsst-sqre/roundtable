@@ -73,6 +73,7 @@ spec:
       limits:
         memory: 3Gi
         cpu: "1"
+    template:
       pod:
         # Schedule Kafka broker pods on nodes labeled "dedicated: events"
         # and tolerate the taint NoExecute dedicated=events.
