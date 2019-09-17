@@ -20,7 +20,7 @@ spec:
         tolerations:
           - key: "dedicated"
             operator: "Equal"
-            value: "Kafka"
+            value: "events"
             effect: "NoExecute"
         affinity:
           nodeAffinity:
@@ -80,7 +80,7 @@ spec:
         tolerations:
           - key: "dedicated"
             operator: "Equal"
-            value: "Kafka"
+            value: "events"
             effect: "NoExecute"
         affinity:
           nodeAffinity:
