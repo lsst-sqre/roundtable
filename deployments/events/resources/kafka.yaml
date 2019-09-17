@@ -14,11 +14,6 @@ spec:
         memory: 4Gi
         cpu: "1"
     template:
-      statefulset:
-        metadata:
-          labels:
-            # A label we can use for pod anti-affinity
-            roundtable.lsst.codes/species: "kafka"
       pod:
         # Schedule Kafka broker pods on nodes labeled "dedicated: events"
         # and tolerate the taint NoExecute dedicated=events.
@@ -36,6 +31,14 @@ spec:
                       operator: "In"
                       values:
                       - "events"
+          podAntiAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+                - matchExpressions:
+                    - key: "strimzi.io/name"
+                      operator: "In"
+                      values:
+                        - "events-kafka"
     # https://strimzi.io/docs/latest/#ref-jvm-options-deployment-configuration-kafka
     # The recommendation is to keep the minimum (Xms) the same as the maximum
     # (Xmx). Expect the usage to be 4.5x this value; hence the 3 to 4 Gi
@@ -79,11 +82,6 @@ spec:
         memory: 3Gi
         cpu: "1"
     template:
-      statefulset:
-        metadata:
-          labels:
-            # A label we can use for pod anti-affinity
-            roundtable.lsst.codes/species: "zookeeper"
       pod:
         # Schedule Kafka broker pods on nodes labeled "dedicated: events"
         # and tolerate the taint NoExecute dedicated=events.
@@ -102,6 +100,14 @@ spec:
                       operator: "In"
                       values:
                       - "events"
+          podAntiAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+                - matchExpressions:
+                    - key: "strimzi.io/name"
+                      operator: "In"
+                      values:
+                        - "events-zookeeper"
     # https://strimzi.io/docs/latest/#ref-jvm-options-deployment-configuration-kafka
     jvmOptions:
       -Xms: 512M
