@@ -1,0 +1,108 @@
+apiVersion: kafka.strimzi.io/v1beta1
+kind: Kafka
+metadata:
+  name: events
+spec:
+  kafka:
+    version: 2.3.0
+    replicas: 3
+    resources:
+      requests:
+        memory: 2Gi
+        cpu: "500m"
+      limits:
+        memory: 4Gi
+        cpu: "1"
+    template:
+      pod:
+        # Schedule Kafka broker pods on nodes labeled "dedicated: events"
+        # and tolerate the taint NoExecute dedicated=events.
+        tolerations:
+          - key: "dedicated"
+            operator: "Equal"
+            value: "Kafka"
+            effect: "NoExecute"
+        affinity:
+          nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+                - matchExpressions:
+                    - key: "dedicated"
+                      operator: "In"
+                      values:
+                      - "events"
+    # https://strimzi.io/docs/latest/#ref-jvm-options-deployment-configuration-kafka
+    # The recommendation is to keep the minimum (Xms) the same as the maximum
+    # (Xmx). Expect the usage to be 4.5x this value; hence the 3 to 4 Gi
+    # Kubernetes limit.
+    jvmOptions:
+      -Xms: 512M
+      -Xmx: 512M
+    listeners:
+      # Enable the TLS listener (encrypted) on 9093 with mutual TLS
+      # authentication
+      # https://strimzi.io/docs/latest/#assembly-kafka-broker-listener-authentication-deployment-configuration-kafka
+      tls:
+        authentication:
+          type: tls
+    authorization:
+      # Users can access topics based on ACLs
+      # https://strimzi.io/docs/latest/#ref-kafka-authorization-deployment-configuration-kafka
+      # ACLs are configured on KafkaUser resources
+      type: simple
+    config:
+      auto.create.topics.enable: "false"
+      offsets.topic.replication.factor: 3
+      transaction.state.log.replication.factor: 3
+      transaction.state.log.min.isr: 2
+      log.message.format.version: "2.3"
+    storage:
+      # Use an SSD persistent volume for Kafka pods
+      type: persistent-claim
+      class: faster
+      size: 100Gi
+      deleteClaim: false
+    metrics:
+      lowercaseOutputName: true
+  zookeeper:
+    replicas: 3
+    resources:
+      requests:
+        memory: 2Gi
+        cpu: "500m"
+      limits:
+        memory: 3Gi
+        cpu: "1"
+      pod:
+        # Schedule Kafka broker pods on nodes labeled "dedicated: events"
+        # and tolerate the taint NoExecute dedicated=events.
+        # (this is the same as Kafka broker scheduling; above)
+        tolerations:
+          - key: "dedicated"
+            operator: "Equal"
+            value: "Kafka"
+            effect: "NoExecute"
+        affinity:
+          nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+                - matchExpressions:
+                    - key: "dedicated"
+                      operator: "In"
+                      values:
+                      - "events"
+    # https://strimzi.io/docs/latest/#ref-jvm-options-deployment-configuration-kafka
+    jvmOptions:
+      -Xms: 512M
+      -Xmx: 512M
+    storage:
+      # Use an SSD persistent volume for zookeeper pods
+      type: persistent-claim
+      class: faster
+      size: 50Gi
+      deleteClaim: false
+  entityOperator:
+    topicOperator:
+      watchedNamespace: events
+    userOperator:
+      watchedNamespace: events
