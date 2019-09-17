@@ -33,12 +33,13 @@ spec:
                       - "events"
           podAntiAffinity:
             requiredDuringSchedulingIgnoredDuringExecution:
-              nodeSelectorTerms:
-                - matchExpressions:
+              - labelSelector:
+                  matchExpressions:
                     - key: "strimzi.io/name"
                       operator: "In"
                       values:
                         - "events-kafka"
+                topologyKey: "kubernetes/io/hostname"
     # https://strimzi.io/docs/latest/#ref-jvm-options-deployment-configuration-kafka
     # The recommendation is to keep the minimum (Xms) the same as the maximum
     # (Xmx). Expect the usage to be 4.5x this value; hence the 3 to 4 Gi
@@ -102,12 +103,13 @@ spec:
                       - "events"
           podAntiAffinity:
             requiredDuringSchedulingIgnoredDuringExecution:
-              nodeSelectorTerms:
-                - matchExpressions:
+              - labelSelector:
+                  matchExpressions:
                     - key: "strimzi.io/name"
                       operator: "In"
                       values:
                         - "events-zookeeper"
+                topologyKey: "kubernetes/io/hostname"
     # https://strimzi.io/docs/latest/#ref-jvm-options-deployment-configuration-kafka
     jvmOptions:
       -Xms: 512M
