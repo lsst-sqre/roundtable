@@ -20,3 +20,9 @@ Roundtable Events enables real-time, events-based, applications in the Roundtabl
 For example, SQuaRE Bot uses Events to pass Slack messages from a central Slack client to domain-specific message handlers.
 
 Events is built on Apache Kafka and deployed with the Strimzi Cluster Operator (see the :doc:`strimzi <../strimzi/index>` application deployment guide).
+
+.. rubric:: Guides
+
+.. toctree::
+
+   cluster-config-overview
