@@ -4,3 +4,5 @@ kind: Kustomization
 resources:
   # Namespaces
   - resources/lsst-the-docs-ns.yaml
+  # Applications
+  - resources/lsst-the-docs.yaml
