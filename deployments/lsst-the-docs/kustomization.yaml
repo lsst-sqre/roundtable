@@ -4,6 +4,6 @@ kind: Kustomization
 resources:
 - resources/keeper-sealedsecret.yaml
 - resources/cloudsql-sealedsecret.yaml
-- github.com/lsst-sqre/ltd-keeper//manifests?ref=tickets/DM-21494
+- github.com/lsst-sqre/ltd-keeper//manifests?ref=cd0d6fd51047c2ec59bdb32036f258062a8f7070
 
 namespace: lsst-the-docs
