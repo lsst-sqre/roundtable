@@ -112,6 +112,10 @@ rst_epilog = """
    :target: https://cd.roundtable.lsst.codes/applications/events
    :alt: Events app status
 
+.. |app-land-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=app-land
+   :target: https://cd.roundtable.lsst.codes/applications/app-land
+   :alt: App Land app status
+
 .. _Helm: https://helm.sh
 .. _Kustomize: https://kustomize.io
 .. _Argo CD: https://argoproj.github.io/argo-cd/
