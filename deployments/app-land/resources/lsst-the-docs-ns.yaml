@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: lsst-the-docs
+spec:
+  finalizers:
+    - kubernetes
