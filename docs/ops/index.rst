@@ -15,3 +15,4 @@ Although this documentation is openly available, application developers shouldn'
    cert-manager/index
    prometheus/index
    strimzi/index
+   events/index

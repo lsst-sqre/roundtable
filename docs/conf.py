@@ -108,6 +108,10 @@ rst_epilog = """
    :target: https://cd.roundtable.lsst.codes/applications/strimzi
    :alt: Strimzi app status
 
+.. |events-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=events
+   :target: https://cd.roundtable.lsst.codes/applications/events
+   :alt: Events app status
+
 .. _Helm: https://helm.sh
 .. _Kustomize: https://kustomize.io
 .. _Argo CD: https://argoproj.github.io/argo-cd/
