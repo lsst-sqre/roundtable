@@ -7,6 +7,6 @@ resources:
 - github.com/lsst-sqre/ltd-keeper.git//manifests?ref=tickets/DM-21494
 - resources/keeper-issuer.yaml
 - resources/keeper-ingress.yaml
-- github.com/lsst-sqre/ltd-dasher.git//manifests?=ref=ed71dce29ec799ffd1efd3161e2066121be51830
+- github.com/lsst-sqre/ltd-dasher.git//manifests?ref=ed71dce29ec799ffd1efd3161e2066121be51830
 
 namespace: lsst-the-docs
