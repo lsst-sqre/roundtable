@@ -4,7 +4,7 @@ metadata:
   name: keeper
   annotations:
     kubernetes.io/ingress.class: "nginx"
-    certmanager.k8s.io/issuer: "keeper-roundtable-letsencrypt"
+    certmanager.k8s.io/issuer: "keeper-letsencrypt"
 spec:
   tls:
     - hosts:
