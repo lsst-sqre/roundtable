@@ -8,7 +8,7 @@ metadata:
 spec:
   tls:
     - hosts:
-      - keeper-roundtable.lsst.codes
+      - keeper.roundtable.lsst.codes
       secretName: keeper-ingress-tls
   rules:
     - host: keeper.roundtable.lsst.codes
