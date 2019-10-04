@@ -112,10 +112,6 @@ rst_epilog = """
    :target: https://cd.roundtable.lsst.codes/applications/events
    :alt: Events app status
 
-.. |sealed-secrets-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=sealed-secrets
-   :target: https://cd.roundtable.lsst.codes/applications/sealed-secrets
-   :alt: Sealed Secrets app status
-
 .. |app-land-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=app-land
    :target: https://cd.roundtable.lsst.codes/applications/app-land
    :alt: App Land app status
@@ -146,6 +142,7 @@ linkcheck_ignore = [
     r'^https://monitoring.roundtable.lsst.codes',
     r'^https://github.com/organizations/lsst-sqre/settings/',
     r'^https://github.com/lsst-sqre/roundtable/settings/',
+    r'^https://github.com/bitnami-labs/sealed-secrets/blob/master/README\.md#homebrew$'
 ]
 
 # -- Options for HTML output ----------------------------------------------
