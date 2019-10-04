@@ -5,12 +5,12 @@ metadata:
 spec:
   acme:
     # The ACME server URL
-    # server: https://acme-v02.api.letsencrypt.org/directory
-    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    server: https://acme-v02.api.letsencrypt.org/directory
+    # server: https://acme-staging-v02.api.letsencrypt.org/directory
     # Email address used for ACME registration
     email: sqre-admin@lists.lsst.org
     # Name of a secret used to store the ACME account private key
     privateKeySecretRef:
-      name: keeper-letsencrypt-staging
-      # name: keeper-letsencrypt-prod
+      # name: keeper-letsencrypt-staging
+      name: keeper-letsencrypt-prod
     http01: {}
