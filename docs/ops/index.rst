@@ -17,3 +17,4 @@ Although this documentation is openly available, application developers shouldn'
    prometheus/index
    strimzi/index
    events/index
+   sealed-secrets/index
