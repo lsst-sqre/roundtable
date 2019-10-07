@@ -40,6 +40,12 @@ spec:
                       values:
                         - "events-kafka"
                 topologyKey: "kubernetes.io/hostname"
+      persistentVolumeClaim:
+        metadata:
+          annotations:
+            # https://argoproj.github.io/argo-cd/user-guide/compare-options/
+            argocd.argoproj.io/compare-options: IgnoreExtraneous
+            argocd.argoproj.io/sync-options: Prune=false
     # https://strimzi.io/docs/latest/#ref-jvm-options-deployment-configuration-kafka
     # The recommendation is to keep the minimum (Xms) the same as the maximum
     # (Xmx). Expect the usage to be 4.5x this value; hence the 3 to 4 Gi
@@ -110,6 +116,12 @@ spec:
                       values:
                         - "events-zookeeper"
                 topologyKey: "kubernetes.io/hostname"
+      persistentVolumeClaim:
+        metadata:
+          annotations:
+            # https://argoproj.github.io/argo-cd/user-guide/compare-options/
+            argocd.argoproj.io/compare-options: IgnoreExtraneous
+            argocd.argoproj.io/sync-options: Prune=false
     # https://strimzi.io/docs/latest/#ref-jvm-options-deployment-configuration-kafka
     jvmOptions:
       -Xms: 512M
