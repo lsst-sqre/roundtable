@@ -1,0 +1,9 @@
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: "_schemas"
+  labels:
+    strimzi.io/cluster: events
+spec:
+  partitions: 1
+  replicas: 3
