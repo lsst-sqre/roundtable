@@ -13,4 +13,5 @@ spec:
     targetRevision: HEAD
   syncPolicy:
     automated:
-      prune: true
+      # Do not prune automatically-created KafkaTopic resources
+      prune: false
