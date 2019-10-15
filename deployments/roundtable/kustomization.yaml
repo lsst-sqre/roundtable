@@ -9,7 +9,7 @@ resources:
   - resources/cert-manager-ns.yaml
   - resources/prometheus-ns.yaml
   - resources/strimzi-ns.yaml
-  - resources/events-ns.yaml
+  # - resources/events-ns.yaml
   - resources/events-dev-ns.yaml
   - resources/sealed-secrets-ns.yaml
   # Applications
@@ -19,5 +19,5 @@ resources:
   - resources/prometheus.yaml
   - resources/strimzi.yaml
   - resources/events-dev.yaml
-  - resources/events.yaml
+  # - resources/events.yaml
   - resources/sealed-secrets.yaml
