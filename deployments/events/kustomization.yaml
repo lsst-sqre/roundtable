@@ -4,6 +4,6 @@ kind: Kustomization
 resources:
   - resources/kafka.yaml
   # Kafka topics
-  # - resources/schemas-topic.yaml
+  - resources/schemas-topic.yaml
 
 namespace: events
