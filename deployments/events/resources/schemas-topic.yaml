@@ -7,3 +7,6 @@ metadata:
 spec:
   partitions: 1
   replicas: 3
+  config:
+    # http://kafka.apache.org/documentation/#topicconfigs
+    cleanup.policy: "compact"
