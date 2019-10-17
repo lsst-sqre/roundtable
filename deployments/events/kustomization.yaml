@@ -6,6 +6,7 @@ resources:
   # Kafka topics
   - resources/schemas-topic.yaml
   # Kafka users
+  - resources/demo-user.yaml
   - resources/schemaregistry-user.yaml
 
 namespace: events
