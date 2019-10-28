@@ -16,7 +16,7 @@ resources:
   - resources/argo-cd.yaml
   - resources/nginx-ingress.yaml
   - resources/cert-manager-crd.yaml
-  # - resources/cert-manager.yaml  # disabled for upgrade to 0.6
+  - resources/cert-manager.yaml
   - resources/prometheus.yaml
   - resources/strimzi.yaml
   - resources/events-dev.yaml
