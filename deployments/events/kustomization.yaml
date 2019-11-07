@@ -4,9 +4,9 @@ kind: Kustomization
 resources:
   - resources/kafka.yaml
   # Schema Registry
-  - resources/schema-registry-user.yaml
+  - resources/schemaregistry-user.yaml
   - github.com/lsst-sqre/strimzi-registry-operator.git//manifests?ref=0.1.0
-  - resources/schema-registry.yaml
+  - resources/schemaregistry.yaml
   - resources/schemas-topic.yaml
   # Kafka topics
   # TODO

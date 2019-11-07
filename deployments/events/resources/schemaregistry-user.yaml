@@ -1,7 +1,7 @@
 apiVersion: kafka.strimzi.io/v1beta1
 kind: KafkaUser
 metadata:
-  name: schema-registry
+  name: schemaregistry
   labels:
     strimzi.io/cluster: events
 spec:
