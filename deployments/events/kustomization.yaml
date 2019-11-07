@@ -5,6 +5,7 @@ resources:
   - resources/kafka.yaml
   # Schema Registry
   - resources/schema-registry-user.yaml
+  - github.com/lsst-sqre/strimzi-registry-operator.git//manifests?refs=0.1.0
   - resources/schemas-topic.yaml
   # Kafka topics
   # TODO
