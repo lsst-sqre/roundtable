@@ -3,8 +3,11 @@ kind: Kustomization
 
 resources:
   - resources/kafka.yaml
-  # Kafka topics
+  # Schema Registry
+  - resources/schema-registry-user.yaml
   - resources/schemas-topic.yaml
+  # Kafka topics
+  # TODO
   # Kafka users
   - resources/demo-user.yaml
 
