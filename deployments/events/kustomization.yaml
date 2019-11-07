@@ -6,6 +6,7 @@ resources:
   # Schema Registry
   - resources/schema-registry-user.yaml
   - github.com/lsst-sqre/strimzi-registry-operator.git//manifests?ref=0.1.0
+  - resources/schema-registry.yaml
   - resources/schemas-topic.yaml
   # Kafka topics
   # TODO

@@ -1,0 +1,5 @@
+apiVersion: roundtable.lsst.codes/v1beta1
+kind: StrimziSchemaRegistry
+metadata:
+  name: schema-registry
+spec: {}
