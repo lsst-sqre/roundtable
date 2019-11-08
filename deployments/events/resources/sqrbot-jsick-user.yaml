@@ -1,0 +1,24 @@
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaUser
+metadata:
+  name: sqrbot-jsick
+  labels:
+    strimzi.io/cluster: events
+spec:
+  authentication:
+    type: tls
+  authorization:
+    type: simple
+    acls:
+      - resource:
+          type: topic
+          name: "sqrbot.jsick"
+          patternType: prefix
+        operation: "Write"
+        type: allow
+      - resource:
+          type: topic
+          name: "sqrbot.jsick"
+          patternType: prefix
+        operation: "Describe"
+        type: allow
