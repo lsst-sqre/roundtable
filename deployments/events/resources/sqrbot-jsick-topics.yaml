@@ -1,0 +1,78 @@
+---
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: "sqrbot.jsick.interaction"
+  labels:
+    strimzi.io/cluster: events
+spec:
+  partitions: 1  # TODO need to determine if this can be partitioned
+  replicas: 3
+  config:
+    # http://kafka.apache.org/documentation/#topicconfigs
+    retention.ms: 1800000  # 30 minutes
+---
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: "sqrbot.jsick.app_mention"
+  labels:
+    strimzi.io/cluster: events
+spec:
+  partitions: 4  # test partitioning and over-partitioning consumers
+  replicas: 3
+  config:
+    # http://kafka.apache.org/documentation/#topicconfigs
+    retention.ms: 1800000  # 30 minutes
+---
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: "sqrbot.jsick.message.channels"
+  labels:
+    strimzi.io/cluster: events
+spec:
+  partitions: 4
+  replicas: 3
+  config:
+    # http://kafka.apache.org/documentation/#topicconfigs
+    retention.ms: 1800000  # 30 minutes
+---
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: "sqrbot.jsick.message.groups"
+  labels:
+    strimzi.io/cluster: events
+spec:
+  partitions: 4
+  replicas: 3
+  config:
+    # http://kafka.apache.org/documentation/#topicconfigs
+    retention.ms: 1800000  # 30 minutes
+---
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: "sqrbot.jsick.message.im"
+  labels:
+    strimzi.io/cluster: events
+spec:
+  partitions: 4
+  replicas: 3
+  config:
+    # http://kafka.apache.org/documentation/#topicconfigs
+    retention.ms: 1800000  # 30 minutes
+---
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: "sqrbot.jsick.message.mpim"
+  labels:
+    strimzi.io/cluster: events
+spec:
+  partitions: 4
+  replicas: 3
+  config:
+    # http://kafka.apache.org/documentation/#topicconfigs
+    retention.ms: 1800000  # 30 minutes

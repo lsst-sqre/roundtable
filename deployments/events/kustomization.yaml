@@ -9,7 +9,7 @@ resources:
   - resources/schemaregistry.yaml
   - resources/schemas-topic.yaml
   # Kafka topics
-  # TODO
+  - resources/sqrbot-jsick-topics.yaml
   # Kafka users
   - resources/demo-user.yaml
 
