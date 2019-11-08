@@ -15,7 +15,7 @@ spec:
 apiVersion: kafka.strimzi.io/v1beta1
 kind: KafkaTopic
 metadata:
-  name: "sqrbot.jsick.app_mention"
+  name: "sqrbot.jsick.app.mention"
   labels:
     strimzi.io/cluster: events
 spec:
