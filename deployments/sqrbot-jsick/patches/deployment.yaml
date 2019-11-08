@@ -31,11 +31,11 @@ spec:
             - name: "broker-tls"
               mountPath: "/var/strimzi-broker"
               readOnly: True
-    volumes:
-      # Mount the TLS secret created by KafkaUser
-      - name: "client-tls"
-        secret:
-          secretName: kafkauser-sqrbot-jsick  # matches name of KafkaUser
-      - name: "broker-tls"
-        secret:
-          secretName: "events-cluster-ca-cert" # matches name of Strimzi cluster cluster CA cert secret
+      volumes:
+        # Mount the TLS secret created by KafkaUser
+        - name: "client-tls"
+          secret:
+            secretName: kafkauser-sqrbot-jsick  # matches name of KafkaUser
+        - name: "broker-tls"
+          secret:
+            secretName: "events-cluster-ca-cert" # matches name of Strimzi cluster cluster CA cert secret
