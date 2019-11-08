@@ -7,3 +7,13 @@ nameSuffix: "-jsick"
 
 commonLabels:
   app: sqrbot-jsick
+
+resources:
+  - resources/sealedsecret.yaml
+  - github.com/lsst-sqre/sqrbot-jr.git//manifests/base?ref=tickets/DM-22099
+  - resources/issuer.yaml
+  - resources/ingress.yaml
+
+patches:
+  - patches/configmap.yaml
+  - patches/deployment.yaml

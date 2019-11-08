@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sqrbot
+data:
+  # App config
+  API_LSST_CODES_NAME: "sqrbot-jsick"
+  API_LSST_CODES_PROFILE: "development"
+  # Kafka broker config
+  SQRBOTJR_BROKER: "events-kafka-bootstrap:9093"
+  SQRBOTJR_KAFKA_PROTOCOL: "SSL"
+  SQRBOTJR_KAFKA_CLUSTER_CA: "/var/strimzi-broker/ca.crt"
+  SQRBOTJR_KAFKA_CLIENT_CA: "/var/strimzi-client/ca.crt"
+  SQRBOTJR_KAFKA_CLIENT_CERT: "/var/strimzi-client/user.crt"
+  SQRBOTJR_KAFKA_CLIENT_KEY: "/var/strimzi-client/user.key"
+  # Schema registry config
+  SQRBOTJR_REGISTRY: "http://schemaregistry:8081"
+  SQRBOTJR_SUBJECT_COMPATIBILITY: "FORWARD_TRANSITIVE"
+  SQRBOTJR_SUBJECT_SUFFIX: "_jsick1"
+  # Kafka topic config
+  SQRBOTJR_TOPIC_APP_MENTION: "sqrbot.jsick.app.mention"
+  SQRBOTJR_TOPIC_INTERACTION: "sqrbot.jsick.interaction"
+  SQRBOTJR_TOPIC_MESSAGE_CHANNELS: "sqrbot.jsick.message.channels"
+  SQRBOTJR_TOPIC_MESSAGE_GROUPS: "sqrbot.jsick.message.groups"
+  SQRBOTJR_TOPIC_MESSAGE_IM: "sqrbot.jsick.message.im"
+  SQRBOTJR_TOPIC_MESSAGE_MPIM: "sqrbot.jsick.message.mpim"
+  # Feature flags ("1"=enabled, "0"=disabled)
+  SQRBOTJR_TOPIC_ENABLE_SCHEMAS: "0"
+  SQRBOTJR_TOPIC_ENABLE_TOPIC_CONFIG: "0"
+  SQRBOTJR_TOPIC_ENABLE_PRODUCERS: "0"
