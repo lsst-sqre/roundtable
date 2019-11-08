@@ -1,7 +1,7 @@
 apiVersion: kafka.strimzi.io/v1beta1
 kind: KafkaUser
 metadata:
-  name: sqrbot-jsick
+  name: kafkauser-sqrbot-jsick
   labels:
     strimzi.io/cluster: events
 spec:
