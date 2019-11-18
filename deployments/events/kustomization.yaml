@@ -14,5 +14,6 @@ resources:
   # Kafka users
   - resources/demo-user.yaml
   - resources/sqrbot-jsick-user.yaml
+  - resources/templatebot-jsick-user.yaml
 
 namespace: events

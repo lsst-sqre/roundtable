@@ -1,0 +1,131 @@
+---
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaUser
+metadata:
+  name: kafkauser-templatebot-jsick
+  labels:
+    strimzi.io/cluster: events
+spec:
+  authentication:
+    type: tls
+  authorization:
+    type: simple
+    acls:
+      # Common for consumers
+      - resource:
+          type: group
+          name: "templatebot-jsick"
+          patternType: literal
+        operation: "Describe"
+        type: allow
+      # Consume the app_mention topic
+      - resource:
+          type: topic
+          name: "sqrbot.jsick.app-mention"
+          patternType: literal
+        operation: "Read"
+        type: allow
+      - resource:
+          type: topic
+          name: "sqrbot.jsick.app-mention"
+          patternType: litral
+        operation: "Describe"
+        type: allow
+      # Consume the render-ready topic
+      - resource:
+          type: topic
+          name: "templatebot.jsick.render-ready"
+          patternType: literal
+        operation: "Read"
+        type: allow
+      - resource:
+          type: topic
+          name: "templatebot.jsick.render-ready"
+          patternType: literal
+        operation: "Describe"
+        type: allow
+      # Produce the prerender topic
+      - resource:
+          type: topic
+          name: "templatebot.jsick.prerender"
+          patternType: literal
+        operation: "Write"
+        type: allow
+      - resource:
+          type: topic
+          name: "templatebot.jsick.prerender"
+          patternType: literal
+        operation: "Describe"
+        type: allow
+      # Produce the postrender topic
+      - resource:
+          type: topic
+          name: "templatebot.jsick.postrender"
+          patternType: literal
+        operation: "Write"
+        type: allow
+      - resource:
+          type: topic
+          name: "templatebot.jsick.postrender"
+          patternType: literal
+        operation: "Describe"
+        type: allow
+---
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaUser
+metadata:
+  name: kafkauser-templatebot-aide-jsick
+  labels:
+    strimzi.io/cluster: events
+spec:
+  authentication:
+    type: tls
+  authorization:
+    type: simple
+    acls:
+      # Common for consumers
+      - resource:
+          type: group
+          name: "templatebot-aide-jsick"
+          patternType: literal
+        operation: "Describe"
+        type: allow
+      # Consume the prerender topic
+      - resource:
+          type: topic
+          name: "templatebot.jsick.prerender"
+          patternType: literal
+        operation: "Read"
+        type: allow
+      - resource:
+          type: topic
+          name: "templatebot.jsick.prerender"
+          patternType: litral
+        operation: "Describe"
+        type: allow
+      # Consume the postrender topic
+      - resource:
+          type: topic
+          name: "templatebot.jsick.postrender"
+          patternType: literal
+        operation: "Read"
+        type: allow
+      - resource:
+          type: topic
+          name: "templatebot.jsick.postrender"
+          patternType: litral
+        operation: "Describe"
+        type: allow
+      # Produce the render-ready topic
+      - resource:
+          type: topic
+          name: "templatebot.jsick.render-ready"
+          patternType: literal
+        operation: "Write"
+        type: allow
+      - resource:
+          type: topic
+          name: "templatebot.jsick.render-ready"
+          patternType: literal
+        operation: "Describe"
+        type: allow
