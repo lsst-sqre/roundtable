@@ -28,7 +28,7 @@ spec:
       - resource:
           type: topic
           name: "sqrbot.jsick.app-mention"
-          patternType: litral
+          patternType: literal
         operation: "Describe"
         type: allow
       # Consume the render-ready topic
@@ -113,7 +113,7 @@ spec:
       - resource:
           type: topic
           name: "templatebot.jsick.postrender"
-          patternType: litral
+          patternType: literal
         operation: "Describe"
         type: allow
       # Produce the render-ready topic
