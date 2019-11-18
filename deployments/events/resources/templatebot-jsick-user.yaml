@@ -100,7 +100,7 @@ spec:
       - resource:
           type: topic
           name: "templatebot.jsick.prerender"
-          patternType: litral
+          patternType: literal
         operation: "Describe"
         type: allow
       # Consume the postrender topic
