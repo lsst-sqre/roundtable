@@ -1,0 +1,39 @@
+---
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: "templatebot.jsick.prerender"
+  labels:
+    strimzi.io/cluster: events
+spec:
+  partitions: 1
+  replicas: 3
+  config:
+    # http://kafka.apache.org/documentation/#topicconfigs
+    retention.ms: 86400000  # 24 hours
+---
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: "templatebot.jsick.render-ready"
+  labels:
+    strimzi.io/cluster: events
+spec:
+  partitions: 1
+  replicas: 3
+  config:
+    # http://kafka.apache.org/documentation/#topicconfigs
+    retention.ms: 86400000  # 24 hours
+---
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: "templatebot.jsick.postrender"
+  labels:
+    strimzi.io/cluster: events
+spec:
+  partitions: 1
+  replicas: 3
+  config:
+    # http://kafka.apache.org/documentation/#topicconfigs
+    retention.ms: 86400000  # 24 hours

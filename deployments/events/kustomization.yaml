@@ -10,6 +10,7 @@ resources:
   - resources/schemas-topic.yaml
   # Kafka topics
   - resources/sqrbot-jsick-topics.yaml
+  - resources/templatebot-jsick-topics.yaml
   # Kafka users
   - resources/demo-user.yaml
   - resources/sqrbot-jsick-user.yaml
