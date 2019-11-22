@@ -96,6 +96,12 @@ spec:
           patternType: literal
         operation: "Describe"
         type: allow
+      - resource:
+          type: group
+          name: "templatebot-aide-jsick"
+          patternType: literal
+        operation: "Read"
+        type: allow
       # Consume the prerender topic
       - resource:
           type: topic
