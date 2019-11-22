@@ -29,6 +29,8 @@ data:
     - url: https://github.com/lsst-sqre/ltd-dasher.git
     - url: https://github.com/lsst-sqre/sqrbot-jr.git
     - url: https://github.com/lsst-sqre/strimzi-registry-operator.git
+    - url: https://github.com/lsst-sqre/templatebot.git
+    - url: https://github.com/lsst-sqre/lsst-templatebot-aide.git
   # Non-standard Helm chart repositories.
   helm.repositories: |
     # For the cert-manager chart
