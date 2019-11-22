@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: templatebot
+  labels:
+    app: templatebot-jsick  # not adapted by nameSuffix
+spec:
+  template:
+    spec:
+      selector:
+      matchLabels:
+        app: templatebot-jsick  # not adapted by nameSuffix
+      template:
+        metadata:
+          labels:
+            app: templatebot-jsick  # not adapted by nameSuffix
+      containers:
+        - name: templatebot-app
+          image: lsstsqre/templatebot:tickets-DM-22100
+          env:
+            - name: TEMPLATEBOT_GITHUB_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: templatebot-jsick  # not automatically patched by kustomize nameSuffix
+                  key: TEMPLATEBOT_GITHUB_TOKEN
+            - name: TEMPLATEBOT_GITHUB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: templatebot-jsick  # not automatically patched by kustomize nameSuffix
+                  key: TEMPLATEBOT_GITHUB_USER
+            - name: SLACK_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: templatebot-jsick  # not automatically patched by kustomize nameSuffix
+                  key: SLACK_TOKEN
+          volumeMounts:
+            - name: "client-tls"
+              mountPath: "/var/strimzi-client"
+              readOnly: True
+            - name: "broker-tls"
+              mountPath: "/var/strimzi-broker"
+              readOnly: True
+      volumes:
+        # Mount the TLS secret created by KafkaUser
+        - name: "client-tls"
+          secret:
+            secretName: kafkauser-templatebot-jsick  # matches name of KafkaUser
+        - name: "broker-tls"
+          secret:
+            secretName: "events-cluster-ca-cert" # matches name of Strimzi cluster cluster CA cert secret

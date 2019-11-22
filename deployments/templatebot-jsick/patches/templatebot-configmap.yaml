@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: templatebot
+  labels:
+    app: templatebot-jsick  # not adapted by nameSuffix
+data:
+  # App config
+  API_LSST_CODES_NAME: 'templatebot-jsick'
+  API_LSST_CODES_PROFILE: "development"
+  TEMPLATEBOT_REPO: "https://github.com/lsst/templates"
+  TEMPLATEBOT_REPO_REF: "master"
+  TEMPLATEBOT_TOPIC_CONFIG: "0"
+  # Kafka broker config
+  KAFKA_BROKER: "events-kafka-bootstrap:9093"
+  KAFKA_PROTOCOL: "SSL"
+  TEMPLATEBOT_SLACK_GROUP_ID: 'templatebot-jsick'
+  TEMPLATEBOT_EVENTS_GROUP_ID: 'templatebot-jsick'
+  KAFKA_CLUSTER_CA: "/var/strimzi-broker/ca.crt"
+  KAFKA_CLIENT_CA: "/var/strimzi-client/ca.crt"
+  KAFKA_CLIENT_CERT: "/var/strimzi-client/user.crt"
+  KAFKA_CLIENT_KEY: "/var/strimzi-client/user.key"
+  # Schema registry config
+  REGISTRY_URL: "http://schemaregistry:8081"
+  TEMPLATEBOT_SUBJECT_SUFFIX: '_jsick1'
+  TEMPLATEBOT_SUBJECT_COMPATIBILITY: 'FORWARD_TRANSITIVE'
+  # Kafka topic config
+  TEMPLATEBOT_TOPIC_PRERENDER: 'templatebot.jsick.prerender'
+  TEMPLATEBOT_TOPIC_RENDERREADY: 'templatebot.jsick.render-ready'
+  TEMPLATEBOT_TOPIC_POSTRENDER: 'templatebot.jsick.postrender'
+  SQRBOTJR_TOPIC_APP_MENTION: 'sqrbot.jsick.app.mention'
+  SQRBOTJR_TOPIC_MESSAGE_IM: 'sqrbot.jsick.message.im'
+  SQRBOTJR_TOPIC_INTERACTION: 'sqrbot.jsick.interaction'

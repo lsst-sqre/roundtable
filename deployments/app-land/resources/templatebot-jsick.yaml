@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: templatebot-jsick
+spec:
+  destination:
+    namespace: events
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: deployments/templatebot-jsick
+    repoURL: https://github.com/lsst-sqre/roundtable
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
