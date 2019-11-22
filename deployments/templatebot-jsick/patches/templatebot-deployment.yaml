@@ -5,15 +5,14 @@ metadata:
   labels:
     app: templatebot-jsick  # not adapted by nameSuffix
 spec:
+  selector:
+    matchLabels:
+      app: templatebot-jsick  # not adapted by nameSuffix
   template:
-    spec:
-      selector:
-      matchLabels:
+    metadata:
+      labels:
         app: templatebot-jsick  # not adapted by nameSuffix
-      template:
-        metadata:
-          labels:
-            app: templatebot-jsick  # not adapted by nameSuffix
+    spec:
       containers:
         - name: templatebot-app
           image: lsstsqre/templatebot:tickets-DM-22100
