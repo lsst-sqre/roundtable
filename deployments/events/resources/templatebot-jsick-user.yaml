@@ -16,13 +16,7 @@ spec:
           type: group
           name: "templatebot-jsick"
           patternType: literal
-        operation: "Describe"
-        type: allow
-      - resource:
-          type: group
-          name: "templatebot-jsick"
-          patternType: literal
-        operation: "Read"
+        operation: "All"
         type: allow
       # Consume the app_mention topic
       - resource:
