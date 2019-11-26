@@ -18,6 +18,12 @@ spec:
           patternType: literal
         operation: "All"
         type: allow
+      - resource:
+          type: group
+          name: "templatebot-jsick-2"
+          patternType: literal
+        operation: "All"
+        type: allow
       # Consume the app_mention topic
       - resource:
           type: topic
