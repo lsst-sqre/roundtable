@@ -10,7 +10,10 @@ data:
   API_LSST_CODES_PROFILE: "development"
   TEMPLATEBOT_REPO: "https://github.com/lsst/templates"
   TEMPLATEBOT_REPO_REF: "master"
+  # Feature flags
   TEMPLATEBOT_TOPIC_CONFIG: "0"
+  TEMPLATEBOT_ENABLE_SLACK_CONSUMER: "0"
+  TEMPLATEBOT_ENABLE_EVENTS_CONSUMER: "0"
   # Kafka broker config
   KAFKA_BROKER: "events-kafka-bootstrap:9093"
   KAFKA_PROTOCOL: "SSL"
