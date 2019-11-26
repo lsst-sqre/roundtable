@@ -7,4 +7,4 @@ resources:
   # Applications
   - resources/lsst-the-docs.yaml
   - resources/sqrbot-jsick.yaml
-  - resources/templatebot-jsick.yaml
+  # - resources/templatebot-jsick.yaml
