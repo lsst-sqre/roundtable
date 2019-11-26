@@ -11,18 +11,18 @@ spec:
   authorization:
     type: simple
     acls:
-      # Common for consumers
+      # Access templatebot-jsick-2 consumer group
       - resource:
           type: group
-          name: "templatebot-jsick"
+          name: "templatebot-jsick-2"
           patternType: literal
-        operation: "All"
+        operation: "Describe"
         type: allow
       - resource:
           type: group
           name: "templatebot-jsick-2"
           patternType: literal
-        operation: "All"
+        operation: "Read"
         type: allow
       # consume the sqrbot.jsick.interaction topic
       - resource:
