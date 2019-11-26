@@ -24,6 +24,32 @@ spec:
           patternType: literal
         operation: "All"
         type: allow
+      # consume the sqrbot.jsick.interaction topic
+      - resource:
+          type: topic
+          name: "sqrbot.jsick.interaction"
+          patternType: literal
+        operation: "Read"
+        type: allow
+      - resource:
+          type: topic
+          name: "sqrbot.jsick.interaction"
+          patternType: literal
+        operation: "Describe"
+        type: allow
+      # Consume the sqrbot.jsick.message.im topic
+      - resource:
+          type: topic
+          name: "sqrbot.jsick.message.im"
+          patternType: literal
+        operation: "Read"
+        type: allow
+      - resource:
+          type: topic
+          name: "sqrbot.jsick.message.im"
+          patternType: literal
+        operation: "Describe"
+        type: allow
       # Consume the app_mention topic
       - resource:
           type: topic
