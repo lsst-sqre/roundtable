@@ -24,6 +24,19 @@ spec:
           patternType: literal
         operation: "Read"
         type: allow
+      # Access templatebot-jsick-3 consumer group
+      - resource:
+          type: group
+          name: "templatebot-jsick-3"
+          patternType: literal
+        operation: "Describe"
+        type: allow
+      - resource:
+          type: group
+          name: "templatebot-jsick-3"
+          patternType: literal
+        operation: "Read"
+        type: allow
       # consume the sqrbot.jsick.interaction topic
       - resource:
           type: topic
