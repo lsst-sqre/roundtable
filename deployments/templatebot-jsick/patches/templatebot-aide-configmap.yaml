@@ -18,7 +18,7 @@ data:
   KAFKA_CLIENT_KEY: "/var/strimzi-client/user.key"
   KAFKA_CLUSTER_CA: "/var/strimzi-broker/ca.crt"
   # Schema registry configuration
-  REGISTRY_URL: "http://localhost:8081"
+  REGISTRY_URL: "http://schemaregistry:8081"
   TEMPLATEBOT_SUBJECT_SUFFIX: "_jsick1"
   # Topic names
   TEMPLATEBOT_TOPIC_PRERENDER: 'templatebot.jsick.prerender'
