@@ -12,7 +12,7 @@ data:
   # Kafka configuration
   KAFKA_BROKER: "events-kafka-bootstrap:9093"
   KAFKA_PROTOCOL: "SSL"
-  TEMPLATEBOT_GROUP_ID: 'templatebot-aide'
+  TEMPLATEBOT_GROUP_ID: 'templatebot-aide-jsick'
   KAFKA_CLIENT_CA: "/var/strimzi-client/ca.crt"
   KAFKA_CLIENT_CERT: "/var/strimzi-client/user.crt"
   KAFKA_CLIENT_KEY: "/var/strimzi-client/user.key"
