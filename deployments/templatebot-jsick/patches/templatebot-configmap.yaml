@@ -18,7 +18,7 @@ data:
   KAFKA_BROKER: "events-kafka-bootstrap:9093"
   KAFKA_PROTOCOL: "SSL"
   TEMPLATEBOT_SLACK_GROUP_ID: 'templatebot-jsick-2'
-  TEMPLATEBOT_EVENTS_GROUP_ID: 'templatebot-jsick-2'
+  TEMPLATEBOT_EVENTS_GROUP_ID: 'templatebot-jsick-3'
   KAFKA_CLUSTER_CA: "/var/strimzi-broker/ca.crt"
   KAFKA_CLIENT_CA: "/var/strimzi-client/ca.crt"
   KAFKA_CLIENT_CERT: "/var/strimzi-client/user.crt"
