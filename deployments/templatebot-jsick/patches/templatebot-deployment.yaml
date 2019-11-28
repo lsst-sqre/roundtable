@@ -5,6 +5,7 @@ metadata:
   labels:
     app: templatebot-jsick  # not adapted by nameSuffix
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: templatebot-jsick  # not adapted by nameSuffix
