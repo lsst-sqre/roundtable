@@ -66,13 +66,13 @@ spec:
       # Consume the app_mention topic
       - resource:
           type: topic
-          name: "sqrbot.jsick.app-mention"
+          name: "sqrbot.jsick.app.mention"
           patternType: literal
         operation: "Read"
         type: allow
       - resource:
           type: topic
-          name: "sqrbot.jsick.app-mention"
+          name: "sqrbot.jsick.app.mention"
           patternType: literal
         operation: "Describe"
         type: allow
