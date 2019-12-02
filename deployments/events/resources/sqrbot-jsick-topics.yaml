@@ -6,7 +6,7 @@ metadata:
   labels:
     strimzi.io/cluster: events
 spec:
-  partitions: 1  # TODO need to determine if this can be partitioned
+  partitions: 4
   replicas: 3
   config:
     # http://kafka.apache.org/documentation/#topicconfigs
