@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: templatebot-app
-          image: lsstsqre/templatebot:tickets-DM-22100
+          image: lsstsqre/templatebot:0.1.0
           env:
             - name: TEMPLATEBOT_GITHUB_TOKEN
               valueFrom:
