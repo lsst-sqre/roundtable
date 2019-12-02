@@ -10,7 +10,7 @@ commonLabels:
 
 resources:
   - resources/sealedsecret.yaml
-  - github.com/lsst-sqre/sqrbot-jr.git//manifests/base?ref=tickets/DM-22099
+  - github.com/lsst-sqre/sqrbot-jr.git//manifests/base?ref=tickets/DM-22408
   - resources/issuer.yaml
   - resources/ingress.yaml
 

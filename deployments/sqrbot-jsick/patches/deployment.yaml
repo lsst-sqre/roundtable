@@ -7,7 +7,7 @@ spec:
     spec:
       containers:
         - name: sqrbot-app
-          image: lsstsqre/sqrbot-jr:tickets-DM-22099
+          image: lsstsqre/sqrbot-jr:tickets-DM-22408
           env:
             - name: SQRBOTJR_SLACK_SIGNING
               valueFrom:
