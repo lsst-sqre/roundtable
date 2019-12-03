@@ -75,3 +75,16 @@ spec:
           patternType: literal
         operation: "Describe"
         type: allow
+      # Produce sqrbot.message.im
+      - resource:
+          type: topic
+          name: "sqrbot.message.im"
+          patternType: literal
+        operation: "Write"
+        type: allow
+      - resource:
+          type: topic
+          name: "sqrbot.message.im"
+          patternType: literal
+        operation: "Describe"
+        type: allow
