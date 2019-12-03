@@ -9,10 +9,14 @@ resources:
   - resources/schemaregistry.yaml
   - resources/schemas-topic.yaml
   # Kafka topics
+  - resources/sqrbot-jr-topics.yaml
+  - resources/templatebot-topics.yaml
   - resources/sqrbot-jsick-topics.yaml
   - resources/templatebot-jsick-topics.yaml
   # Kafka users
   - resources/demo-user.yaml
+  - resources/sqrbot-jr-user.yaml
+  - resources/templatebot-user.yaml
   - resources/sqrbot-jsick-user.yaml
   - resources/templatebot-jsick-user.yaml
 

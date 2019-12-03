@@ -1,0 +1,77 @@
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaUser
+metadata:
+  name: kafkauser-sqrbot-jr
+  labels:
+    strimzi.io/cluster: events
+spec:
+  authentication:
+    type: tls
+  authorization:
+    type: simple
+    acls:
+      # Produce sqrbot.interaction
+      - resource:
+          type: topic
+          name: "sqrbot.interaction"
+          patternType: literal
+        operation: "Write"
+        type: allow
+      - resource:
+          type: topic
+          name: "sqrbot.interaction"
+          patternType: literal
+        operation: "Describe"
+        type: allow
+      # Produce sqrbot.app.mention
+      - resource:
+          type: topic
+          name: "sqrbot.app.mention"
+          patternType: literal
+        operation: "Write"
+        type: allow
+      - resource:
+          type: topic
+          name: "sqrbot.app.mention"
+          patternType: literal
+        operation: "Describe"
+        type: allow
+      # Produce sqrbot.message.channels
+      - resource:
+          type: topic
+          name: "sqrbot.message.channels"
+          patternType: literal
+        operation: "Write"
+        type: allow
+      - resource:
+          type: topic
+          name: "sqrbot.message.channels"
+          patternType: literal
+        operation: "Describe"
+        type: allow
+      # Produce sqrbot.message.groups
+      - resource:
+          type: topic
+          name: "sqrbot.message.groups"
+          patternType: literal
+        operation: "Write"
+        type: allow
+      - resource:
+          type: topic
+          name: "sqrbot.message.groups"
+          patternType: literal
+        operation: "Describe"
+        type: allow
+      # Produce sqrbot.message.mpim
+      - resource:
+          type: topic
+          name: "sqrbot.message.mpim"
+          patternType: literal
+        operation: "Write"
+        type: allow
+      - resource:
+          type: topic
+          name: "sqrbot.message.mpim"
+          patternType: literal
+        operation: "Describe"
+        type: allow
