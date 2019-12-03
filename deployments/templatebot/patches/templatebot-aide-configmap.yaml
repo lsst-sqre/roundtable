@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: templatebot-aide
+  labels:
+    app: templatebot-aide
+data:
+  # These configurations are injected as environment variables into the
+  # sqrbot app container.
+  API_LSST_CODES_NAME: 'templatebot-aide'
+  API_LSST_CODES_PROFILE: "production"
+  # Kafka configuration
+  KAFKA_BROKER: "events-kafka-bootstrap:9093"
+  KAFKA_PROTOCOL: "SSL"
+  TEMPLATEBOT_GROUP_ID: 'templatebot-aide'
+  KAFKA_CLIENT_CA: "/var/strimzi-client/ca.crt"
+  KAFKA_CLIENT_CERT: "/var/strimzi-client/user.crt"
+  KAFKA_CLIENT_KEY: "/var/strimzi-client/user.key"
+  KAFKA_CLUSTER_CA: "/var/strimzi-broker/ca.crt"
+  # Schema registry configuration
+  REGISTRY_URL: "http://schemaregistry:8081"
+  TEMPLATEBOT_SUBJECT_SUFFIX: ""
+  # Topic names
+  TEMPLATEBOT_TOPIC_PRERENDER: 'templatebot.prerender'
+  TEMPLATEBOT_TOPIC_RENDERREADY: 'templatebot.render-ready'
+  TEMPLATEBOT_TOPIC_POSTRENDER: 'templatebot.postrender'
