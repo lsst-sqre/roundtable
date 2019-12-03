@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: templatebot
+  labels:
+    app: templatebot
+data:
+  # App config
+  API_LSST_CODES_NAME: 'templatebot'
+  API_LSST_CODES_PROFILE: "production"
+  TEMPLATEBOT_REPO: "https://github.com/lsst/templates"
+  TEMPLATEBOT_REPO_REF: "master"
+  # Feature flags
+  TEMPLATEBOT_TOPIC_CONFIG: "0"
+  TEMPLATEBOT_ENABLE_SLACK_CONSUMER: "1"
+  TEMPLATEBOT_ENABLE_EVENTS_CONSUMER: "1"
+  # Kafka broker config
+  KAFKA_BROKER: "events-kafka-bootstrap:9093"
+  KAFKA_PROTOCOL: "SSL"
+  TEMPLATEBOT_SLACK_GROUP_ID: 'templatebot'
+  TEMPLATEBOT_EVENTS_GROUP_ID: 'templatebot'
+  KAFKA_CLUSTER_CA: "/var/strimzi-broker/ca.crt"
+  KAFKA_CLIENT_CA: "/var/strimzi-client/ca.crt"
+  KAFKA_CLIENT_CERT: "/var/strimzi-client/user.crt"
+  KAFKA_CLIENT_KEY: "/var/strimzi-client/user.key"
+  # Schema registry config
+  REGISTRY_URL: "http://schemaregistry:8081"
+  TEMPLATEBOT_SUBJECT_SUFFIX: ''
+  TEMPLATEBOT_SUBJECT_COMPATIBILITY: 'FORWARD_TRANSITIVE'
+  # Kafka topic config
+  TEMPLATEBOT_TOPIC_PRERENDER: 'templatebot.prerender'
+  TEMPLATEBOT_TOPIC_RENDERREADY: 'templatebot.render-ready'
+  TEMPLATEBOT_TOPIC_POSTRENDER: 'templatebot.postrender'
+  SQRBOTJR_TOPIC_APP_MENTION: 'sqrbot.app.mention'
+  SQRBOTJR_TOPIC_MESSAGE_IM: 'sqrbot.message.im'
+  SQRBOTJR_TOPIC_INTERACTION: 'sqrbot.interaction'
