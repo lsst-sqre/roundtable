@@ -6,5 +6,6 @@ resources:
   - resources/lsst-the-docs-ns.yaml
   # Applications
   - resources/lsst-the-docs.yaml
+  - resources/sqrbot-jr.yaml
   - resources/sqrbot-jsick.yaml
   - resources/templatebot-jsick.yaml
