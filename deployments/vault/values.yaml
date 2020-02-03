@@ -1,0 +1,65 @@
+vault-helm:
+  global:
+    tlsDisable: false
+
+  injector:
+    image:
+      tag: "0.2.0"
+    agentImage:
+      tag: "1.3.2"
+
+  server:
+    image:
+      tag: "1.3.2"
+
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: "nginx"
+        certmanager.k8s.io/issuer: "vault-letsencrypt"
+      tls:
+        - secretName: vault-ingress-tls
+          hosts:
+            - vault.lsst.codes
+      hosts:
+        - host: vault.lsst.codes
+          paths:
+            - "/"
+
+    extraEnvironmentVars:
+      GOOGLE_REGION: "global"
+      GOOGLE_PROJECT: "sqre"
+      GOOGLE_APPLICATION_CREDENTIALS: "/vault/userconfig/vault-kms-creds/credentials.json"
+
+    extraVolumes:
+      - type: "secret"
+        name: "vault-kms-creds"
+
+    standalone:
+      enabled: false
+
+    ha:
+      enabled: true
+      replicas: 3
+
+      config: |
+        ui = true
+
+        listener "tcp" {
+          tls_disable     = 1
+          address         = "[::]:8200"
+          cluster_address = "[::]:8201"
+        }
+
+        seal "gcpckms" {
+          credentials = "/vault/userconfig/vault-kms-creds/credentials.json"
+          project     = "sqre"
+          region      = "global"
+          key_ring    = "vault"
+          crypto_key  = "vault-seal"
+        }
+
+        storage "gcs" {
+          bucket     = "storage.vault.lsst.codes"
+          ha_enabled = "true"
+        }

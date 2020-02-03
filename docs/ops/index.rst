@@ -18,3 +18,4 @@ Although this documentation is openly available, application developers shouldn'
    strimzi/index
    events/index
    sealed-secrets/index
+   vault/index
