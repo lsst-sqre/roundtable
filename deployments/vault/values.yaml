@@ -1,4 +1,4 @@
-vault-helm:
+vault:
   global:
     tlsDisable: false
 
