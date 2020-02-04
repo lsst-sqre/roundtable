@@ -43,6 +43,9 @@ vault-helm:
       - type: "secret"
         name: "vault-kms-creds"
 
+    dataStorage:
+      enabled: false
+
     standalone:
       enabled: false
 
