@@ -2,3 +2,14 @@ nginx-ingress:
   controller:
     metrics:
       enabled: true
+
+# Work around upgrade issue (https://github.com/helm/charts/pull/13646)
+nginx-ingress-default-backend:
+  service:
+    clusterIP: "10.4.39.46"
+nginx-ingress-controller-metrics:
+  service:
+    clusterIP: "10.4.46.235"
+nginx-ingress-controller:
+  service:
+    clusterIP: "10.4.40.37"
