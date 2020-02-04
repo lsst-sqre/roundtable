@@ -32,7 +32,7 @@ We manually created the ``security`` application from the :command:`argocd` CLI:
 .. code-block:: bash
 
    argocd app create security \
-     --dest-namespace security \
+     --dest-namespace argocd \
      --dest-server https://kubernetes.default.svc \
      --repo https://github.com/lsst-sqre/roundtable.git \
      --path deployments/security \
