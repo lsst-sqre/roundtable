@@ -2,10 +2,12 @@
 # https://github.com/helm/charts/pull/13646
 nginx-ingress:
   controller:
-    clusterIP: "10.4.40.37"
     metrics:
       enabled: true
-      clusterIP: "10.4.46.235"
+      service:
+        clusterIP: "10.4.46.235"
+    service:
+      clusterIP: "10.4.40.37"
   defaultBackend:
     service:
       clusterIP: "10.4.39.46"
