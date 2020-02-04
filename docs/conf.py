@@ -88,6 +88,10 @@ rst_epilog = """
    :target: https://cd.roundtable.lsst.codes/applications/roundtable
    :alt: Roundtable app status
 
+.. |security-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=security
+   :target: https://cd.roundtable.lsst.codes/applications/security
+   :alt: Security app status
+
 .. |argo-cd-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=argo-cd
    :target: https://cd.roundtable.lsst.codes/applications/argo-cd
    :alt: Argo CD app status
@@ -120,6 +124,10 @@ rst_epilog = """
    :target: https://cd.roundtable.lsst.codes/applications/sealed-secrets
    :alt: Sealed Secrets app status
 
+.. |vault-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=vault
+   :target: https://cd.roundtable.lsst.codes/applications/vault
+   :alt: Vault app status
+
 .. _Helm: https://helm.sh
 .. _Kustomize: https://kustomize.io
 .. _Argo CD: https://argoproj.github.io/argo-cd/
@@ -130,6 +138,8 @@ rst_epilog = """
 .. _httpie: https://httpie.org
 .. _Strimzi: https://strimzi.io
 .. _Sealed Secrets: https://github.com/bitnami-labs/sealed-secrets
+.. _Vault: https://www.vaultproject.io/
+.. _lsstvaultutils: https://github.com/lsst-sqre/lsstvaultutils
 """
 
 # -- Options for linkcheck builder ----------------------------------------

@@ -5,8 +5,6 @@ resources:
   # Storage classes
   - resources/ssd-storageclass.yaml
   # Namespaces
-  - resources/nginx-ingress-ns.yaml
-  - resources/cert-manager-ns.yaml
   - resources/prometheus-ns.yaml
   - resources/strimzi-ns.yaml
   - resources/events-ns.yaml
@@ -15,9 +13,6 @@ resources:
   - resources/logging-ns.yaml
   # Applications
   - resources/argo-cd.yaml
-  - resources/nginx-ingress.yaml
-  - resources/cert-manager-crd.yaml
-  - resources/cert-manager.yaml
   - resources/prometheus.yaml
   - resources/strimzi.yaml
   - resources/events-dev.yaml

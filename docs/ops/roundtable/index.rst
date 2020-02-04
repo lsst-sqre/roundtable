@@ -17,7 +17,7 @@ roundtable app deployment guide
 .. rubric:: Overview
 
 The ``roundtable`` app is responsible for deploying the core infrastructure of Roundtable.
-It follows the `app of apps <https://argoproj.github.io/argo-cd/operator-manual/cluster-bootstrapping/#app-of-apps-pattern>`_ pattern.
+It follows the `app of apps <https://argoproj.github.io/argo-cd/operator-manual/cluster-bootstrapping/#app-of-apps-pattern>`__ pattern.
 It deploys:
 
 - Namespaces for core infrastructure apps.
@@ -25,9 +25,9 @@ It deploys:
 - The core infrastructure apps:
 
   - :doc:`argo-cd <../argo-cd/index>` for continuous delivery of Roundtable apps with Argo CD.
-  - :doc:`nginx-ingress <../nginx-ingress/index>` for shared ingress.
-  - :doc:`cert-manager <../cert-manager/index>` for Let's Encrypt-provided TLS certificates.
   - :doc:`prometheus <../prometheus/index>` for the Kubernetes-native monitoring stack (Prometheus Operator, Prometheus, and Grafana).
+
+This app depends on the :doc:`security <../security/index>` app, which provides secret management facilities and ingress.
 
 .. rubric:: Bootstrapping the Application
 
