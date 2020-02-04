@@ -20,6 +20,8 @@ The ``vault`` application is an installation of Vault_ used as the primary LSST 
 This installation currently provides secrets for all LSST environments and clusters.
 Eventually, we may install a separate production Vault at the LDF and use the Roundtable Vault only for non-LDF services.
 
+See `DMTN-112 <https://dmtn-112.lsst.io>`__ for the LSST Vault design.
+
 This application deploys both the Vault server and the Vault Agent Injector.
 
 Vault is configured in HA mode with a public API endpoint accessible at vault.lsst.codes.
