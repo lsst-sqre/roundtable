@@ -36,7 +36,7 @@ vault:
 
     extraEnvironmentVars:
       GOOGLE_REGION: "global"
-      GOOGLE_PROJECT: "sqre"
+      GOOGLE_PROJECT: "plasma-geode-127520"
       GOOGLE_APPLICATION_CREDENTIALS: "/vault/userconfig/vault-kms-creds/credentials.json"
 
     extraVolumes:
@@ -64,7 +64,7 @@ vault:
 
         seal "gcpckms" {
           credentials = "/vault/userconfig/vault-kms-creds/credentials.json"
-          project     = "sqre"
+          project     = "plasma-geode-127520"
           region      = "global"
           key_ring    = "vault"
           crypto_key  = "vault-seal"
