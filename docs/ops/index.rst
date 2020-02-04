@@ -9,6 +9,7 @@ Although this documentation is openly available, application developers shouldn'
    :maxdepth: 2
 
    gke/index
+   security/index
    roundtable/index
    app-land/index
    argo-cd/index

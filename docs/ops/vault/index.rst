@@ -12,7 +12,7 @@ vault app deployment guide
    * - Type
      - Helm_
    * - Parent app
-     - None
+     - :doc:`security <../security/index>`
 
 .. rubric:: Overview
 

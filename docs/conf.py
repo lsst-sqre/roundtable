@@ -88,6 +88,10 @@ rst_epilog = """
    :target: https://cd.roundtable.lsst.codes/applications/roundtable
    :alt: Roundtable app status
 
+.. |security-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=security
+   :target: https://cd.roundtable.lsst.codes/applications/security
+   :alt: Security app status
+
 .. |argo-cd-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=argo-cd
    :target: https://cd.roundtable.lsst.codes/applications/argo-cd
    :alt: Argo CD app status
