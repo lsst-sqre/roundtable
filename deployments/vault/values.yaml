@@ -1,7 +1,5 @@
 vault:
   global:
-    # Temporary while migrating data.
-    enabled: false
     tlsDisable: true
 
   injector:
