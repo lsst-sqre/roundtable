@@ -14,8 +14,6 @@ vault:
 
     ingress:
       enabled: true
-      labels:
-        traffic: external
       annotations:
         kubernetes.io/ingress.class: "nginx"
         certmanager.k8s.io/issuer: "vault-letsencrypt"
