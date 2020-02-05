@@ -31,8 +31,8 @@ vault:
             - "/"
 
     extraEnvironmentVars:
-      GOOGLE_REGION: "global"
-      GOOGLE_PROJECT: "plasma-geode-127520"
+#      GOOGLE_REGION: "global"
+#      GOOGLE_PROJECT: "plasma-geode-127520"
       GOOGLE_APPLICATION_CREDENTIALS: "/vault/userconfig/vault-kms-creds/credentials.json"
 
     extraVolumes:
