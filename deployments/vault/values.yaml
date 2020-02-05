@@ -47,7 +47,7 @@ vault:
 
     ha:
       enabled: true
-      replicas: 3
+      replicas: 1
 
       config: |
         ui = true
@@ -59,6 +59,7 @@ vault:
         }
 
         seal "gcpckms" {
+          disabled    = "true"
           credentials = "/vault/userconfig/vault-kms-creds/credentials.json"
           project     = "vault-c45398b18d335fa9"
           region      = "us-central1"
