@@ -1,6 +1,6 @@
 vault:
   global:
-    tlsDisable: false
+    tlsDisable: true
 
   injector:
     image:
