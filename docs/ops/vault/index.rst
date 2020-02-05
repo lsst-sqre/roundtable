@@ -30,6 +30,48 @@ The UI is not available outside of the pod, but can be accessed via port forward
 
 To manipulate the secrets stored in this Vault instance, use lsstvaultutils_.
 
+.. rubric:: Changing Vault Configuration
+
+When making configuration changes, be aware that Argo CD will not detect a change to the configuration in ``values.yaml`` and automatically relaunch the ``vault-*`` pods.
+You will need to delete the pods and let Kubernetes recreate them in order to pick up changes to the configuration.
+
+.. rubric:: Seal Configuration
+
+A Vault database is "sealed" by encrypting the stored data with an encryption key, which in turn is encrypted with a master key.
+In a default Vault installation, the master key is then split with Shamir secret sharing and a quorum of key fragments is required to manually unseal the Vault each time the Vault server is restarted.
+This is a poor design for high availability and for Kubernetes management, so we instead use an "auto-unseal" configuration.
+
+Auto-unsealing works by using a Google KMS key as the master key.
+That KMS key is stored internally by Google and cannot be retrieved or downloaded, but an application can request that data be encrypted or decrypted with that key.
+Vault has KMS decrypt the encryption key on startup and then uses that to unseal the Vault database.
+The Vault server uses a Google service account with permission on the relevant key ring to authenticate to KMS to perform this operation.
+
+In auto-unseal mode, there is still a manual key, but this key is called a "recovery key" and cannot be used to unseal the database.
+It is, however, still needed for certain operations, such as seal key migration.
+
+The recovery key for the Vault is kept in 1Password.
+
+.. rubric:: Changing Seal Keys
+
+It is possible to change the key used to seal Vault (if, for instance, Vault needs to be migrated to another GCP project), but it's not well-documented and is moderately complicated.
+Here are the steps:
+
+#. Add ``disabled = "true"`` to the ``seal`` configuration stanza in ``values.yaml``.
+#. Change ``vault.server.ha.relicas`` to 1 in ``values.yaml``.
+#. Push the changes and wait for Argo CD to sync and remove the other running Vault containers.
+   Argo CD will complain about synchronizing the affinity configuration; this is harmless and can be ignored.
+#. Relaunch the ``vault-0`` pod by deleting it and letting Kubernetes recreate it.
+#. Get the recovery key from 1Password.
+#. ``kubectl exec --namespace=vault -ti vault-0 -- vault operator unseal -migrate`` and enter the recovery key.
+   This will disable auto-unseal and convert the unseal recovery key to be a regular unseal key using Shamir.
+   Vault is no longer using the KMS key at this point.
+#. Change the KMS ``seal`` configuration stanza in ``values.yaml`` to point to the new KMS keyring and key that you want to use.
+   Push this change and wait for Argo CD to synchronize it.
+#. Relaunch the ``vault-0`` pod by deleting it and letting Kubernetes recreate it.
+#. ``kubectl exec --namespace=vault -ti vault-0 -- vault operator unseal -migrate`` and enter the recovery key.
+   This will reseal Vault using the KMS key and convert the unseal key you have been using back to being a recovery key.
+#. Change ``vault.server.ha.replicas`` back to 3 in ``values.yaml``, push, and let Argo CD start the remaining Vault pods.
+
 .. rubric:: External Configuration
 
 This deployment is currently only tested on GCP.
