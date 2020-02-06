@@ -1,0 +1,6 @@
+dependencies:
+- name: opendistro-es
+  version: "1.1.0"
+- name: fluentd-elasticsearch
+  version: ">=3.0.0"
+  repository: https://kiwigrid.github.io

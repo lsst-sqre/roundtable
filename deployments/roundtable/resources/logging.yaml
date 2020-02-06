@@ -11,9 +11,6 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: services/logging
-    repoURL: https://github.com/lsst-sqre/lsp-deploy.git
+    path: deployments/logging
+    repoURL: https://github.com/lsst-sqre/roundtable.git
     targetRevision: HEAD
-    helm:
-      valueFiles:
-      - values-roundtable.yaml
