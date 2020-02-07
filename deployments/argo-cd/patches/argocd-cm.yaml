@@ -43,3 +43,6 @@ data:
     # For ELK stack logging
     - url: https://kiwigrid.github.io/
       name: kiwigrid
+    # SQuaRE charts
+    - url: https://lsst-sqre.github.io/charts/
+      name: lsst-sqre
