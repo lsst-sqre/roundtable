@@ -8,7 +8,7 @@ data:
   # These configurations are injected as environment variables into the
   # sqrbot app container.
   API_LSST_CODES_NAME: 'templatebot-aide'
-  API_LSST_CODES_PROFILE: "development"
+  API_LSST_CODES_PROFILE: "production"
   # Kafka configuration
   KAFKA_BROKER: "events-kafka-bootstrap:9093"
   KAFKA_PROTOCOL: "SSL"

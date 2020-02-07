@@ -7,7 +7,7 @@ metadata:
 data:
   # App config
   API_LSST_CODES_NAME: 'templatebot'
-  API_LSST_CODES_PROFILE: "development"
+  API_LSST_CODES_PROFILE: "production"
   TEMPLATEBOT_REPO: "https://github.com/lsst/templates"
   TEMPLATEBOT_REPO_REF: "master"
   # Feature flags

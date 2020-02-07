@@ -5,7 +5,7 @@ metadata:
 data:
   # App config
   API_LSST_CODES_NAME: "sqrbot-jr"
-  API_LSST_CODES_PROFILE: "development"
+  API_LSST_CODES_PROFILE: "production"
   # Kafka broker config
   SQRBOTJR_BROKER: "events-kafka-bootstrap:9093"
   SQRBOTJR_KAFKA_PROTOCOL: "SSL"
