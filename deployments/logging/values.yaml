@@ -5,6 +5,9 @@ opendistro-es:
     imageTag: 1.2.0
     data:
       storageClassName: standard
+    client:
+      ingress:
+        enabled: false
 
   kibana:
     imageTag: 1.2.0
