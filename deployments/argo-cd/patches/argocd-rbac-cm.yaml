@@ -7,4 +7,4 @@ data:
   policy.default: role:readonly
   # Make members of the lsst-sqre/roundtable-ops team administrators
   policy.csv: |
-      g, lsst-sqre:roundtable-ops, role:admin
+      g, lsst-sqre:Roundtable Ops, role:admin
