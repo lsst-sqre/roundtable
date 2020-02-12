@@ -17,7 +17,7 @@ To update the version of the Helm chart:
 #. Find the new release that you want to use (generally the latest).
 #. Select `Source code (tar.gz)` to download.
 #. Unpack the `.tar.gz` file into a subdirectory of the `charts` directory
-#. From the `charts` directory, run `help package vault-helm-*/`.
+#. From the `charts` directory, run `helm package vault-helm-*/`.
 #. Add the resulting `.tgz` file to Git.
 #. Update the version in `../requirements.yaml` to point to the new file.
 #. Optionally delete the old `.tgz` file.
