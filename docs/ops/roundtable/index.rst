@@ -26,6 +26,7 @@ It deploys:
 
   - :doc:`argo-cd <../argo-cd/index>` for continuous delivery of Roundtable apps with Argo CD.
   - :doc:`prometheus <../prometheus/index>` for the Kubernetes-native monitoring stack (Prometheus Operator, Prometheus, and Grafana).
+  - :doc:`vault-secrets-operator <../vault-secrets-operator/index>` to retrieve secrets from Vault and store them as Kubernetes secrets.
 
 This app depends on the :doc:`security <../security/index>` app, which provides secret management facilities and ingress.
 
@@ -33,7 +34,14 @@ This app depends on the :doc:`security <../security/index>` app, which provides 
 
 Since ``roundtable`` is a parent app, its ``Application`` resource was not created automatically and is not managed by GitOps.
 
-We manually created the ``roundtable`` ``Application`` from the :command:`argocd` CLI:
+Before bootstrapping the ``roundtable`` app, the ``security`` app needs to be bootstrapped so that Vault is running.
+See :doc:`its documentation <../security/index>` for more information.
+Then, a Vault access token for the Vault Secrets Operator must be created in Vault and stored as the ``vault-secrets-operator`` Kubernetes secret with two keys:
+
+- VAULT_TOKEN
+- VAULT_LEASE_DURATION
+
+Finally, create the ``roundtable`` ``Application`` from the :command:`argocd` CLI:
 
 .. code-block:: bash
 
