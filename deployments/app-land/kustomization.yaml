@@ -10,3 +10,4 @@ resources:
   - resources/templatebot.yaml
   - resources/sqrbot-jsick.yaml
   - resources/templatebot-jsick.yaml
+  - resources/uservice-ghslacker.yaml

@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: events
+
+resources:
+  - github.com/lsst-sqre/uservice-ghslacker.git//manifests/base?ref=0.1.0
+  - resources/ingress.yaml
+  - resources/issuer.yaml
+  - resources/secret.yaml

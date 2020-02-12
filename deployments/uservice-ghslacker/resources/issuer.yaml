@@ -1,0 +1,11 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Issuer
+metadata:
+  name: api-lsst-codes-letsencrypt
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: sqre-admin@lists.lsst.org
+    privateKeySecretRef:
+      name: api-lsst-codes-letsencrypt
+    http01: {}
