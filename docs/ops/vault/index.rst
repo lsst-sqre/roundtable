@@ -35,6 +35,10 @@ To manipulate the secrets stored in this Vault instance, use lsstvaultutils_.
 When making configuration changes, be aware that Argo CD will not detect a change to the configuration in ``values.yaml`` and automatically relaunch the ``vault-*`` pods.
 You will need to delete the pods and let Kubernetes recreate them in order to pick up changes to the configuration.
 
+If you change the number of HA replicas, Argo CD will fail to fully synchronize the configuration because the ``poddisruptionbudget`` resource cannot be updated.
+Argo CD will show an error saying that a resource failed to synchronize.
+To fix this problem, delete the ``poddisruptionbudget`` resource in Argo CD and then resynchronize the ``vault`` app, and then Argo CD will be happy.
+
 .. rubric:: Seal Configuration
 
 A Vault database is "sealed" by encrypting the stored data with an encryption key, which in turn is encrypted with a master key.
@@ -66,6 +70,7 @@ Here are the steps:
    This will disable auto-unseal and convert the unseal recovery key to be a regular unseal key using Shamir.
    Vault is no longer using the KMS key at this point.
 #. Change the KMS ``seal`` configuration stanza in ``values.yaml`` to point to the new KMS keyring and key that you want to use.
+   Remove ``disabled = "true"`` from the ``seal`` configuration.
    Push this change and wait for Argo CD to synchronize it.
 #. Relaunch the ``vault-0`` pod by deleting it and letting Kubernetes recreate it.
 #. ``kubectl exec --namespace=vault -ti vault-0 -- vault operator unseal -migrate`` and enter the recovery key.
