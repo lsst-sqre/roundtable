@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: roundtable-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    certmanager.k8s.io/issuer: "roundtable-letsencrypt"
+spec:
+  tls:
+    - hosts:
+      - roundtable.lsst.codes
+      secretName: roundtable-ingress-tls
+  rules:
+    - host: roundtable.lsst.codes
+      http:
+        paths:
+          - path: /ghslacker
+            backend:
+              serviceName: ghslacker
+              servicePort: 5000
+          - path: /sqrbot-jr
+            backend:
+              serviceName: sqrbot-jr
+              servicePort: 8080
+          - path: /sqrbot-jsick
+            backend:
+              serviceName: sqrbot-jsick
+              servicePort: 8080

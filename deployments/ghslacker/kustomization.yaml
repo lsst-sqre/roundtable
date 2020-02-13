@@ -5,6 +5,4 @@ namespace: events
 
 resources:
   - github.com/lsst-sqre/uservice-ghslacker.git//manifests/base?ref=0.1.0
-  - resources/ingress.yaml
-  - resources/issuer.yaml
   - resources/secret.yaml

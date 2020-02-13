@@ -11,8 +11,6 @@ commonLabels:
 resources:
   - resources/sealedsecret.yaml
   - github.com/lsst-sqre/sqrbot-jr.git//manifests/base?ref=0.6.0
-  - resources/issuer.yaml
-  - resources/ingress.yaml
 
 patches:
   - patches/configmap.yaml
