@@ -1,5 +1,6 @@
 vault:
   global:
+    enable: false
     tlsDisable: true
 
   injector:
@@ -46,7 +47,7 @@ vault:
 
     ha:
       enabled: true
-      replicas: 3
+      replicas: 1
 
       config: |
         ui = true
