@@ -20,9 +20,13 @@ vault:
       tls:
         - secretName: vault-ingress-tls
           hosts:
+            - vault.lsst.codes
             - vault-1.lsst.codes
             - vault-2.lsst.codes
       hosts:
+        - host: vault.lsst.codes
+          paths:
+            - "/"
         - host: vault-1.lsst.codes
           paths:
             - "/"
