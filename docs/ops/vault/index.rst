@@ -66,6 +66,7 @@ Here are the steps:
    This will disable auto-unseal and convert the unseal recovery key to be a regular unseal key using Shamir.
    Vault is no longer using the KMS key at this point.
 #. Change the KMS ``seal`` configuration stanza in ``values.yaml`` to point to the new KMS keyring and key that you want to use.
+   Remove ``disabled = "true"`` from the ``seal`` configuration.
    Push this change and wait for Argo CD to synchronize it.
 #. Relaunch the ``vault-0`` pod by deleting it and letting Kubernetes recreate it.
 #. ``kubectl exec --namespace=vault -ti vault-0 -- vault operator unseal -migrate`` and enter the recovery key.
