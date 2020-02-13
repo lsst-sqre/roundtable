@@ -1,6 +1,5 @@
 vault:
   global:
-    enabled: false
     tlsDisable: true
 
   injector:
