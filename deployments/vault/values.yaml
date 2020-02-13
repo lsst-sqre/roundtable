@@ -59,11 +59,12 @@ vault:
         }
 
         seal "gcpckms" {
+          disabled    = "true"
           credentials = "/vault/userconfig/vault-kms-creds/credentials.json"
-          project     = "plasma-geode-127520"
-          region      = "global"
+          project     = "vault-c45398b18d335fa9"
+          region      = "us-central1"
           key_ring    = "vault"
-          crypto_key  = "vault-seal"
+          crypto_key  = "vault-init"
         }
 
         storage "gcs" {
