@@ -35,6 +35,10 @@ To manipulate the secrets stored in this Vault instance, use lsstvaultutils_.
 When making configuration changes, be aware that Argo CD will not detect a change to the configuration in ``values.yaml`` and automatically relaunch the ``vault-*`` pods.
 You will need to delete the pods and let Kubernetes recreate them in order to pick up changes to the configuration.
 
+If you change the number of HA replicas, Argo CD will fail to fully synchronize the configuration because the ``poddisruptionbudget`` resource cannot be updated.
+Argo CD will show an error saying that a resource failed to synchronize.
+To fix this problem, delete the ``poddisruptionbudget`` resource in Argo CD and then resynchronize the ``vault`` app, and then Argo CD will be happy.
+
 .. rubric:: Seal Configuration
 
 A Vault database is "sealed" by encrypting the stored data with an encryption key, which in turn is encrypted with a master key.
