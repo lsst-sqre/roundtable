@@ -46,7 +46,7 @@ vault:
 
     ha:
       enabled: true
-      replicas: 1
+      replicas: 3
 
       config: |
         ui = true
