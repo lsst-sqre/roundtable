@@ -26,7 +26,7 @@ This application deploys both the Vault server and the Vault Agent Injector.
 
 Vault is configured in HA mode with a public API endpoint accessible at vault.lsst.codes.
 TLS termination is done at the nginx ingress layer using a Let's Encrypt server certificate.
-The UI is not available outside of the pod, but can be accessed via port forwarding.
+The UI is available at `vault.lsst.codes <https://vault.lsst.codes/ui>`__.
 
 To manipulate the secrets stored in this Vault instance, use lsstvaultutils_.
 
