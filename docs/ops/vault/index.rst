@@ -39,6 +39,8 @@ If you change the number of HA replicas, Argo CD will fail to fully synchronize 
 Argo CD will show an error saying that a resource failed to synchronize.
 To fix this problem, delete the ``poddisruptionbudget`` resource in Argo CD and then resynchronize the ``vault`` app, and then Argo CD will be happy.
 
+.. _change-seal:
+
 .. rubric:: Seal configuration
 
 A Vault database is "sealed" by encrypting the stored data with an encryption key, which in turn is encrypted with a master key.
@@ -106,11 +108,11 @@ Note that the GCP project and region are also encoded in ``values.yaml`` if depl
 
 If you want to migrate a Vault deployment from one GCP project and Kubernetes cluster to another, do the following:
 
-#. Create the `external configuration <External configuration_>`_ required for the new Vault server in the new GCP project.
+#. Create the `external configuration <external_>`_ required for the new Vault server in the new GCP project.
 #. Grant the new service account access to the KMS keyring and key used for unsealing in the old GCP project.
    This is necessary to be able to do a seal migration later.
    See `this StackOverflow answer <https://stackoverflow.com/questions/49214127/can-you-share-google-cloud-kms-keys-across-projects-with-service-roles>`__ for how to grant access.
 #. Copy the data from the old GCS bucket to the new GCS bucket using a GCS transfer.
 #. Configure the new vault to point to the KMS keyring and key in the old project.
-#. Perform a `seal migration <Changing seal keys_>`_ to switch from the old seal key in KMS in the old GCP project to the new seal key in the new GCP project.
+#. Perform a `seal migration <change-seal_>`_ to switch from the old seal key in KMS in the old GCP project to the new seal key in the new GCP project.
 #. Change DNS to point the Vault server name (generally ``vault.lsst.codes``) to point to the new installation.
