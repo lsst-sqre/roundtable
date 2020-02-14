@@ -1,11 +1,11 @@
 ###################
-Defining an Ingress
+Defining an ingress
 ###################
 
 If your Roundtable application has to accept HTTP requests from the outside world, you need to define an ingress for it.
 There are two options: Give your application its own subdomain of ``roundtable.lsst.codes``, or add a route to ``roundtable.lsst.codes``.
 
-Using a Subdomain
+Using a subdomain
 =================
 
 Giving your application its own subdomain is the best option for applications that serve an entire web site.
@@ -46,7 +46,7 @@ For Kustomize, don't forget to include this ingress definition in ``kustomizatio
 You do not need to define your own issuer.
 You can use the shared ``roundtable-letsencrypt`` issuer, which will use the ACME HTTP validator.
 
-Using a Route
+Using a route
 =============
 
 Giving your application a route on ``roundtable.lsst.codes`` is most appropriate for small :abbr:`SOA (Service-Oriented Architecture)` services that provide an API rather than a web site.
