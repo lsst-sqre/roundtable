@@ -30,7 +30,7 @@ The UI is not available outside of the pod, but can be accessed via port forward
 
 To manipulate the secrets stored in this Vault instance, use lsstvaultutils_.
 
-.. rubric:: Changing Vault Configuration
+.. rubric:: Changing Vault configuration
 
 When making configuration changes, be aware that Argo CD will not detect a change to the configuration in ``values.yaml`` and automatically relaunch the ``vault-*`` pods.
 You will need to delete the pods and let Kubernetes recreate them in order to pick up changes to the configuration.
@@ -39,7 +39,7 @@ If you change the number of HA replicas, Argo CD will fail to fully synchronize 
 Argo CD will show an error saying that a resource failed to synchronize.
 To fix this problem, delete the ``poddisruptionbudget`` resource in Argo CD and then resynchronize the ``vault`` app, and then Argo CD will be happy.
 
-.. rubric:: Seal Configuration
+.. rubric:: Seal configuration
 
 A Vault database is "sealed" by encrypting the stored data with an encryption key, which in turn is encrypted with a master key.
 In a default Vault installation, the master key is then split with Shamir secret sharing and a quorum of key fragments is required to manually unseal the Vault each time the Vault server is restarted.
@@ -55,7 +55,7 @@ It is, however, still needed for certain operations, such as seal key migration.
 
 The recovery key for the Vault is kept in 1Password.
 
-.. rubric:: Changing Seal Keys
+.. rubric:: Changing seal keys
 
 It is possible to change the key used to seal Vault (if, for instance, Vault needs to be migrated to another GCP project), but it's not well-documented and is moderately complicated.
 Here are the steps:
@@ -77,7 +77,9 @@ Here are the steps:
    This will reseal Vault using the KMS key and convert the unseal key you have been using back to being a recovery key.
 #. Change ``vault.server.ha.replicas`` back to 3 in ``values.yaml``, push, and let Argo CD start the remaining Vault pods.
 
-.. rubric:: External Configuration
+.. _external:
+
+.. rubric:: External configuration
 
 This deployment is currently only tested on GCP.
 Vault requires some external resources and a Kubernetes secret to be created and configured before deployment.
@@ -92,7 +94,23 @@ Vault requires some external resources and a Kubernetes secret to be created and
    (This will require domain valiation in Google Webmaster Tools.)
    Configure this bucket in the permissions tab to use uniform bucket-level access (there is no meaningful reason to use per-object access for this application and this configuration is simpler).
    Grant the ``vault-server`` service account the ``Storage Object Admin`` role on this bucket in the bucket permissions tab.
-#. Create DNS entries for ``vault-1.lsst.codes`` and ``vault-2.lsst.codes`` pointing to the external IP of the nginx ingress for the Kubernetes cluster in which this application is deployed (or update the list of hosts in ``values.yaml``).
+#. Create a DNS entry for the new cluster pointing to the external IP of the nginx ingress for the Kubernetes cluster in which this application is deployed.
+   We have ``vault.lsst.codes`` for the primary Vault installation and ``vault-1.lsst.codes`` and ``vault-2.lsst.codes`` for test installations.
+   Update the list of hostnames configured in the Vault ``values.yaml`` file for the ingress to match the DNS entries that you want to use.
+   The DNS entry has to match the hostname for cert-manager to be able to get TLS certificates for Vault.
 
 When deploying Vault elsewhere, at least the storage bucket name will have to change because bucket names are globally unique in GCP.
 Note that the GCP project and region are also encoded in ``values.yaml`` if deploying elsewhere.
+
+.. rubric:: Migrating Vault
+
+If you want to migrate a Vault deployment from one GCP project and Kubernetes cluster to another, do the following:
+
+#. Create the `external configuration <External configuration_>`_ required for the new Vault server in the new GCP project.
+#. Grant the new service account access to the KMS keyring and key used for unsealing in the old GCP project.
+   This is necessary to be able to do a seal migration later.
+   See `this StackOverflow answer <https://stackoverflow.com/questions/49214127/can-you-share-google-cloud-kms-keys-across-projects-with-service-roles>`__ for how to grant access.
+#. Copy the data from the old GCS bucket to the new GCS bucket using a GCS transfer.
+#. Configure the new vault to point to the KMS keyring and key in the old project.
+#. Perform a `seal migration <Changing seal keys_>`_ to switch from the old seal key in KMS in the old GCP project to the new seal key in the new GCP project.
+#. Change DNS to point the Vault server name (generally ``vault.lsst.codes``) to point to the new installation.
