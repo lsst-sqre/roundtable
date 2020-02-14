@@ -20,3 +20,4 @@ Although this documentation is openly available, application developers shouldn'
    events/index
    sealed-secrets/index
    vault/index
+   vault-secrets-operator/index

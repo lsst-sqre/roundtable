@@ -19,3 +19,4 @@ resources:
   - resources/events.yaml
   - resources/sealed-secrets.yaml
   - resources/logging.yaml
+  - resources/vault-secrets-operator.yaml

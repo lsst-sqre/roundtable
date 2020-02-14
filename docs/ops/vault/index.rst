@@ -22,7 +22,8 @@ Eventually, we may install a separate production Vault at the LDF and use the Ro
 
 See `DMTN-112 <https://dmtn-112.lsst.io>`__ for the LSST Vault design.
 
-This application deploys both the Vault server and the Vault Agent Injector.
+This application deploys the Vault server.
+The Vault Agent Injector is not enabled since we're instead using the :doc:`Vault Secrets Operator <../vault-secrets-operator/index>`.
 
 Vault is configured in HA mode with a public API endpoint accessible at vault.lsst.codes.
 TLS termination is done at the nginx ingress layer using a Let's Encrypt server certificate.

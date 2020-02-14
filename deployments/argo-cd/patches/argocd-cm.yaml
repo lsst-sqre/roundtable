@@ -43,6 +43,9 @@ data:
     # For ELK stack logging
     - url: https://kiwigrid.github.io/
       name: kiwigrid
+    # For Vault Secrets Operator
+    - url: https://ricoberger.github.io/helm-charts/
+      name: ricoberger
     # SQuaRE charts
     - url: https://lsst-sqre.github.io/charts/
       name: lsst-sqre

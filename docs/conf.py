@@ -128,6 +128,10 @@ rst_epilog = """
    :target: https://cd.roundtable.lsst.codes/applications/vault
    :alt: Vault app status
 
+.. |vault-secrets-operator-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=vault-secrets-operator
+   :target: https://cd.roundtable.lsst.codes/applications/vault-secrets-operator
+   :alt: Vault Secrets Operator app status
+
 .. _Helm: https://helm.sh
 .. _Kustomize: https://kustomize.io
 .. _Argo CD: https://argoproj.github.io/argo-cd/
@@ -139,6 +143,7 @@ rst_epilog = """
 .. _Strimzi: https://strimzi.io
 .. _Sealed Secrets: https://github.com/bitnami-labs/sealed-secrets
 .. _Vault: https://www.vaultproject.io/
+.. _Vault Secrets Operator: https://github.com/ricoberger/vault-secrets-operator
 .. _lsstvaultutils: https://github.com/lsst-sqre/lsstvaultutils
 """
 

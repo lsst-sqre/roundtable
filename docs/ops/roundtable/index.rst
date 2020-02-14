@@ -26,14 +26,34 @@ It deploys:
 
   - :doc:`argo-cd <../argo-cd/index>` for continuous delivery of Roundtable apps with Argo CD.
   - :doc:`prometheus <../prometheus/index>` for the Kubernetes-native monitoring stack (Prometheus Operator, Prometheus, and Grafana).
+  - :doc:`vault-secrets-operator <../vault-secrets-operator/index>` to retrieve secrets from Vault and store them as Kubernetes secrets.
 
 This app depends on the :doc:`security <../security/index>` app, which provides secret management facilities and ingress.
 
-.. rubric:: Bootstrapping the Application
+.. rubric:: Bootstrapping the application
 
 Since ``roundtable`` is a parent app, its ``Application`` resource was not created automatically and is not managed by GitOps.
 
-We manually created the ``roundtable`` ``Application`` from the :command:`argocd` CLI:
+Before bootstrapping the ``roundtable`` app, the ``security`` app needs to be bootstrapped so that Vault is running.
+See :doc:`its documentation <../security/index>` for more information.
+Then, a Vault access token for the Vault Secrets Operator must be created in Vault and stored as the ``vault-secrets-operator`` Kubernetes secret.
+Here is the template for that secret:
+
+.. code-block:: yaml
+
+   apiVersion: v1
+   kind: Secret
+   metadata:
+     name: vault-secrets-operator
+     namespace: vault-secrets-operator
+   type: Opaque
+   stringData:
+     VAULT_TOKEN: <token>
+     VAULT_TOKEN_LEASE_DURATION: 86400
+
+Replace ``<token>`` with the ``read`` Vault token for the path ``secret/k8s_operator/roundtable`` in Vault (see `DMTN-112 <https://dmtn-112.lsst.io>`__ for more information):
+
+Finally, create the ``roundtable`` ``Application`` from the :command:`argocd` CLI:
 
 .. code-block:: bash
 
