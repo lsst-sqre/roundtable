@@ -39,8 +39,6 @@ If you change the number of HA replicas, Argo CD will fail to fully synchronize 
 Argo CD will show an error saying that a resource failed to synchronize.
 To fix this problem, delete the ``poddisruptionbudget`` resource in Argo CD and then resynchronize the ``vault`` app, and then Argo CD will be happy.
 
-.. _change-seal:
-
 .. rubric:: Seal configuration
 
 A Vault database is "sealed" by encrypting the stored data with an encryption key, which in turn is encrypted with a master key.
@@ -56,6 +54,8 @@ In auto-unseal mode, there is still a manual key, but this key is called a "reco
 It is, however, still needed for certain operations, such as seal key migration.
 
 The recovery key for the Vault is kept in 1Password.
+
+.. _change-seal:
 
 .. rubric:: Changing seal keys
 
