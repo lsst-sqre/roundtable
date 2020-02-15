@@ -4,5 +4,5 @@ kind: Kustomization
 namespace: events
 
 resources:
-  - github.com/lsst-sqre/uservice-ghslacker.git//manifests/base?ref=0.1.0
+  - github.com/lsst-sqre/uservice-ghslacker.git//manifests/base?ref=0.1.1
   - resources/secret.yaml
