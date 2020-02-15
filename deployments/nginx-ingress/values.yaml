@@ -6,6 +6,8 @@ nginx-ingress:
       enabled: true
       service:
         clusterIP: "10.4.46.235"
+    publishService:
+      enabled: true
     service:
       clusterIP: "10.4.40.37"
   defaultBackend:
