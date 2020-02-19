@@ -23,15 +23,16 @@ data:
   # Git repositories that Argo CD monitors.
   repositories: |
     - url: https://github.com/argoproj/argocd-example-apps.git
-    - url: https://github.com/lsst-sqre/roundtable.git
     - url: https://github.com/argoproj/argo-cd.git
-    - url: https://github.com/lsst-sqre/ltd-keeper.git
+    - url: https://github.com/lsst-sqre/checkerboard.git
+    - url: https://github.com/lsst-sqre/lsp-deploy.git
+    - url: https://github.com/lsst-sqre/lsst-templatebot-aide.git
     - url: https://github.com/lsst-sqre/ltd-dasher.git
+    - url: https://github.com/lsst-sqre/ltd-keeper.git
+    - url: https://github.com/lsst-sqre/roundtable.git
     - url: https://github.com/lsst-sqre/sqrbot-jr.git
     - url: https://github.com/lsst-sqre/strimzi-registry-operator.git
     - url: https://github.com/lsst-sqre/templatebot.git
-    - url: https://github.com/lsst-sqre/lsst-templatebot-aide.git
-    - url: https://github.com/lsst-sqre/lsp-deploy.git
   # Non-standard Helm chart repositories.
   helm.repositories: |
     # For the cert-manager chart
