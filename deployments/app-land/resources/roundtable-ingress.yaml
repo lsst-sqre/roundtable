@@ -15,9 +15,9 @@ spec:
     - host: roundtable.lsst.codes
       http:
         paths:
-          - path: /ghslacker
+          - path: /checkerboard
             backend:
-              serviceName: ghslacker
+              serviceName: checkerboard
               servicePort: 5000
           - path: /sqrbot-jr
             backend:
