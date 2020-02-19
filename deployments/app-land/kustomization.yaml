@@ -8,7 +8,7 @@ resources:
   # Namespaces
   - resources/lsst-the-docs-ns.yaml
   # Applications
-  - resources/ghslacker.yaml
+  - resources/checkerboard.yaml
   - resources/lsst-the-docs.yaml
   - resources/sqrbot-jr.yaml
   - resources/sqrbot-jsick.yaml

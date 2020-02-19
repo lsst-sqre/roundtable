@@ -67,7 +67,7 @@ Using a route
 =============
 
 Giving your application a route on ``roundtable.lsst.codes`` is most appropriate for small :abbr:`SOA (Service-Oriented Architecture)` services that provide an API rather than a web site.
-Examples of applications like this are ghslacker and sqrbot-jr.
+Examples of applications like this are checkerboard and sqrbot-jr.
 In this case, add the route for the application to the shared ingress defined in ``deployments/app-land/resources/roundtable-ingress.yaml``.
 
 This ingress defines the ``roundtable.lsst.codes`` host and its routes.
