@@ -4,7 +4,6 @@ kind: Kustomization
 resources:
   # Ingress
   - resources/roundtable-ingress.yaml
-  - resources/roundtable-issuer.yaml
   # Namespaces
   - resources/lsst-the-docs-ns.yaml
   # Applications
