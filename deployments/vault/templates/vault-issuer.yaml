@@ -1,4 +1,4 @@
-apiVersion: certmanager.k8s.io/v1alpha1
+apiVersion: cert-manager.io/v1alpha2
 kind: Issuer
 metadata:
   name: vault-letsencrypt
@@ -8,4 +8,7 @@ spec:
     email: sqre-admin@lists.lsst.org
     privateKeySecretRef:
       name: vault-letsencrypt
-    http01: {}
+    solvers:
+      - http01:
+          ingress:
+            class: nginx

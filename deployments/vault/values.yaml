@@ -13,7 +13,7 @@ vault:
       enabled: true
       annotations:
         kubernetes.io/ingress.class: "nginx"
-        certmanager.k8s.io/issuer: "vault-letsencrypt"
+        cert-manager.io/issuer: "vault-letsencrypt"
       tls:
         - secretName: vault-ingress-tls
           hosts:
