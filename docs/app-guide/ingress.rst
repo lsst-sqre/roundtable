@@ -26,7 +26,7 @@ That ingress definition should look something like this:
      namespace: <app-namespace>
      annotations:
        kubernetes.io/ingress.class: nginx
-       certmanager.k8s.io/issuer: <app-name>-letsencrypt
+       cert-manager.io/issuer: <app-name>-letsencrypt
    spec:
      tls:
        - hosts:
@@ -42,12 +42,12 @@ That ingress definition should look something like this:
                  servicePort: <app-port>
 
 Replace ``<app-name>`` with the name of your application, ``<app-namespace>`` with the namespace the app is running in, ``<app-port>`` with the port on which it's running, and ``<fqdn>`` with the domain name to use (which should be a subdomain of ``lsst.codes`` and normally of ``roundtable.lsst.codes``).
-If the app is running in the ``events`` namespace, set the ``certmanager.k8s.io/issuer`` annotation to ``roundtable-letsencrypt``.
+If the app is running in the ``events`` namespace, set the ``cert-manager.io/issuer`` annotation to ``roundtable-letsencrypt``.
 Otherwise, you will also need to define an issuer in the same namespace as the ingress, as follows:
 
 .. code-block:: yaml
 
-   apiVersion: certmanager.k8s.io/v1alpha1
+   apiVersion: cert-manager.io/v1alpha2
    kind: Issuer
    metadata:
      name: <app-name>-letsencrypt
@@ -57,7 +57,10 @@ Otherwise, you will also need to define an issuer in the same namespace as the i
        email: sqre-admin@lists.lsst.org
        privateKeySecretRef:
          name: <app-name>-letsencrypt
-       http01: {}
+       solvers:
+         - http01:
+             ingress:
+               class: nginx
 
 As above, replace ``<app-name>`` with the name of your application.
 
