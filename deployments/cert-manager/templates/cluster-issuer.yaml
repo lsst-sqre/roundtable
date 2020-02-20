@@ -1,13 +1,13 @@
 apiVersion: cert-manager.io/v1alpha2
-kind: Issuer
+kind: ClusterIssuer
 metadata:
-  name: keeper-letsencrypt
+  name: letsencrypt-issuer
 spec:
   acme:
     server: https://acme-v02.api.letsencrypt.org/directory
     email: sqre-admin@lists.lsst.org
     privateKeySecretRef:
-      name: keeper-letsencrypt-prod
+      name: vault-letsencrypt
     solvers:
       - http01:
           ingress:
