@@ -4,7 +4,7 @@ kind: Kustomization
 namespace: events
 
 images:
-  - name: app
+  - name: lsstsqre/safirdemo
     newTag: tickets-DM-23356-docker-image
 
 resources:
