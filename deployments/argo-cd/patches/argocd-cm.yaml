@@ -30,6 +30,7 @@ data:
     - url: https://github.com/lsst-sqre/ltd-dasher.git
     - url: https://github.com/lsst-sqre/ltd-keeper.git
     - url: https://github.com/lsst-sqre/roundtable.git
+    - url: https://github.com/lsst-sqre/safirdemo.git
     - url: https://github.com/lsst-sqre/sqrbot-jr.git
     - url: https://github.com/lsst-sqre/strimzi-registry-operator.git
     - url: https://github.com/lsst-sqre/templatebot.git

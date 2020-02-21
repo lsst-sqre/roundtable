@@ -19,6 +19,10 @@ spec:
             backend:
               serviceName: checkerboard
               servicePort: 5000
+          - path: /safirdemo
+            backend:
+              serviceName: safirdemo
+              servicePort: 8080
           - path: /sqrbot-jr
             backend:
               serviceName: sqrbot-jr
