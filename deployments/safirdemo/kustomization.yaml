@@ -5,7 +5,7 @@ namespace: events
 
 images:
   - name: lsstsqre/safirdemo
-    newTag: tickets-DM-23356-docker-image
+    newTag: tickets-DM-23356-docker-build
 
 resources:
   - github.com/lsst-sqre/safirdemo.git//manifests/base?ref=tickets/DM-23356-docker-build
