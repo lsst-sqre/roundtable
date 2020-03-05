@@ -3,6 +3,10 @@ kind: Kustomization
 
 namespace: events
 
+images:
+  - name: lsstsqre/checkerboard
+    newTag: tickets-DM-23590
+
 resources:
-  - github.com/lsst-sqre/checkerboard.git//manifests/base?ref=0.2.0
+  - github.com/lsst-sqre/checkerboard.git//manifests/base?ref=tickets/DM-23590
   - resources/secret.yaml
