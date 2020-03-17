@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ltdevents
+data:
+  SAFIR_NAME: "ltdevents"
+  SAFIR_PROFILE: "production"
+  SAFIR_LOG_LEVEL: "INFO"
+  SAFIR_KAFKA_PROTOCOL: "SSL"
+  SAFIR_KAFKA_BROKER_URL: "events-kafka-bootstrap:9093"
+  SAFIR_KAFKA_CLUSTER_CA: "/var/strimzi-broker/ca.crt"
+  SAFIR_KAFKA_CLIENT_CA: "/var/strimzi-client/ca.crt"
+  SAFIR_KAFKA_CLIENT_CERT: "/var/strimzi-client/user.crt"
+  SAFIR_KAFKA_CLIENT_KEY: "/var/strimzi-client/user.key"
+  SAFIR_SCHEMA_REGISTRY_URL: "http://schemaregistry:8081"
+  SAFIR_SCHEMA_SUFFIX: ""
+  SAFIR_SCHEMA_COMPATIBILITY: "FORWARD"
+  LTD_EVENTS_KAFKA_TOPIC: "ltd.events"

@@ -9,6 +9,7 @@ resources:
   # Applications
   - resources/checkerboard.yaml
   - resources/lsst-the-docs.yaml
+  - resources/ltdevents.yaml
   - resources/safirdemo.yaml
   - resources/sqrbot-jr.yaml
   - resources/sqrbot-jsick.yaml
