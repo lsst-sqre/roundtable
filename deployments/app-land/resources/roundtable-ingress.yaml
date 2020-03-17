@@ -19,6 +19,10 @@ spec:
             backend:
               serviceName: checkerboard
               servicePort: 8080
+          - path: /ltdevents
+            backend:
+              serviceName: ltdevents
+              servicePort: 8080
           - path: /safirdemo
             backend:
               serviceName: safirdemo

@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: events
+
+images:
+  - name: "lsstsqre/ltdevents"
+    newTag: "tickets-DM-23731"
+
+resources:
+  - github.com/lsst-sqre/ltd-events.git//manifests/base?ref=tickets/DM-23731
+
+patches:
+  - patches/configmap.yaml
+  - patches/deployment.yaml
