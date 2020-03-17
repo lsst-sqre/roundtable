@@ -8,6 +8,9 @@ resources:
 - resources/keeper-ingress.yaml
 - github.com/lsst-sqre/ltd-dasher.git//manifests?ref=0.1.4
 
+patches:
+  - patches/keeper-deployment.yaml
+
 namespace: lsst-the-docs
 
 images:

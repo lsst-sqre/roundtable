@@ -1,0 +1,28 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: keeper-api
+spec:
+  template:
+    spec:
+      containers:
+        - name: app
+          env:
+            - name: LTD_EVENTS_URL
+              value: "http://ltdevents.events:8080/webhook"
+
+---
+# Deployment of celery workers for keeper
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: keeper-worker-deployment
+spec:
+  template:
+    spec:
+      containers:
+        - name: app
+          env:
+            - name: LTD_EVENTS_URL
+              value: "http://ltdevents.events:8080/webhook"
