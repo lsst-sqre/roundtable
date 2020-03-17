@@ -1,0 +1,25 @@
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaUser
+metadata:
+  name: kafkauser-ltdevents
+  labels:
+    strimzi.io/cluster: events
+spec:
+  authentication:
+    type: tls
+  authorization:
+    type: simple
+    acls:
+      # Produce ltd.events
+      - resource:
+          type: topic
+          name: "ltd.events"
+          patternType: literal
+        operation: "Write"
+        type: allow
+      - resource:
+          type: topic
+          name: "ltd.events"
+          patternType: literal
+        operation: "Describe"
+        type: allow
