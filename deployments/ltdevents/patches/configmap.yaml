@@ -5,7 +5,7 @@ metadata:
 data:
   SAFIR_NAME: "ltdevents"
   SAFIR_PROFILE: "production"
-  SAFIR_LOG_LEVEL: "INFO"
+  SAFIR_LOG_LEVEL: "DEBUG"
   SAFIR_KAFKA_PROTOCOL: "SSL"
   SAFIR_KAFKA_BROKER_URL: "events-kafka-bootstrap:9093"
   SAFIR_KAFKA_CLUSTER_CA: "/var/strimzi-broker/ca.crt"
