@@ -157,7 +157,8 @@ linkcheck_ignore = [
     r'^https://monitoring.roundtable.lsst.codes',
     r'^https://github.com/organizations/lsst-sqre/settings/',
     r'^https://github.com/lsst-sqre/roundtable/settings/',
-    r'^https://github.com/bitnami-labs/sealed-secrets/blob/master/README\.md#homebrew$'
+    r'^https://github.com/bitnami-labs/sealed-secrets/blob/master/README\.md#homebrew$',
+    r'^http://localhost',
 ]
 
 # -- Options for HTML output ----------------------------------------------
