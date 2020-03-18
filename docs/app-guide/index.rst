@@ -6,4 +6,5 @@ Application developer guide
    :maxdepth: 2
 
    ingress
+   viewing-logs
    using-sealed-secrets
