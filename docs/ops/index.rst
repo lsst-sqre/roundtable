@@ -21,3 +21,4 @@ Although this documentation is openly available, application developers shouldn'
    sealed-secrets/index
    vault/index
    vault-secrets-operator/index
+   logging/index
