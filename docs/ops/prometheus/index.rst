@@ -18,7 +18,7 @@ prometheus app deployment guide
 
 .. rubric:: Overview
 
-This Argo CD Application deploys and configures a Prometheus_ monitoring stack based on the `prometheus-operator Helm chart <https://github.com/helm/charts/tree/master/stable/cert-manager>`__.
+This Argo CD Application deploys and configures a Prometheus_ monitoring stack based on the `prometheus-operator Helm chart <https://github.com/helm/charts/tree/master/stable/prometheus-operator>`__.
 The Grafana dashboard is online at https://monitoring.roundtable.lsst.codes.
 
 .. rubric:: Guides
