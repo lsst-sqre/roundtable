@@ -5,10 +5,10 @@ namespace: events
 
 images:
   - name: "lsstsqre/ltdevents"
-    newTag: "tickets-DM-23731"
+    newTag: "0.1.0"
 
 resources:
-  - github.com/lsst-sqre/ltd-events.git//manifests/base?ref=tickets/DM-23731
+  - github.com/lsst-sqre/ltd-events.git//manifests/base?ref=0.1.0
 
 patches:
   - patches/configmap.yaml
