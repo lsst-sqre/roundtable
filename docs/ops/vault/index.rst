@@ -105,6 +105,35 @@ Vault requires some external resources and a Kubernetes secret to be created and
 When deploying Vault elsewhere, at least the storage bucket name will have to change because bucket names are globally unique in GCP.
 Note that the GCP project and region are also encoded in ``values.yaml`` if deploying elsewhere.
 
+.. rubric:: Backups
+
+Google Cloud Storage promises a very high level of durability, so backups are primarily to protect against human errors, upgrade disasters, or dangerous actions by Vault administrators.
+The first line of protection is to set a lifecycle rule that deletes objects if there are more than three newer versions, and then enable object versioning in the ``storage.vault.lsst.codes`` bucket:
+
+.. code-block:: console
+
+   $ gsutil versioning set on gs://storage.vault.lsst.codes/
+
+That will allow restoring a previous version of the Vault database.
+
+To also protect against problems that weren't caught immediately, and against human error such as deleting the volume, create a backup:
+
+#. Create a GCS bucket named ``backup.vault.lsst.codes``.
+   It's unclear what settings to use for this to minimize cost.
+   In particular, nearline or cold storage may be cheaper, or may not be given backup by data transfer, and it's impossible to figure this out from the documentation.
+   The current configuration uses a single-region bucket (in ``us-central1``) with standard storage.
+#. Set a lifecycle rule to delete objects if there are more than twenty newer versions.
+#. Enable object versioning on that bucket:
+
+   .. code-block:: console
+
+      $ gsutil versioning set on gs://backup.vault.lsst.codes/
+
+#. Create a daily periodic transfer from ``storage.vault.lsst.codes`` to ``backup.vault.lsst.codes``.
+   The current configuration schedules this for 2am Pacific time.
+   The time zone shown is the local time zone.
+   That time was picked to be in the middle of the night for US project staff.
+
 .. rubric:: Migrating Vault
 
 If you want to migrate a Vault deployment from one GCP project and Kubernetes cluster to another, do the following:
