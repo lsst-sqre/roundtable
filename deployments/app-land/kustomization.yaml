@@ -15,3 +15,4 @@ resources:
   - resources/sqrbot-jsick.yaml
   - resources/templatebot.yaml
   - resources/templatebot-jsick.yaml
+  - resources/segwarides.yaml
