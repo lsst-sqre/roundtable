@@ -35,3 +35,7 @@ spec:
             backend:
               serviceName: sqrbot-jsick
               servicePort: 8080
+          - path: /segwarides
+            backend:
+              serviceName: segwarides
+              servicePort: 8080
