@@ -29,7 +29,7 @@ Listeners and authentication
 ============================
 
 The cluster has an internal listener on port ``9093``, which supports mutual TLS authentication between the client and brokers.
-See `Creating a Kafka user with mutual TLS authentication <https://strimzi.io/docs/latest/#proc-creating-kafka-user-tls-using-uo>`_ for details on how create a ``KafkaUser`` resource and use the corresponding Kubernetes ``Secret`` resource with client TLS certificates.
+See `Creating a Kafka user with mutual TLS authentication <https://strimzi.io/docs/operators/latest/using.html#tls_client_authentication_5>`_ for details on how create a ``KafkaUser`` resource and use the corresponding Kubernetes ``Secret`` resource with client TLS certificates.
 
 Authorization
 =============
