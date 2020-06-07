@@ -15,7 +15,6 @@ spec:
     spec:
       containers:
         - name: templatebot-aide-app
-          image: lsstsqre/templatebot-aide:0.1.0
           env:
             - name: SLACK_TOKEN
               valueFrom:
