@@ -9,7 +9,7 @@ data:
   API_LSST_CODES_NAME: 'templatebot'
   API_LSST_CODES_PROFILE: "production"
   TEMPLATEBOT_REPO: "https://github.com/lsst/templates"
-  TEMPLATEBOT_REPO_REF: "master"
+  TEMPLATEBOT_REPO_REF: "tickets/DM-25331"
   # Feature flags
   TEMPLATEBOT_TOPIC_CONFIG: "0"
   TEMPLATEBOT_ENABLE_SLACK_CONSUMER: "1"
