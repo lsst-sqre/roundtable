@@ -1,2 +1,5 @@
 documenteer[pipelines]>=0.5.0,<0.6.0'
 ltd-conveyor==0.6.1
+
+boto3>=1.4.5 # not directly required, pinned by Snyk to avoid a vulnerability
+sphinx>=3.0.4 # not directly required, pinned by Snyk to avoid a vulnerability
