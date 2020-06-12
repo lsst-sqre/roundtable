@@ -4,5 +4,5 @@ kind: Kustomization
 namespace: events
 
 resources:
-  - "https://github.com/lsst-sqre/checkerboard//manifests/base?ref=0.3.0"
+  - github.com/lsst-sqre/checkerboard.git//manifests/base?ref=0.3.0
   - resources/secret.yaml
