@@ -7,7 +7,7 @@ resources:
   - resources/templatebot-sealedsecret.yaml
   - resources/templatebot-aide-sealedsecret.yaml
   - github.com/lsst-sqre/templatebot.git//manifests/base?ref=0.1.1
-  - github.com/lsst-sqre/lsst-templatebot-aide.git//manifests/base?ref=0.3.1
+  - github.com/lsst-sqre/lsst-templatebot-aide.git//manifests/base?ref=0.3.2
 
 patches:
   - patches/templatebot-configmap.yaml
