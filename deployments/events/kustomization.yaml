@@ -14,6 +14,7 @@ resources:
   - resources/sqrbot-jsick-topics.yaml
   - resources/templatebot-jsick-topics.yaml
   - resources/ltdevents-topics.yaml
+  - resources/ook-topics.yaml
   # Kafka users
   - resources/demo-user.yaml
   - resources/sqrbot-jr-user.yaml
@@ -21,5 +22,6 @@ resources:
   - resources/sqrbot-jsick-user.yaml
   - resources/templatebot-jsick-user.yaml
   - resources/ltdevents-user.yaml
+  - resources/ook-user.yaml
 
 namespace: events

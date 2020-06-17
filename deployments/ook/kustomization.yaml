@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: events
+
+resources:
+  - resources/vaultsecret.yaml
+  - github.com/lsst-sqre/ook.git//manifests/base?ref=tickets/DM-24958
+
+patches:
+  - patches/configmap.yaml
+  - patches/deployment.yaml
