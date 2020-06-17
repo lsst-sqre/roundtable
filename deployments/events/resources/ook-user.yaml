@@ -37,6 +37,8 @@ spec:
           type: "group"
           name: "ook-queue"
           patternType: "literal"
+        operation: "Read"
+        type: "allow"
       # Consume the ltd.events topic
       - resource:
           type: "topic"
@@ -76,6 +78,8 @@ spec:
           type: "group"
           name: "ook-ingest"
           patternType: "literal"
+        operation: "Read"
+        type: "allow"
       # Consume the ook.ingest topic
       - resource:
           type: "topic"
