@@ -1,0 +1,56 @@
+---
+# ook-queue deployment
+# ook-queue exposes an HTTP API
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ook-queue
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+        - name: app
+          volumeMounts:
+            - name: "client-tls"
+              mountPath: "/var/strimzi-client"
+              readOnly: True
+            - name: "broker-tls"
+              mountPath: "/var/strimzi-broker"
+              readOnly: True
+      volumes:
+        # Mount the TLS secret created by KafkaUser
+        - name: "client-tls"
+          secret:
+            secretName: kafkauser-ook-queue  # matches name of KafkaUser
+        - name: "broker-tls"
+          secret:
+            secretName: "events-cluster-ca-cert" # matches name of Strimzi cluster cluster CA cert secret
+---
+# ook-ingest deployment
+# ook-ingest is the backend that consumes the ook.ingest Kafka topic
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ook-ingest
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+        - name: app
+          volumeMounts:
+            - name: "client-tls"
+              mountPath: "/var/strimzi-client"
+              readOnly: True
+            - name: "broker-tls"
+              mountPath: "/var/strimzi-broker"
+              readOnly: True
+      volumes:
+        # Mount the TLS secret created by KafkaUser
+        - name: "client-tls"
+          secret:
+            secretName: kafkauser-ook-ingest  # matches name of KafkaUser
+        - name: "broker-tls"
+          secret:
+            secretName: "events-cluster-ca-cert" # matches name of Strimzi cluster cluster CA cert secret
