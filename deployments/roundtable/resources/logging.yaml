@@ -14,3 +14,6 @@ spec:
     path: deployments/logging
     repoURL: https://github.com/lsst-sqre/roundtable.git
     targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true

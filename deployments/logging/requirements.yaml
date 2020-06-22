@@ -1,7 +1,7 @@
 dependencies:
 - name: opendistro-es
-  version: "1.4.0"
+  version: 1.4.0
   repository: https://lsst-sqre.github.io/charts/
 - name: fluentd-elasticsearch
-  version: ">=3.0.0"
+  version: 9.3.2
   repository: https://kiwigrid.github.io
