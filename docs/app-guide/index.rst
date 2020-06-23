@@ -7,4 +7,5 @@ Application developer guide
 
    ingress
    viewing-logs
+   using-vault-secrets
    using-sealed-secrets
