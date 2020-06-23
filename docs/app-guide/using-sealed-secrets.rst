@@ -5,6 +5,13 @@ Using Sealed Secrets to make encrypted secrets for your deployment
 Roundtable provides a feature called `Sealed Secrets`_, developed by Bitnami, that allows you to securely encrypt secrets so that you can include them alongside the rest of your app's deployment in the Roundtable Git repository (quite unlike regular Kubernetes ``Secret`` resources!).
 This page provides a quick primer on how Sealed Secrets work and gives you directions on how to create Sealed Secrets for your application.
 
+.. important::
+
+   The preferred way to maintain secrets is now with Vault and the Vault Secrets Operator.
+   See :doc:`using-vault-secrets`.
+
+   Sealed Secrets are still available for compatibility with existing applications, but new applications should use Vault.
+
 Sealed Secrets primer
 =====================
 
