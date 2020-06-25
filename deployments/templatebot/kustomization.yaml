@@ -6,7 +6,7 @@ namespace: events
 resources:
   - resources/templatebot-sealedsecret.yaml
   - resources/templatebot-aide-sealedsecret.yaml
-  - github.com/lsst-sqre/templatebot.git//manifests/base?ref=0.1.1
+  - github.com/lsst-sqre/templatebot.git//manifests/base?ref=tickets/DM-25659
   - github.com/lsst-sqre/lsst-templatebot-aide.git//manifests/base?ref=tickets/DM-25659
 
 patches:
