@@ -9,3 +9,4 @@ nginx-ingress:
       enabled: true
     service:
       externalTrafficPolicy: Local
+      loadBalancerIP: "35.238.16.244"
