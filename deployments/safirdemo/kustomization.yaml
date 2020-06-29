@@ -5,7 +5,7 @@ namespace: events
 
 images:
   - name: lsstsqre/safirdemo
-    newTag: 0.1.1
+    newTag: tickets-DM-25624
 
 resources:
   - github.com/lsst-sqre/safirdemo.git//manifests/base?ref=0.1.1
