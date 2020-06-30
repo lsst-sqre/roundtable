@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
 - resources/keeper-sealedsecret.yaml
 - resources/cloudsql-sealedsecret.yaml
-- github.com/lsst-sqre/ltd-keeper.git//manifests?ref=tickets/DM-25740
+- github.com/lsst-sqre/ltd-keeper.git//manifests?ref=master
 - resources/keeper-ingress.yaml
 - github.com/lsst-sqre/ltd-dasher.git//manifests?ref=0.1.6
 
@@ -12,3 +12,7 @@ patches:
   - patches/keeper-deployment.yaml
 
 namespace: lsst-the-docs
+
+images:
+  - name: lsstsqre/ltd-keeper
+    newTag: 1.18.0
