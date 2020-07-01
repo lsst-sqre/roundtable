@@ -11,6 +11,30 @@ spec:
           env:
             - name: LTD_EVENTS_URL
               value: "http://ltdevents.events:8080/webhook"
+        - name: app
+          env:
+            - name: LTD_EVENTS_URL
+              value: "http://ltdevents.events:8080/webhook"
+            - name: LTD_KEEPER_PROXY_FIX
+              valueFrom:
+                configMapKeyRef:
+                  name: keeper
+                  key: LTD_KEEPER_PROXY_FIX
+            - name: LTD_KEEPER_TRUST_X_FOR
+              valueFrom:
+                configMapKeyRef:
+                  name: keeper
+                  key: LTD_KEEPER_TRUST_X_FOR
+            - name: LTD_KEEPER_TRUST_X_PROTO
+              valueFrom:
+                configMapKeyRef:
+                  name: keeper
+                  key: LTD_KEEPER_TRUST_X_PROTO
+            - name: LTD_KEEPER_TRUST_X_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: keeper
+                  key: LTD_KEEPER_TRUST_X_HOST
 
 ---
 # Deployment of celery workers for keeper
@@ -26,3 +50,23 @@ spec:
           env:
             - name: LTD_EVENTS_URL
               value: "http://ltdevents.events:8080/webhook"
+            - name: LTD_KEEPER_PROXY_FIX
+              valueFrom:
+                configMapKeyRef:
+                  name: keeper
+                  key: LTD_KEEPER_PROXY_FIX
+            - name: LTD_KEEPER_TRUST_X_FOR
+              valueFrom:
+                configMapKeyRef:
+                  name: keeper
+                  key: LTD_KEEPER_TRUST_X_FOR
+            - name: LTD_KEEPER_TRUST_X_PROTO
+              valueFrom:
+                configMapKeyRef:
+                  name: keeper
+                  key: LTD_KEEPER_TRUST_X_PROTO
+            - name: LTD_KEEPER_TRUST_X_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: keeper
+                  key: LTD_KEEPER_TRUST_X_HOST

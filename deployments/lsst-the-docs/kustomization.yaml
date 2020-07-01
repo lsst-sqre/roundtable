@@ -9,6 +9,7 @@ resources:
 - github.com/lsst-sqre/ltd-dasher.git//manifests?ref=0.1.6
 
 patches:
+  - patches/keeper-cm.yaml
   - patches/keeper-deployment.yaml
 
 namespace: lsst-the-docs
