@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: keeper
+data:
+  profile: "production"
+  log-level: "INFO"
+  cloud-sql-instance: "plasma-geode-127520:us-central1:ltd-sql-1"
+  LTD_KEEPER_PROXY_FIX: "1"
+  LTD_KEEPER_TRUST_X_FOR: "1"
+  LTD_KEEPER_TRUST_X_PROTO: "1"
+  LTD_KEEPER_TRUST_X_HOST: "1"
