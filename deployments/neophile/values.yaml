@@ -1,0 +1,13 @@
+neophile:
+  github_user: "sqrbot"
+  image:
+    tag: "tickets-DM-25844"
+    pullPolicy: "Always"
+  repositories:
+    - owner: "lsst-sqre"
+      repo: "checkerboard"
+    - owner: "lsst-sqre"
+      repo: "gafaelfawr"
+
+  # For testing, run daily at 4am.
+  schedule: "0 4 * * *"
