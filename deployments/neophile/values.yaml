@@ -9,8 +9,8 @@ neophile:
       repo: "checkerboard"
     - owner: "lsst-sqre"
       repo: "gafaelfawr"
-    - owner: "neophile"
-      repo: "lsst-sqre"
+    - owner: "lsst-sqre"
+      repo: "neophile"
   vault_secrets_path: "secret/k8s_operator/roundtable/neophile"
 
   # For testing, run daily at 4am.
