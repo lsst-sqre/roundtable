@@ -1,4 +1,5 @@
 neophile:
+  github_email: "24442459+sqrbot@users.noreply.github.com"
   github_user: "sqrbot"
   image:
     tag: "tickets-DM-25844"
@@ -8,6 +9,8 @@ neophile:
       repo: "checkerboard"
     - owner: "lsst-sqre"
       repo: "gafaelfawr"
+    - owner: "neophile"
+      repo: "lsst-sqre"
   vault_secrets_path: "secret/k8s_operator/roundtable/neophile"
 
   # For testing, run daily at 4am.
