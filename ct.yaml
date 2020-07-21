@@ -1,0 +1,5 @@
+chart-dirs:
+  - "deployments"
+check-version-increment: false
+validate-maintainers: false
+validate-chart-schema: false
