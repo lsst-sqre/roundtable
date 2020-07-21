@@ -1,0 +1,8 @@
+# Configuration for helm/cert-testing, run via chart-testing-action in
+# GitHub Actions.  https://github.com/helm/chart-testing#configuration
+
+chart-dirs:
+  - "deployments"
+check-version-increment: false
+validate-maintainers: false
+validate-chart-schema: false
