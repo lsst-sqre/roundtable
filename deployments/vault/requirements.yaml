@@ -1,4 +1,0 @@
-dependencies:
-  - name: vault
-    version: 0.6.0
-    repository: https://helm.releases.hashicorp.com
