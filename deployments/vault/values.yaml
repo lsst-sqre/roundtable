@@ -70,3 +70,5 @@ vault:
           bucket     = "storage.vault.lsst.codes"
           ha_enabled = "true"
         }
+
+        service_registration "kubernetes" {}
