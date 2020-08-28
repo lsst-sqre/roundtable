@@ -8,18 +8,18 @@ opendistro-es:
       javaOpts: "-Xms1g -Xmx1g"
       resources:
         limits:
-          memory: 1G
+          memory: 2G
         requests:
-          memory: 1G
+          memory: 2G
       storageClassName: standard
     client:
       replicas: 2
       javaOpts: "-Xms1g -Xmx1g"
       resources:
         limits:
-          memory: 1G
+          memory: 2G
         requests:
-          memory: 1G
+          memory: 2G
       ingress:
         enabled: false
 
