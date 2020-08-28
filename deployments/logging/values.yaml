@@ -5,9 +5,21 @@ opendistro-es:
       storageClassName: standard
     data:
       replicas: 3
+      javaOpts: "-Xms1g -Xmx1g"
+      resources:
+        limits:
+          memory: 1G
+        requests:
+          memory: 1G
       storageClassName: standard
     client:
       replicas: 2
+      javaOpts: "-Xms1g -Xmx1g"
+      resources:
+        limits:
+          memory: 1G
+        requests:
+          memory: 1G
       ingress:
         enabled: false
 
