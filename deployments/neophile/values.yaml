@@ -9,6 +9,8 @@ neophile:
     - owner: "lsst-sqre"
       repo: "kafka-aggregator"
     - owner: "lsst-sqre"
+      repo: "ltd-keeper"
+    - owner: "lsst-sqre"
       repo: "neophile"
     - owner: "lsst-sqre"
       repo: "ook"
