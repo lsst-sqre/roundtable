@@ -7,7 +7,7 @@ vault:
 
   server:
     image:
-      tag: "1.4.1"
+      tag: "1.5.3"
 
     ingress:
       enabled: true
