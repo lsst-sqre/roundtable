@@ -32,3 +32,4 @@ The web dashboard for Roundtable's Argo CD is https://cd.roundtable.lsst.codes.
    github-webhook
    port-forward
    grafana-dashboard
+   upgrading
