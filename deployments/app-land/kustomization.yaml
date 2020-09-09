@@ -8,6 +8,7 @@ resources:
   - resources/lsst-the-docs-ns.yaml
   # Applications
   - resources/checkerboard.yaml
+  - resources/gafaelfawr.yaml
   - resources/lsst-the-docs.yaml
   - resources/ltdevents.yaml
   - resources/neophile.yaml
