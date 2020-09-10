@@ -13,3 +13,7 @@ gafaelfawr:
 
   oidc_server:
     enabled: true
+
+  group_mapping:
+    "exec:admin":
+      - "lsst-sqre-square"
