@@ -13,12 +13,13 @@ Although this documentation is openly available, application developers shouldn'
    roundtable/index
    app-land/index
    argo-cd/index
-   nginx-ingress/index
    cert-manager/index
-   prometheus/index
-   strimzi/index
    events/index
+   gafaelfawr/index
+   logging/index
+   nginx-ingress/index
+   prometheus/index
    sealed-secrets/index
+   strimzi/index
    vault/index
    vault-secrets-operator/index
-   logging/index

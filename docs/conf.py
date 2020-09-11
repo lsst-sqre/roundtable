@@ -136,6 +136,10 @@ rst_epilog = """
    :target: https://cd.roundtable.lsst.codes/applications/logging
    :alt: Logging app status
 
+.. |gafaelfawr-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=gafaelfawr
+   :target: https://cd.roundtable.lsst.codes/applications/gafaelfawr
+   :alt: Gafaelfawr app status
+
 .. _Elasticsearch: https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
 .. _Kibana: https://www.elastic.co/guide/en/kibana/current/index.html
 .. _Helm: https://helm.sh

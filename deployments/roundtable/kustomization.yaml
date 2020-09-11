@@ -13,6 +13,7 @@ resources:
   - resources/logging-ns.yaml
   # Applications
   - resources/argo-cd.yaml
+  - resources/gafaelfawr.yaml
   - resources/prometheus.yaml
   - resources/strimzi.yaml
   - resources/events-dev.yaml

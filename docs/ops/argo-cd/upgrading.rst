@@ -34,7 +34,7 @@ This is taken from the `Argo CD disaster recovery documentation <https://argopro
 
 If anything goes horribly wrong, you can then restore the configuration with:
 
-.. code-block::
+.. code-block:: console
 
    $ chmod 644 ~/.kube/config
    $ docker run -i -v ~/.kube:/home/argocd/.kube --rm \

@@ -1,0 +1,19 @@
+gafaelfawr:
+  host: roundtable.lsst.codes
+  ingress:
+    host: roundtable.lsst.codes
+  vault_secrets_path: "secret/k8s_operator/roundtable/gafaelfawr"
+
+  image:
+    tag: "tickets-DM-26602"
+    pullPolicy: "Always"
+
+  github:
+    client_id: 4e2ca7a338b0435060ad
+
+  oidc_server:
+    enabled: true
+
+  group_mapping:
+    "exec:admin":
+      - "lsst-sqre-square"
