@@ -1,4 +1,4 @@
-apiVersion: ricoberger.de/v1alpha1
+apiVersion: v1
 kind: Secret
 metadata:
   name: logging-security-config
