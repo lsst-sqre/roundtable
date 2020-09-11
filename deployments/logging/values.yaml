@@ -3,6 +3,7 @@ opendistro-es:
     master:
       replicas: 3
       storageClassName: standard
+
     data:
       replicas: 3
       javaOpts: "-Xms1g -Xmx1g"
@@ -12,6 +13,7 @@ opendistro-es:
         requests:
           memory: 2G
       storageClassName: standard
+
     client:
       replicas: 2
       javaOpts: "-Xms1g -Xmx1g"
@@ -23,9 +25,38 @@ opendistro-es:
       ingress:
         enabled: false
 
+    securityConfig:
+      enabled: true
+      configSecret: "logging-security-config"
+      internalUsersSecret: "logging-accounts"
+
   kibana:
+    config:
+      elasticsearch.username: "${ELASTICSEARCH_USERNAME}"
+      elasticsearch.password: "${ELASTICSEARCH_PASSWORD}"
+      elasticsearch.requestHeadersWhitelist:
+        - "Authorization"
+        - "X-Forwarded-For"
+        - "X-Auth-Request-User"
+        - "X-Proxy-Roles"
+      opendistro_security.auth.type: "proxy"
+      opendistro_security.cookie.secure: true
+      opendistro_security.cookie.password: "${COOKIE_PASS}"
+
+    elasticsearchAccount:
+      secret: "logging-accounts"
+
     ingress:
-      enabled: false
+      enabled: true
+      annotations:
+        nginx.ingress.kubernetes.io/auth-method: "GET"
+        nginx.ingress.kubernetes.io/auth-response-headers: "X-Auth-Request-User"
+        nginx.ingress.kubernetes.io/auth-signin: "https://roundtable.lsst.codes/login"
+        nginx.ingress.kubernetes.io/auth-url: "https://roundtable.lsst.codes/auth?scope=exec:admin"
+        nginx.ingress.kubernetes.io/configuration-snippet: |
+          proxy_set_header X-Proxy-Roles "all_access"
+      hosts:
+        - "roundtable.lsst.codes/logs"
 
 fluentd-elasticsearch:
   elasticsearch:
@@ -34,8 +65,13 @@ fluentd-elasticsearch:
     sslVerify: false
     auth:
       enabled: true
-      user: admin
-      password: admin
+      user: "logstash"
+      # Get password from the logging-accounts secret.
+      password: ""
+    secret:
+      - name: OUTPUT_PASSWORD
+        secret_name: "logging-accounts"
+        secret_key: "logstash-password"
     configMaps:
       useDefaults:
         containersInputConf: false
