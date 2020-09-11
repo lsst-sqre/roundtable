@@ -7,14 +7,14 @@ spec:
     matchLabels:
       app: logging-opendistro-es
       role: kibana
-    policyTypes:
-      - Ingress
-    ingress:
-      - from:
-          - podSelector:
-              matchLabels:
-                app: nginx-ingress
-                component: controller
-        ports:
-          - protocol: TCP
-            port: 5601
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              app: nginx-ingress
+              component: controller
+      ports:
+        - protocol: TCP
+          port: 5601
