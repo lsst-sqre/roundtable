@@ -15,5 +15,5 @@ gafaelfawr:
     enabled: true
 
   group_mapping:
-    "exec:admin":
-      - "lsst-sqre-square"
+    "exec:admin": ["lsst-sqre-square"]
+    "exec:user": ["lsst-sqre-square"]
