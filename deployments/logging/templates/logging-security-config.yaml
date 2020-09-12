@@ -34,5 +34,6 @@ stringData:
               challenge: false
               config:
                 user_header: "X-Auth-Request-User"
+                roles_header: "X-Proxy-Roles"
             authentication_backend:
               type: noop

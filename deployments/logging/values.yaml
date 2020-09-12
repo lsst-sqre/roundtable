@@ -43,13 +43,14 @@ opendistro-es:
       elasticsearch.requestHeadersWhitelist:
         - "Authorization"
         - "securitytenant"
-        - "X-Forwarded-For"
-        - "X-Auth-Request-User"
-        - "X-Proxy-Roles"
+        - "x-forwarded-for"
+        - "x-auth-request-user"
+        - "x-proxy-roles"
       elasticsearch.ssl.verificationMode: "none"
       opendistro_security.auth.type: "proxy"
       opendistro_security.cookie.secure: true
       opendistro_security.cookie.password: "${COOKIE_PASS}"
+      opendistro_security.multitenancy.enabled: false
       server.basePath: "/logs"
       server.rewriteBasePath: true
       server.host: "0.0.0.0"
