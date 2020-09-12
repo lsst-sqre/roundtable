@@ -37,6 +37,7 @@ opendistro-es:
 
   kibana:
     config:
+      elasticsearch.hosts: ["https://logging-opendistro-es-client-service:9200"]
       elasticsearch.username: "${ELASTICSEARCH_USERNAME}"
       elasticsearch.password: "${ELASTICSEARCH_PASSWORD}"
       elasticsearch.requestHeadersWhitelist:
@@ -44,9 +45,11 @@ opendistro-es:
         - "X-Forwarded-For"
         - "X-Auth-Request-User"
         - "X-Proxy-Roles"
+      elasticsearch.ssl.verificationMode: none
       opendistro_security.auth.type: "proxy"
       opendistro_security.cookie.secure: true
       opendistro_security.cookie.password: "${COOKIE_PASS}"
+      server.ssl.enabled: false
 
     elasticsearchAccount:
       secret: "logging-accounts"
