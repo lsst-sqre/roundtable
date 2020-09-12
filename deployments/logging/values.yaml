@@ -11,7 +11,7 @@ opendistro-es:
 
     data:
       replicas: 3
-      javaOpts: "-Xms1g -Xmx1g"
+      javaOpts: "-Xms1228m -Xmx1228m"
       resources:
         limits:
           memory: 2G
@@ -21,7 +21,7 @@ opendistro-es:
 
     client:
       replicas: 2
-      javaOpts: "-Xms1g -Xmx1g"
+      javaOpts: "-Xms1228m -Xmx1228m"
       resources:
         limits:
           memory: 2G
