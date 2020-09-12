@@ -11,13 +11,13 @@ spec:
     - Ingress
   ingress:
     - from:
-        - podSelector:
+        - namespaceSelector:
+            matchLabels:
+              app.kubernetes.io/instance: security
+          podSelector:
             matchLabels:
               app: nginx-ingress
               component: controller
-        - podSelector:
-            matchLabels:
-              app: logging-opendistro-es
       ports:
         - protocol: TCP
           port: 5601
