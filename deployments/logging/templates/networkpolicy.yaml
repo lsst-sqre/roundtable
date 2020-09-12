@@ -15,7 +15,7 @@ spec:
             matchLabels:
               app: nginx-ingress
               component: controller
-          podSelector:
+        - podSelector:
             matchLabels:
               app: logging-opendistro-es
       ports:
