@@ -15,6 +15,9 @@ spec:
             matchLabels:
               app: nginx-ingress
               component: controller
+          podSelector:
+            matchLabels:
+              app: logging-opendistro-es
       ports:
         - protocol: TCP
           port: 5601
