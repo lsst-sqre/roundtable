@@ -63,7 +63,7 @@ opendistro-es:
         nginx.ingress.kubernetes.io/auth-signin: "https://roundtable.lsst.codes/login"
         nginx.ingress.kubernetes.io/auth-url: "https://roundtable.lsst.codes/auth?scope=exec:admin"
         nginx.ingress.kubernetes.io/configuration-snippet: |
-          proxy_set_header X-Proxy-Roles "all_access"
+          proxy_set_header X-Proxy-Roles "all_access";
       hosts:
         - "roundtable.lsst.codes/logs"
 
