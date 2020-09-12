@@ -50,6 +50,7 @@ opendistro-es:
       opendistro_security.cookie.secure: true
       opendistro_security.cookie.password: "${COOKIE_PASS}"
       server.basePath: "/logs"
+      server.rewriteBasePath: true
       server.host: "0.0.0.0"
       server.ssl.enabled: false
 
