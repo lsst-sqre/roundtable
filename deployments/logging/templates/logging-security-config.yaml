@@ -14,7 +14,7 @@ stringData:
         http:
           xff:
             enabled: true
-            internalProxies: "10\..*"
+            internalProxies: "10\\..*"
         authc:
           proxy_auth_domain:
             http_enabled: true
