@@ -42,6 +42,7 @@ opendistro-es:
       elasticsearch.password: "${ELASTICSEARCH_PASSWORD}"
       elasticsearch.requestHeadersWhitelist:
         - "Authorization"
+        - "securitytenant"
         - "X-Forwarded-For"
         - "X-Auth-Request-User"
         - "X-Proxy-Roles"
