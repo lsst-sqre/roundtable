@@ -45,11 +45,12 @@ opendistro-es:
         - "X-Forwarded-For"
         - "X-Auth-Request-User"
         - "X-Proxy-Roles"
-      elasticsearch.ssl.verificationMode: none
+      elasticsearch.ssl.verificationMode: "none"
       opendistro_security.auth.type: "proxy"
       opendistro_security.cookie.secure: true
       opendistro_security.cookie.password: "${COOKIE_PASS}"
-      server.host: 0.0.0.0
+      server.basePath: "/logs"
+      server.host: "0.0.0.0"
       server.ssl.enabled: false
 
     elasticsearchAccount:
