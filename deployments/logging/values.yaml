@@ -3,6 +3,11 @@ opendistro-es:
     master:
       replicas: 3
       storageClassName: standard
+      livenessProbe:
+        tcpSocket:
+          port: transport
+        initialDelaySeconds: 180
+        periodSeconds: 10
 
     data:
       replicas: 3
