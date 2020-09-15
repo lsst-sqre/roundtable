@@ -31,6 +31,34 @@ The recommended way to configure proxy authentication is to specify the IP addre
 However, this requires hard-coding internal IP addresses, which we don't want to do.
 The proxy authentication module is therefore configured to accept any internal IP address, and a Kubernetes ``NetworkPolicy`` is used to prevent other pods from talking to Kibana or Elasticsearch and providing the proxy headers to impersonate a legitimate user.
 
+.. rubric:: Authorization
+
+Authorization in Elasticsearch is done via roles.
+This is complex in Open Distro for Elasticsearch because there are two different concepts of roles in play:
+
+- Roles asserted via authentication
+- Elasticsearch roles (sometimes called "backend roles")
+
+The first are mapped to the second via the ``role_mapping.yml`` file.
+
+Roles can be assigned directly to accounts in the ``internal_users.yml`` file shown in the bootstrapping instructions.
+Otherwise, they need to be asserted by the authentication configuration.
+
+There are some default mappings and roles, such as ``admin`` and ``logstash``.
+The documentation claims that there is a default role for the Kibana user as well.
+In different pieces of documentation, it is named three different things (``kibanauser``, ``kibana_user``, and ``kibana_system``).
+None of these work or appear to do anything.
+The current configuration just assigns a role of ``admin`` to the Kibana user, which is excessive but works.
+
+For the proxy authentication mechanism that we're using, the roles of a user are asserted by the ``X-Proxy-Roles`` header, which is a comma-separated list of roles.
+These are the authentication roles, which are then mapped to backend roles via ``role_mapping.yml``.
+We map all users who are allowed access to Kibana to the ``admin`` role, and limit access via Gafaelfawr to people in the ``square`` team of the ``lsst-sqre`` GitHub organization.
+
+.. rubric:: Multi-tenancy
+
+Kibana has some concept of multi-tenancy, which appears to be a way to create private and shared index spaces.
+This didn't seem like something that was necessary for our use case and it was confusing the authentication configuration, so we have it turned off.
+
 .. rubric:: Making configuration changes
 
 The ``opendistro_security`` configuration is stored in a special Elasticsearch index.
