@@ -16,7 +16,8 @@ Step 1: Log into Kibana
 Step 2: Explore with the Discover tab
 =====================================
 
-The best place to start exploring log messages is in the Discover tab: https://roundtable.lsst.codes/logs/app/kibana#/discover.
+The best place to start exploring log messages is in the Discover tab.
+This is the top icon on the left icon bar.
 
 By default you can see every log message from across the entire Roundtable cluster.
 Here are a few tips to help filter the log stream down to just the messages you're interested in:

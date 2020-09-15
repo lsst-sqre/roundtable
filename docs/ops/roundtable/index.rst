@@ -25,7 +25,7 @@ It deploys:
 - The core infrastructure apps:
 
   - :doc:`argo-cd <../argo-cd/index>` for continuous delivery of Roundtable apps with Argo CD.
-  - :doc:`gafaelfawr <../gafaelfawr/index` for OpenID Connect web authentication.
+  - :doc:`gafaelfawr <../gafaelfawr/index>` for OpenID Connect web authentication.
   - :doc:`prometheus <../prometheus/index>` for the Kubernetes-native monitoring stack (Prometheus Operator, Prometheus, and Grafana).
   - :doc:`vault-secrets-operator <../vault-secrets-operator/index>` to retrieve secrets from Vault and store them as Kubernetes secrets.
 
