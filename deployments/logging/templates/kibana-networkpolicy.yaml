@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: logging-networkpolicy
+  name: logging-kibana-networkpolicy
 spec:
   podSelector:
     matchLabels:
@@ -13,7 +13,7 @@ spec:
     - from:
         - namespaceSelector:
             matchLabels:
-              app: ngninx-ingress
+              app: nginx-ingress
           podSelector:
             matchLabels:
               app: nginx-ingress
