@@ -6,40 +6,18 @@ Roundtable includes its own logging infrastructure.
 Your application's log messages to stdout and stderr are automatically captured by fluentd, stored in ElasticSearch, and made available with Kibana.
 This page will help you use Kibana to view your app's log messages.
 
-.. note::
-
-   To follow this tutorial, you will need kubectl access to the Roundtable cluster.
-   See :doc:`/ops/gke/howto-connect-to-gke`.
-
-Step 1: Port forward into the Kibana pod
-========================================
-
-Kibana is the front-end for viewing your logs.
-Currently, Kibana does not have a public URL.
-To access Kibana, you'll need to set up port forwarding between the Kibana pod in Roundtable and your localhost.
-Copy this line and run it in a terminal:
-
-.. code-block:: bash
-
-   kubectl -n logging port-forward `kubectl -n logging get pods -l app=logging-opendistro-es -l role=kibana -o name | head -n 1` 5601:5601
-
-Step 2: Log into Kibana
+Step 1: Log into Kibana
 =======================
 
-1. Open http://localhost:5601 in your browser.
+1. Open https://roundtable.lsst.codes/logs in your browser.
 
-2. Enter the credentials:
+2. Log in with GitHub if needed.
 
-   Username
-     ``admin``
-
-   Password
-     ``admin``
-
-Step 3: Explore with the Discover tab
+Step 2: Explore with the Discover tab
 =====================================
 
-The best place to start exploring log messages is in the Discover tab: http://localhost:5601/app/kibana#/discover.
+The best place to start exploring log messages is in the Discover tab.
+This is the top icon on the left icon bar.
 
 By default you can see every log message from across the entire Roundtable cluster.
 Here are a few tips to help filter the log stream down to just the messages you're interested in:
@@ -59,11 +37,11 @@ Here are a few tips to help filter the log stream down to just the messages you'
 
   .. code-block:: yaml
 
-    apiVersion: v1
-    kind: Pod
-    metadata:
-      labels:
-        name: myapp
+     apiVersion: v1
+     kind: Pod
+     metadata:
+       labels:
+         name: myapp
 
   You can select log messages this pod, and ones like it in a Deployment, based on the ``name: myapp`` label:
 
