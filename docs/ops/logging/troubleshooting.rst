@@ -2,7 +2,8 @@
 Troubleshooting Elasticsearch
 #############################
 
-.. rubric:: Memory limits
+Memory limits
+=============
 
 The most frequent problem with Elasticsearch is that some component will run out of memory.
 The Helm chart for Open Distro for Elasticsearch allocates 512MB of memory.
@@ -20,7 +21,8 @@ On-line estimates of that overhead vary, but it's probably about 500MB.
 These settings therefore need to be updated in lockstep.
 If you set the Java memory allocation too high for the pod memory limit, the component will fail to start and go into a crash loop.
 
-.. rubric:: JavaScript errors
+JavaScript errors
+=================
 
 In Chrome, I have sometimes seen parts of the UI not load, often with no error and sometimes with cryptic empty JavaScript errors.
 By using the JavaScript console, that turned out to be due to 413 HTTP (Payload Too Large) errors from Elasticsearch.

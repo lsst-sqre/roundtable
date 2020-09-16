@@ -6,7 +6,8 @@ Elasticsearch has a blizzard of authentication options, and Open Distro for Elas
 They're also in general poorly documented.
 This is an attempt to explain the basics of the authentication system and the choices we made when configuring it.
 
-.. rubric:: Configuration
+Configuration
+=============
 
 Open Distro for Elasticsearch does authentication through a custom plugin called ``opendistro_security``.
 Kibana and Elasticsearch have separate authentication paths but use the same plugin.
@@ -31,7 +32,8 @@ The recommended way to configure proxy authentication is to specify the IP addre
 However, this requires hard-coding internal IP addresses, which we don't want to do.
 The proxy authentication module is therefore configured to accept any internal IP address, and a Kubernetes ``NetworkPolicy`` is used to prevent other pods from talking to Kibana or Elasticsearch and providing the proxy headers to impersonate a legitimate user.
 
-.. rubric:: Authorization
+Authorization
+=============
 
 Authorization in Elasticsearch is done via roles.
 This is complex in Open Distro for Elasticsearch because there are two different concepts of roles in play:
@@ -54,12 +56,14 @@ For the proxy authentication mechanism that we're using, the roles of a user are
 These are the authentication roles, which are then mapped to backend roles via ``role_mapping.yml``.
 We map all users who are allowed access to Kibana to the ``admin`` role, and limit access via Gafaelfawr to people in the ``square`` team of the ``lsst-sqre`` GitHub organization.
 
-.. rubric:: Multi-tenancy
+Multi-tenancy
+=============
 
 Kibana has some concept of multi-tenancy, which appears to be a way to create private and shared index spaces.
 This didn't seem like something that was necessary for our use case and it was confusing the authentication configuration, so we have it turned off.
 
-.. rubric:: Making configuration changes
+Making configuration changes
+============================
 
 The ``opendistro_security`` configuration is stored in a special Elasticsearch index.
 That index is created or updated via configuration files stored in the Elasticsearch master pod.
