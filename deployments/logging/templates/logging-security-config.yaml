@@ -31,7 +31,6 @@ stringData:
               config:
                 enable_ssl: true
                 subject_key: sub
-                roles_key: scope
                 openid_connect_url: https://roundtable.lsst.codes/.well-known/openid-configuration
             authentication_backend:
               type: noop
