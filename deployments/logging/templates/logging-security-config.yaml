@@ -11,6 +11,10 @@ stringData:
 
     config:
       dynamic:
+        http:
+          xff:
+            enabled: true
+            internalProxies: "10\\..*"
         authc:
           basic_internal_auth_domain:
             http_enabled: true
@@ -21,16 +25,15 @@ stringData:
               challenge: false
             authentication_backend:
               type: internal
-          openid_auth_domain:
+          proxy_auth_domain:
             http_enabled: true
             transport_enabled: true
             order: 1
             http_authenticator:
-              type: openid
+              type: proxy
               challenge: false
               config:
-                enable_ssl: true
-                subject_key: sub
-                openid_connect_url: https://roundtable.lsst.codes/.well-known/openid-configuration
+                user_header: "X-Auth-Request-User"
+                roles_header: "X-Proxy-Roles"
             authentication_backend:
               type: noop

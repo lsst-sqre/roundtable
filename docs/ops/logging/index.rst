@@ -40,6 +40,7 @@ Fluentd gathers logs from each cluster node and forwards them to Elasticsearch.
    bootstrapping
    authentication
    troubleshooting
+   openid-connect
 
 .. seealso::
 
