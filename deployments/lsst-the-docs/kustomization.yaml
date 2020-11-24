@@ -14,3 +14,7 @@ patches:
   - patches/dasher-deployment.yaml
 
 namespace: lsst-the-docs
+
+images:
+  - name: lsstsqre/ltd-keeper
+    newTag: tickets-DM-27702
