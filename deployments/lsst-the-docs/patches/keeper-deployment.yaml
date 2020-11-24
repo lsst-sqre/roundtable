@@ -6,6 +6,7 @@ metadata:
 spec:
   template:
     spec:
+      replicas: 4
       containers:
         - name: app
           env:
@@ -45,6 +46,7 @@ metadata:
 spec:
   template:
     spec:
+      replicas: 4
       containers:
         - name: app
           env:
