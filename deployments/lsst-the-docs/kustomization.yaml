@@ -11,5 +11,6 @@ resources:
 patches:
   - patches/keeper-cm.yaml
   - patches/keeper-deployment.yaml
+  - patches/dasher-deployment.yaml
 
 namespace: lsst-the-docs
