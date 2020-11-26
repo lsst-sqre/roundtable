@@ -18,3 +18,5 @@ namespace: lsst-the-docs
 images:
   - name: lsstsqre/ltd-keeper
     newTag: tickets-DM-27702
+  - name: lsstsqre/ltd-dasher
+    newTag: tickets-DM-27702
