@@ -4,9 +4,9 @@ kind: Kustomization
 resources:
 - resources/keeper-sealedsecret.yaml
 - resources/cloudsql-sealedsecret.yaml
-- github.com/lsst-sqre/ltd-keeper.git//manifests?ref=1.20.3
+- github.com/lsst-sqre/ltd-keeper.git//manifests?ref=1.21.0
 - resources/keeper-ingress.yaml
-- github.com/lsst-sqre/ltd-dasher.git//manifests?ref=0.1.7
+- github.com/lsst-sqre/ltd-dasher.git//manifests?ref=0.1.8
 
 patches:
   - patches/keeper-cm.yaml
@@ -14,9 +14,3 @@ patches:
   - patches/dasher-deployment.yaml
 
 namespace: lsst-the-docs
-
-images:
-  - name: lsstsqre/ltd-keeper
-    newTag: tickets-DM-27702
-  - name: lsstsqre/ltd-dasher
-    newTag: tickets-DM-27702
