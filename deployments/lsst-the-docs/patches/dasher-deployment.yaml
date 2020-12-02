@@ -4,4 +4,4 @@ kind: Deployment
 metadata:
   name: dasher
 spec:
-  replicas: 1
+  replicas: 4
