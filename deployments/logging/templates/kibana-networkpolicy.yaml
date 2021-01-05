@@ -13,10 +13,10 @@ spec:
     - from:
         - namespaceSelector:
             matchLabels:
-              app: nginx-ingress
+              app: ingress-nginx
           podSelector:
             matchLabels:
-              app: nginx-ingress
+              app: ingress-nginx
               component: controller
       ports:
         - protocol: TCP

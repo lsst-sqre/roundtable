@@ -16,8 +16,8 @@ Although this documentation is openly available, application developers shouldn'
    cert-manager/index
    events/index
    gafaelfawr/index
+   ingress-nginx/index
    logging/index
-   nginx-ingress/index
    prometheus/index
    sealed-secrets/index
    strimzi/index

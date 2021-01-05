@@ -3,5 +3,5 @@ kind: Kustomization
 
 resources:
   - resources/cert-manager.yaml
-  - resources/nginx-ingress.yaml
+  - resources/ingress-nginx.yaml
   - resources/vault.yaml

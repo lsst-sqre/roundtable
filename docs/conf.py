@@ -96,9 +96,9 @@ rst_epilog = """
    :target: https://cd.roundtable.lsst.codes/applications/argo-cd
    :alt: Argo CD app status
 
-.. |nginx-ingress-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=nginx-ingress
-   :target: https://cd.roundtable.lsst.codes/applications/nginx-ingress
-   :alt: nginx-ingress app status
+.. |ingress-nginx-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=ingress-nginx
+   :target: https://cd.roundtable.lsst.codes/applications/ingress-nginx
+   :alt: ingress-nginx app status
 
 .. |cert-manager-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=cert-manager
    :target: https://cd.roundtable.lsst.codes/applications/cert-manager
