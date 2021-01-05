@@ -149,7 +149,7 @@ rst_epilog = """
 .. _Grafana: https://grafana.com/grafana
 .. _lsst-sqre GitHub organization: https://github.com/lsst-sqre
 .. _roundtable-ops team: https://github.com/orgs/lsst-sqre/teams/roundtable-ops
-.. _httpie: https://httpie.org
+.. _httpie: https://httpie.io
 .. _Strimzi: https://strimzi.io
 .. _Sealed Secrets: https://github.com/bitnami-labs/sealed-secrets
 .. _Vault: https://www.vaultproject.io/

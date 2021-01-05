@@ -9,7 +9,7 @@ data:
   dex.config: |
     connectors:
       # Auth using GitHub.
-      # See https://github.com/dexidp/dex/blob/master/Documentation/connectors/github.md
+      # See https://dexidp.io/docs/connectors/github/
       # For example, we can authorize only members of certain teams in orgs.
       - type: github
         id: github
