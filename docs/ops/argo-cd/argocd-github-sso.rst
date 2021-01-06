@@ -24,7 +24,7 @@ Access can be limited to members of organizations listed in the GitHub SSO of th
 Currently only members of the `lsst-sqre GitHub organization`_ can log in.
 
 Dex, the OIDC component used by Argo CD, also supports limited access by GitHub team.
-See the `Authenticating with GitHub page <https://github.com/dexidp/dex/blob/master/Documentation/connectors/github.md>`__ in the Dex documentation.
+See the `Authentication through GitHub page <https://dexidp.io/docs/connectors/github/>`__ in the Dex documentation.
 
 .. _`SSO Configuration`: https://argoproj.github.io/argo-cd/operator-manual/user-management/#sso
 .. _`argocd-cm.yaml patch`: https://github.com/lsst-sqre/roundtable/blob/master/deployments/argo-cd/patches/argocd-cm.yaml

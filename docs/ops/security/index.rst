@@ -20,7 +20,7 @@ The ``security`` app is responsible for deploying security services for Roundtab
 It follows the `app of apps <https://argoproj.github.io/argo-cd/operator-manual/cluster-bootstrapping/#app-of-apps-pattern>`__ pattern.
 It deploys:
 
-- :doc:`nginx-ingress <../nginx-ingress/index>` for shared ingress.
+- :doc:`ingress-nginx <../ingress-nginx/index>` for shared ingress.
 - :doc:`cert-manager <../cert-manager/index>` for Let's-Encrypt-provided TLS certificates.
 - :doc:`vault <../vault/index>` for the Vault secret service.
 

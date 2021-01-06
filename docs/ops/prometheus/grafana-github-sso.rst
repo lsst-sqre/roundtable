@@ -11,8 +11,8 @@ GitHub OAuth app and grafana.ini configuration
 The GitHub OAuth app is called `LSST Roundtable Monitor <https://github.com/organizations/lsst-sqre/settings/applications/1133398>`_ and is owned by the `lsst-sqre GitHub organization`_ organization.
 
 GitHub SSO is primarily configured through the `values.yaml file`_.
-The Grafana Helm chart translates YAML into the standard `grafana.ini configuration file <https://grafana.com/docs/installation/configuration/>`_.
-See the Grafana documentation on `GitHub OAuth2 Authentication <https://grafana.com/docs/auth/github/>`_, specifically.
+The Grafana Helm chart translates YAML into the standard `grafana.ini configuration file <https://grafana.com/docs/grafana/latest/installation/configuration/>`_.
+See the Grafana documentation on `GitHub OAuth2 Authentication <https://grafana.com/docs/grafana/latest/auth/github/>`_, specifically.
 
 The only part of the configuration not included in the `values.yaml file`_ is the GitHub OAuth client secret.
 This value is obtained from an environment variable override mounted from the ``grafana-env`` secret resource (see the ``envFromSecret`` field in the `values.yaml file`_).

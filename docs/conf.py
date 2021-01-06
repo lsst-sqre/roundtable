@@ -96,9 +96,9 @@ rst_epilog = """
    :target: https://cd.roundtable.lsst.codes/applications/argo-cd
    :alt: Argo CD app status
 
-.. |nginx-ingress-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=nginx-ingress
-   :target: https://cd.roundtable.lsst.codes/applications/nginx-ingress
-   :alt: nginx-ingress app status
+.. |ingress-nginx-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=ingress-nginx
+   :target: https://cd.roundtable.lsst.codes/applications/ingress-nginx
+   :alt: ingress-nginx app status
 
 .. |cert-manager-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=cert-manager
    :target: https://cd.roundtable.lsst.codes/applications/cert-manager
@@ -149,7 +149,7 @@ rst_epilog = """
 .. _Grafana: https://grafana.com/grafana
 .. _lsst-sqre GitHub organization: https://github.com/lsst-sqre
 .. _roundtable-ops team: https://github.com/orgs/lsst-sqre/teams/roundtable-ops
-.. _httpie: https://httpie.org
+.. _httpie: https://httpie.io
 .. _Strimzi: https://strimzi.io
 .. _Sealed Secrets: https://github.com/bitnami-labs/sealed-secrets
 .. _Vault: https://www.vaultproject.io/

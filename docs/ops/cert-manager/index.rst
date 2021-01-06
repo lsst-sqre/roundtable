@@ -16,4 +16,4 @@ cert-manager app deployment guide
 
 .. rubric:: Overview
 
-This Argo CD Application deploys and configures `cert-manager <https://cert-manager.io>`__ from its `Helm chart repository <https://hub.helm.sh/charts/jetstack/cert-manager>`__.
+This Argo CD Application deploys and configures `cert-manager <https://cert-manager.io>`__ from its `Helm chart repository <https://artifacthub.io/packages/helm/jetstack/cert-manager>`__.

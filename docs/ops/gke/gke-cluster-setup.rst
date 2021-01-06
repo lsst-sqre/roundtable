@@ -27,7 +27,7 @@ Stackdriver monitoring
 Stackdriver Kubernetes monitoring is **enabled** and Legacy Stackdriver Logging and Legacy Stackdriver Monitoring are **disabled**.
 
 We use Stackdriver for logs.
-See the `Stackdriver Kubernetes Engine Monitoring <https://cloud.google.com/monitoring/kubernetes-engine/>`_ documentation for more information.
+See the `Stackdriver Kubernetes Engine Monitoring <https://cloud.google.com/stackdriver/docs/solutions/gke>`_ documentation for more information.
 
 Istio
 =====
