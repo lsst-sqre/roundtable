@@ -16,21 +16,9 @@ See the Grafana documentation on `GitHub OAuth2 Authentication <https://grafana.
 
 The only part of the configuration not included in the `values.yaml file`_ is the GitHub OAuth client secret.
 This value is obtained from an environment variable override mounted from the ``grafana-env`` secret resource (see the ``envFromSecret`` field in the `values.yaml file`_).
-The secret configuration:
+This secret, in turn, is created from a ``VaultSecret`` that pulls the secret information from the ``grafana`` secret in the Roundtable Vault secret tree.
 
-.. code-block:: yaml
-
-   apiVersion: v1
-   kind: Secret
-   metadata:
-     name: grafana-env
-   type: Opaque
-   stringData:
-     GF_AUTH_GITHUB_CLIENT_SECRET: "<client-secret>"
-
-Deploy this secret into the ``prometheus`` namespace.
-
-.. _`values.yaml file`: https://github.com/lsst-sqre/roundtable/blob/master/deployments/prometheus/values.yaml
+The Vault secret should contain one key, ``GF_AUTH_GITHUB_CLIENT_SECRET``, the value of which is the GitHub OAuth client secret.
 
 Organization and team-based access
 ==================================

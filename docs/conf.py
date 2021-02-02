@@ -104,8 +104,8 @@ rst_epilog = """
    :target: https://cd.roundtable.lsst.codes/applications/cert-manager
    :alt: cert-manager app status
 
-.. |prometheus-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=prometheus
-   :target: https://cd.roundtable.lsst.codes/applications/prometheus
+.. |kube-prometheus-stack-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=kube-prometheus-stack
+   :target: https://cd.roundtable.lsst.codes/applications/kube-prometheus-stack
    :alt: Prometheus app status
 
 .. |strimzi-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=strimzi
