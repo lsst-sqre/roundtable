@@ -8,9 +8,9 @@ kube-prometheus-stack:
       hosts:
         - monitoring.roundtable.lsst.codes
       tls:
-        secretName: grafana-ingress-tls
-        hosts:
-          - monitoring.roundtable.lsst.codes
+        - secretName: grafana-ingress-tls
+          hosts:
+            - monitoring.roundtable.lsst.codes
     service:
       persistence:
         enabled: true
