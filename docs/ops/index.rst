@@ -17,8 +17,8 @@ Although this documentation is openly available, application developers shouldn'
    events/index
    gafaelfawr/index
    ingress-nginx/index
+   kube-prometheus-stack/index
    logging/index
-   prometheus/index
    sealed-secrets/index
    strimzi/index
    vault/index

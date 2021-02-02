@@ -13,6 +13,7 @@ resources:
   # Applications
   - resources/argo-cd.yaml
   - resources/gafaelfawr.yaml
+  - resources/kube-prometheus-stack.yaml
   - resources/strimzi.yaml
   - resources/events-dev.yaml
   - resources/events.yaml

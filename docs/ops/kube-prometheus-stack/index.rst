@@ -1,14 +1,14 @@
-###############################
-prometheus app deployment guide
-###############################
+##########################################
+kube-prometheus-stack app deployment guide
+##########################################
 
 .. list-table::
    :widths: 10,40
 
    * - Deployment
-     - |prometheus-status|
+     - |kube-prometheus-stack-status|
    * - Edit on GitHub
-     - `/deployments/prometheus <https://github.com/lsst-sqre/roundtable/tree/master/deployments/prometheus>`__
+     - `/deployments/kube-prometheus-stack <https://github.com/lsst-sqre/roundtable/tree/master/deployments/kube-prometheus-stack>`__
    * - Type
      - Helm_
    * - Parent app
@@ -18,7 +18,7 @@ prometheus app deployment guide
 
 .. rubric:: Overview
 
-This Argo CD Application deploys and configures a Prometheus_ monitoring stack based on the `prometheus-operator Helm chart <https://github.com/helm/charts/tree/master/stable/prometheus-operator>`__.
+This Argo CD Application deploys and configures a Prometheus_ monitoring stack based on the `kube-prometheus-stack Helm chart <https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack>`__.
 The Grafana dashboard is online at https://monitoring.roundtable.lsst.codes.
 
 .. rubric:: Upgrading
