@@ -11,10 +11,17 @@ kube-prometheus-stack:
         - secretName: grafana-ingress-tls
           hosts:
             - monitoring.roundtable.lsst.codes
+
     persistence:
       enabled: true
       size: "10Gi"
       storageClassName: "standard"
+
+    sidecar:
+      dashboards:
+        enabled: true
+        label: "grafana_dashboard"
+        searchNamespace: "ALL"
 
     # Secret resource that contains environment variables for e.g.
     # the GitHub auth client secret.
