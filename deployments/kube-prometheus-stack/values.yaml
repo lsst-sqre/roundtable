@@ -50,9 +50,6 @@ kube-prometheus-stack:
 
   prometheus:
     prometheusSpec:
-      serviceMonitorNamespaceSelector:
-        all: true
-
       storageSpec:
         volumeClaimTemplate:
           # Request SSD persistent volume for Prometheus data.
