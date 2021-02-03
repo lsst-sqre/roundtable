@@ -4,7 +4,7 @@ metadata:
   name: argocd-repo-server-metrics
   labels:
     # Match Prometheus's serviceMonitorSelector.matchLabels
-    release: prometheus
+    release: kube-prometheus-stack
 spec:
   selector:
     matchLabels:
