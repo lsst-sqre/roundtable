@@ -3,5 +3,5 @@ name: vault
 version: 1.0.0
 dependencies:
   - name: vault
-    version: 0.9.0
+    version: 0.9.1
     repository: https://helm.releases.hashicorp.com
