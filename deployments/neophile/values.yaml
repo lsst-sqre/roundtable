@@ -17,6 +17,8 @@ neophile:
     - owner: "lsst-sqre"
       repo: "mobu"
     - owner: "lsst-sqre"
+      repo: "moneypenny"
+    - owner: "lsst-sqre"
       repo: "neophile"
     - owner: "lsst-sqre"
       repo: "nublado2"
