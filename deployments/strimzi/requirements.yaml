@@ -1,4 +1,0 @@
-dependencies:
-  - name: strimzi-kafka-operator
-    version: 0.14.0
-    repository: https://strimzi.io/charts/

@@ -1,3 +1,7 @@
 apiVersion: v2
 name: gafaelfawr
 version: 1.0.0
+dependencies:
+  - name: gafaelfawr
+    version: 1.5.6
+    repository: https://lsst-sqre.github.io/charts/
