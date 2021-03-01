@@ -1,3 +1,7 @@
-apiVersion: v1
+apiVersion: v2
 name: strimzi
 version: 1.0.0
+dependencies:
+  - name: strimzi-kafka-operator
+    version: 0.14.0
+    repository: https://strimzi.io/charts/
