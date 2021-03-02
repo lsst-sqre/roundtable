@@ -5,7 +5,7 @@ namespace: events
 
 resources:
   - resources/vaultsecret.yaml
-  - github.com/lsst-sqre/ook.git//manifests/base?ref=0.3.0
+  - github.com/lsst-sqre/ook.git//manifests/base?ref=0.3.1
 
 patches:
   - patches/configmap.yaml
