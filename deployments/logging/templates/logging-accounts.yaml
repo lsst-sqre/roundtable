@@ -1,7 +1,0 @@
-apiVersion: ricoberger.de/v1alpha1
-kind: VaultSecret
-metadata:
-  name: logging-accounts
-spec:
-  path: "secret/k8s_operator/roundtable/logging"
-  type: Opaque
