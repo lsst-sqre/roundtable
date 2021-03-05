@@ -51,9 +51,6 @@ data:
     # For Strimzi (Kafka)
     - url: https://strimzi.io/charts/
       name: strimzi
-    # For ELK stack logging
-    - url: https://kiwigrid.github.io/
-      name: kiwigrid
     # For Vault Secrets Operator
     - url: https://ricoberger.github.io/helm-charts/
       name: ricoberger
