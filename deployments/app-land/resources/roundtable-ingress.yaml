@@ -39,3 +39,7 @@ spec:
             backend:
               serviceName: segwarides
               servicePort: 8080
+          - path: /rubintv
+            backend:
+              serviceName: rubintv
+              servicePort: 8080
