@@ -18,3 +18,4 @@ resources:
   - resources/templatebot-jsick.yaml
   - resources/segwarides.yaml
   - resources/ook.yaml
+  - resources/rubintv.yaml
