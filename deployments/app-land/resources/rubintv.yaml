@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rubintv
+spec:
+  destination:
+    namespace: events
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: deployments/rubintv
+    repoURL: https://github.com/lsst-sqre/roundtable
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
