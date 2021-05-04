@@ -31,6 +31,7 @@ data:
     - url: https://github.com/lsst-sqre/ltd-events.git
     - url: https://github.com/lsst-sqre/ltd-keeper.git
     - url: https://github.com/lsst-sqre/roundtable.git
+    - url: https://github.com/lsst-sqre/rubin-tv.git
     - url: https://github.com/lsst-sqre/safirdemo.git
     - url: https://github.com/lsst-sqre/segwarides.git
     - url: https://github.com/lsst-sqre/sqrbot-jr.git

@@ -30,3 +30,5 @@ neophile:
         repo: "safirdemo"
       - owner: "lsst-sqre"
         repo: "segwarides"
+      - owner: "lsst-sqre"
+        repo: "rubin-tv"
