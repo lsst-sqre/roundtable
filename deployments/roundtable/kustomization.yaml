@@ -8,12 +8,10 @@ resources:
   - resources/strimzi-ns.yaml
   - resources/events-ns.yaml
   - resources/events-dev-ns.yaml
-  - resources/sealed-secrets-ns.yaml
   # Applications
   - resources/argo-cd.yaml
   - resources/kube-prometheus-stack.yaml
   - resources/strimzi.yaml
   - resources/events-dev.yaml
   - resources/events.yaml
-  - resources/sealed-secrets.yaml
   - resources/vault-secrets-operator.yaml

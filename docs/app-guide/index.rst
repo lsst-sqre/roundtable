@@ -7,4 +7,3 @@ Application developer guide
 
    ingress
    using-vault-secrets
-   using-sealed-secrets
