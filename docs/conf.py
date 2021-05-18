@@ -120,10 +120,6 @@ rst_epilog = """
    :target: https://cd.roundtable.lsst.codes/applications/app-land
    :alt: App Land app status
 
-.. |sealed-secrets-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=sealed-secrets
-   :target: https://cd.roundtable.lsst.codes/applications/sealed-secrets
-   :alt: Sealed Secrets app status
-
 .. |vault-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=vault
    :target: https://cd.roundtable.lsst.codes/applications/vault
    :alt: Vault app status
@@ -141,7 +137,6 @@ rst_epilog = """
 .. _roundtable-ops team: https://github.com/orgs/lsst-sqre/teams/roundtable-ops
 .. _httpie: https://httpie.io
 .. _Strimzi: https://strimzi.io
-.. _Sealed Secrets: https://github.com/bitnami-labs/sealed-secrets
 .. _Vault: https://www.vaultproject.io/
 .. _Vault Secrets Operator: https://github.com/ricoberger/vault-secrets-operator
 .. _lsstvaultutils: https://github.com/lsst-sqre/lsstvaultutils
@@ -157,7 +152,6 @@ linkcheck_ignore = [
     r'^https://monitoring.roundtable.lsst.codes',
     r'^https://github.com/organizations/lsst-sqre/settings/',
     r'^https://github.com/lsst-sqre/roundtable/settings/',
-    r'^https://github.com/bitnami-labs/sealed-secrets/blob/master/README\.md#homebrew$',
     r'^http://localhost',
     r'^http(s)*://ls.st',
 ]

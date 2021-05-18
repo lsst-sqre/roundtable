@@ -9,7 +9,7 @@ commonLabels:
   app: sqrbot-jsick
 
 resources:
-  - resources/sealedsecret.yaml
+  - resources/vaultsecret.yaml
   - github.com/lsst-sqre/sqrbot-jr.git//manifests/base?ref=0.6.0
 
 patches:
