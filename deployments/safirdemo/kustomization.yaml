@@ -4,4 +4,4 @@ kind: Kustomization
 namespace: events
 
 resources:
-  - github.com/lsst-sqre/safirdemo.git//manifests/base?ref=1.0.1
+  - github.com/lsst-sqre/safirdemo.git//manifests/base?ref=1.0.2
