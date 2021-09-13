@@ -22,6 +22,7 @@ data:
   ENABLE_OOK_INGEST_KAFKA_TOPIC: "false"
   LTD_EVENTS_KAFKA_TOPIC: "ltd.events"
   OOK_GROUP_ID: "ook-queue"
+  OOK_GITHUB_APP_ID: "137886"
 ---
 # Configuration for the ook-queue deployment
 apiVersion: v1
@@ -48,3 +49,4 @@ data:
   OOK_GROUP_ID: "ook-ingest"
   ALGOLIA_APP_ID: "0OJETYIVL5"
   ALGOLIA_DOCUMENT_INDEX: "document_dev"
+  OOK_GITHUB_APP_ID: "137886"
