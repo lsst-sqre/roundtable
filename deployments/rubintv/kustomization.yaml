@@ -3,6 +3,10 @@ kind: Kustomization
 
 namespace: events
 
+images:
+  - name: lsstsqre/rubintv
+    newTag: tickets-DM-31998
+
 resources:
-  - github.com/lsst-sqre/rubin-tv.git//manifests/base?ref=0.0.10
+  - github.com/lsst-sqre/rubin-tv.git//manifests/base?ref=tickets/DM-31998
   - resources/secret.yaml
