@@ -6,7 +6,7 @@ resources:
 - resources/cloudsql-vaultsecret.yaml
 - github.com/lsst-sqre/ltd-keeper.git//manifests?ref=1.22.0
 - resources/keeper-ingress.yaml
-- github.com/lsst-sqre/ltd-dasher.git//manifests?ref=0.1.10
+- github.com/lsst-sqre/ltd-dasher.git//manifests?ref=0.1.11
 
 patches:
   - patches/keeper-cm.yaml
