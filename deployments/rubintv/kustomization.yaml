@@ -4,5 +4,5 @@ kind: Kustomization
 namespace: events
 
 resources:
-  - github.com/lsst-sqre/rubin-tv.git//manifests/base?ref=0.0.11
+  - github.com/lsst-sqre/rubin-tv.git//manifests/base?ref=0.0.12
   - resources/secret.yaml
