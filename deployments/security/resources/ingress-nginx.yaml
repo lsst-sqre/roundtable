@@ -25,13 +25,21 @@ spec:
     automated:
       prune: true
   ignoreDifferences:
-  - group: ""
-    kind: Service
-    jsonPointers:
-    # The Cluster IP is immutable; so we shouldn't look at differences there.
-    # If left out, we see the error message:
-    #   kubectl failed exit status 1: The Service
-    #   "ingress-nginx-controller-metrics" is invalid: spec.clusterIP: Invalid
-    #   value: "": field is immutable
-    # Credit: https://gist.github.com/kyohmizu/8ebc9c3dcadad6f22dd0246caad9b951
-    - /spec/clusterIP
+    - group: ""
+      kind: Service
+      # The Cluster IP is immutable; so we shouldn't look at differences there.
+      # If left out, we see the error message:
+      #   kubectl failed exit status 1: The Service
+      #   "ingress-nginx-controller-metrics" is invalid: spec.clusterIP: Invalid
+      #   value: "": field is immutable
+      # See: https://gist.github.com/kyohmizu/8ebc9c3dcadad6f22dd0246caad9b951
+      jsonPointers:
+        - /spec/clusterIP
+    - group: ""
+      kind: Service
+      name: ingress-nginx-controller
+      namespace: ingress-nginx
+      # These fields are populated automatically on resource creation.
+      jsonPointers:
+        - /spec/ipFamilies
+        - /spec/ipFamilyPolicy
