@@ -12,6 +12,7 @@ resources:
   - resources/ltdevents.yaml
   - resources/neophile.yaml
   - resources/safirdemo.yaml
+  - resources/sqrbot.yaml
   - resources/sqrbot-jr.yaml
   - resources/sqrbot-jsick.yaml
   - resources/templatebot.yaml
