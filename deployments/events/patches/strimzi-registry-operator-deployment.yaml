@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: strimzi-registry-operator
+  spec:
+    template:
+      spec:
+        containers:
+          - name: operator
+            env:
+              - name: SSR_CLUSTER_NAME
+                value: events
+              - name: SSR_NAMESPACE
+                value: events
