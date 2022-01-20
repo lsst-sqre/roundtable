@@ -6,4 +6,13 @@
   "schedule": [
     "before 6am on Monday"
   ]
+  "packageRules": [
+    {
+      "matchPaths": [
+        "deployments/sqrbot-jsick",
+        "deployments/templatebot-jsick"
+      ],
+      "enabled": false
+    }
+  ]
 }
