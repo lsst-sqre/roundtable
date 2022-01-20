@@ -3,13 +3,13 @@ kind: Kustomization
 
 images:
   - name: lsstsqre/strimzi-registry-operator
-    newTag: tickets-DM-33317
+    newTag: 0.4.0
 
 resources:
   - resources/kafka.yaml
   # Schema Registry
   - resources/schemaregistry-user.yaml
-  - github.com/lsst-sqre/strimzi-registry-operator.git//manifests?ref=tickets/DM-33317
+  - github.com/lsst-sqre/strimzi-registry-operator.git//manifests?ref=0.4.0
   - resources/schemaregistry.yaml
   - resources/schemas-topic.yaml
   # Kafka topics
