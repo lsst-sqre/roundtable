@@ -25,6 +25,10 @@ The Grafana dashboard is online at https://monitoring.roundtable.lsst.codes.
 
 The prometheus chart is large and complex, so some hand-holding may be required when upgrading it to a new upstream release.
 
+One of the custom resource definitions (CRDs) is too long for Argo CD to be able to update using its normal mechanism, so every sync that attempts to update that CRD will fail.
+To successfully sync the application, find the CRD that is failing to update, select :guilabel:`Sync` from its menu, and select :guilabel:`Replace` from the resulting sync configuration menu before syncing.
+This should successfully sync that CRD and then the rest of the application should sync correctly.
+
 You may have to delete the existing prometheus-grafana replica set to release its underlying storage, and then delete the new prometheus-grafana pod to force it to re-attempt to attach its storage.
 
 Argo CD will often not complete all updates in the first, automatically triggered pass.
