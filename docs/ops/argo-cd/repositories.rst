@@ -11,7 +11,7 @@ We also include the Argo CD repository, https://github.com/argoproj/argo-cd, bec
 
 .. seealso::
 
-   `Repositories <https://argoproj.github.io/argo-cd/operator-manual/declarative-setup/#repositories>`_ in the Argo CD documentation.
+   `Repositories <https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#repositories>`_ in the Argo CD documentation.
 
 .. _`argocd-cm.yaml`: https://github.com/lsst-sqre/roundtable/blob/master/deployments/argo-cd/patches/argocd-cm.yaml
 .. _`kustomization.yaml`: https://github.com/lsst-sqre/roundtable/blob/master/deployments/argo-cd/kustomization.yaml

@@ -17,7 +17,7 @@ app-land app deployment guide
 .. rubric:: Overview
 
 The ``app-land`` app is responsible for deploying most, if not all, of Roundtable's tenant applications.
-It follows the `app of apps <https://argoproj.github.io/argo-cd/operator-manual/cluster-bootstrapping/#app-of-apps-pattern>`_ pattern, equivalent to how the :doc:`roundtable <../roundtable/index>` application deploys core infrastructure.
+It follows the `app of apps <https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/#app-of-apps-pattern>`_ pattern, equivalent to how the :doc:`roundtable <../roundtable/index>` application deploys core infrastructure.
 
 .. rubric:: Bootstrapping the Application
 

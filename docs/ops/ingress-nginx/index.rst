@@ -16,7 +16,7 @@ ingress-nginx app deployment guide
 
 .. rubric:: Overview
 
-This Argo CD Application deploys and configures `ingress-nginx <https://github.com/kubernetes/ingress-nginx>`__ from its `Helm chart repository <https://github.com/kubernetes/ingress-nginx/tree/master/charts/ingress-nginx>`__.
+This Argo CD Application deploys and configures `ingress-nginx <https://github.com/kubernetes/ingress-nginx>`__ from its `Helm chart repository <https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx>`__.
 
 .. rubric:: Upgrading
 

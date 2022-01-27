@@ -3,7 +3,7 @@ Argo CD RBAC configuration
 ##########################
 
 This page describes the role-based access control (RBAC) configuration for the Roundtable Argo CD instance and is intended for Roundtable operators.
-For background, see `Argo CD's RBAC documentation <https://argoproj.github.io/argo-cd/operator-manual/rbac/>`_.
+For background, see `Argo CD's RBAC documentation <https://argo-cd.readthedocs.io/en/stable/operator-manual/rbac/>`_.
 
 The RBAC is configured through the `argocd-rbac-cm.yaml`_ patch.
 
