@@ -17,7 +17,7 @@ security app deployment guide
 .. rubric:: Overview
 
 The ``security`` app is responsible for deploying security services for Roundtable, most notably Vault and all of its dependencies.
-It follows the `app of apps <https://argoproj.github.io/argo-cd/operator-manual/cluster-bootstrapping/#app-of-apps-pattern>`__ pattern.
+It follows the `app of apps <https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/#app-of-apps-pattern>`__ pattern.
 It deploys:
 
 - :doc:`ingress-nginx <../ingress-nginx/index>` for shared ingress.

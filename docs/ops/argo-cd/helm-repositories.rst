@@ -8,6 +8,6 @@ Note that the default repository (which provides the ``stable/<chart>`` charts f
 
 .. seealso::
 
-   `Helm Chart Repositories <https://argoproj.github.io/argo-cd/operator-manual/declarative-setup/#helm-chart-repositories>`_ in the Argo CD documentation.
+   `Helm Chart Repositories <https://argo-cd.readthedocs.io/en/stable/operator-manual/declarative-setup/#helm-chart-repositories>`_ in the Argo CD documentation.
 
 .. _`argocd-cm.yaml`: https://github.com/lsst-sqre/roundtable/blob/master/deployments/argo-cd/patches/argocd-cm.yaml

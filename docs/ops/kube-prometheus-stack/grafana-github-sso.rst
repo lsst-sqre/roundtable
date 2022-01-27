@@ -14,6 +14,8 @@ GitHub SSO is primarily configured through the `values.yaml file`_.
 The Grafana Helm chart translates YAML into the standard `grafana.ini configuration file <https://grafana.com/docs/grafana/latest/installation/configuration/>`_.
 See the Grafana documentation on `GitHub OAuth2 Authentication <https://grafana.com/docs/grafana/latest/auth/github/>`_, specifically.
 
+.. _values.yaml file: https://github.com/lsst-sqre/roundtable/blob/master/deployments/kube-prometheus-stack/values.yaml
+
 The only part of the configuration not included in the `values.yaml file`_ is the GitHub OAuth client secret.
 This value is obtained from an environment variable override mounted from the ``grafana-env`` secret resource (see the ``envFromSecret`` field in the `values.yaml file`_).
 This secret, in turn, is created from a ``VaultSecret`` that pulls the secret information from the ``grafana`` secret in the Roundtable Vault secret tree.

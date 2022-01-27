@@ -17,7 +17,7 @@ roundtable app deployment guide
 .. rubric:: Overview
 
 The ``roundtable`` app is responsible for deploying the core infrastructure of Roundtable.
-It follows the `app of apps <https://argoproj.github.io/argo-cd/operator-manual/cluster-bootstrapping/#app-of-apps-pattern>`__ pattern.
+It follows the `app of apps <https://argo-cd.readthedocs.io/en/stable/operator-manual/cluster-bootstrapping/#app-of-apps-pattern>`__ pattern.
 It deploys:
 
 - Namespaces for core infrastructure apps.
