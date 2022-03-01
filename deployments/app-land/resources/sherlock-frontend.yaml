@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sherlock
+spec:
+  destination:
+    namespace: sherlock
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: deployments/sherlock-frontend
+    repoURL: https://github.com/lsst-sqre/roundtable
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
