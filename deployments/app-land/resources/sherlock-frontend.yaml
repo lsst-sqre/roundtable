@@ -1,3 +1,11 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: sherlock
+spec:
+  finalizers:
+    - kubernetes
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
