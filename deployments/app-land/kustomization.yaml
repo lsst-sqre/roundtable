@@ -16,6 +16,7 @@ resources:
   - resources/sqrbot-jr.yaml
   - resources/templatebot.yaml
   - resources/segwarides.yaml
+  - resources/sherlock-frontend.yaml
   - resources/ook.yaml
   - resources/rubintv.yaml
   # Test versions of apps; to re-enable these also re-enable the events API
