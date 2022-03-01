@@ -3,5 +3,5 @@ name: neophile
 version: 1.0.0
 dependencies:
   - name: neophile
-    version: 0.3.2
+    version: 0.3.3
     repository: https://lsst-sqre.github.io/charts/
