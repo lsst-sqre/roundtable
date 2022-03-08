@@ -4,6 +4,6 @@ kind: Kustomization
 namespace: sherlock
 
 resources:
-  - github.com/lsst-sqre/sherlock-frontend.git//manifests/base?ref=0.0.8
+  - github.com/lsst-sqre/sherlock-frontend.git//manifests/base?ref=0.0.9
   - resources/sherlock-ingress.yaml
   - resources/secret.yaml
