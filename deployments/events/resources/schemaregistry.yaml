@@ -4,4 +4,4 @@ metadata:
   name: schemaregistry
 spec:
   strimzi-version: v1beta1
-  listener: internal
+  listener: tls
