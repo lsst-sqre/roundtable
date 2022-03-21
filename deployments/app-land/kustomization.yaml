@@ -6,10 +6,12 @@ resources:
   - resources/roundtable-ingress.yaml
   # Namespaces
   - resources/lsst-the-docs-ns.yaml
+  - resources/monitoring-ns.yaml
   # Applications
   - resources/checkerboard.yaml
   - resources/lsst-the-docs.yaml
   - resources/ltdevents.yaml
+  - resources/monitoring.yaml
   - resources/neophile.yaml
   - resources/safirdemo.yaml
   - resources/sqrbot.yaml
