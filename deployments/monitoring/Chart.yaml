@@ -1,0 +1,8 @@
+apiVersion: v2
+name: monitoring
+version: 1.0.0
+description: SQuaRE packaging of monitoring apps
+dependencies:
+  - name: influxdb2
+    version: 2.0.10
+    repository: https://helm.influxdata.com/
