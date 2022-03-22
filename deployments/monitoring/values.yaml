@@ -15,8 +15,8 @@ influxdb2:
     secretName: monitoring-tls
     # InfluxDB2 can't run behind a routed path--it must be on the root.
     # Note that this requires a CNAME
-    # from: _acme_challenge.<hostname>.<domain>
-    # to: _acme_challenge.tls.<domain>
+    # from: _acme-challenge.<hostname>.<domain>
+    # to: _acme-challenge.tls.<domain>
     # cf https://phalanx.lsst.io/ops/cert-issuer/bootstrapping.html
     ingressClassName: nginx
     annotations:
