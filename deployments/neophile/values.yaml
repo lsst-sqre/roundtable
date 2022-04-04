@@ -36,6 +36,8 @@ neophile:
       - owner: "lsst-sqre"
         repo: "rubin-tv"
       - owner: "lsst-sqre"
+        repo: "safir"
+      - owner: "lsst-sqre"
         repo: "safirdemo"
       - owner: "lsst-sqre"
         repo: "segwarides"
@@ -45,6 +47,8 @@ neophile:
         repo: "strimzi-registry-operator"
       - owner: "lsst-sqre"
         repo: "templatebot"
+      - owner: "lsst-sqre"
+        repo: "templatekit"
       # Ignore during active development
       # - owner: "lsst-sqre"
       #   repo: "times-square"
