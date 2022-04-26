@@ -5,8 +5,8 @@ namespace: events
 
 images:
   - name: lsstsqre/rubintv
-    newTag: 0.1.1
+    newTag: 0.1.2
 
 resources:
-  - github.com/lsst-sqre/rubin-tv.git//manifests/base?ref=0.1.1
+  - github.com/lsst-sqre/rubin-tv.git//manifests/base?ref=0.1.2
   - resources/secret.yaml
