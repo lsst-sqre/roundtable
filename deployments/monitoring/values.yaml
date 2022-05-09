@@ -9,22 +9,81 @@ influxdb2:
   # -- InfluxDB2 ingress configuration.
   ingress:
     # @default -- False
-    enabled: true
-    hostname: monitoring.lsst.codes
-    tls: true
-    secretName: monitoring-tls
-    # InfluxDB2 can't run behind a routed path--it must be on the root.
-    # Note that this requires a CNAME
-    # from: _acme-challenge.<hostname>.<domain>
-    # to: _acme-challenge.tls.<domain>
-    # cf https://phalanx.lsst.io/ops/cert-issuer/bootstrapping.html
-    ingressClassName: nginx
-    annotations:
-      kubernetes.io/ingress.class: "nginx"
-      nginx.ingress.kubernetes.io/rewrite-target: /
-      cert-manager.io/cluster-issuer: letsencrypt-issuer
-    path: /
-    pathType: Prefix
+    # This is a lie.  We define our own ingress template that knows how
+    # to route to both influxdb2 and chronograf, and use it.
+    enabled: false
 
-# -- Path to the Vault secrets (`secret/k8s_operator/<hostname>`)
-vaultSecretsPath: "secret/k8s_operator/roundtable"
+chronograf:
+  ## Image Settings
+  ##
+  image:
+    tag: 1.9.4
+    pullPolicy: IfNotPresent
+
+  ## Specify a service type
+  ## ClusterIP is default
+  ## ref: http://kubernetes.io/docs/user-guide/services/
+  ##
+  service:
+    replicas: 1
+    type: ClusterIP
+
+  ## Persist data to a persistent volume
+  ##
+  persistence:
+    enabled: true
+    ## chronograf data Persistent Volume Storage Class
+    ## If defined, storageClassName: <storageClass>
+    ## If set to "-", storageClassName: "", which disables dynamic provisioning
+    ## If undefined (the default) or set to null, no storageClassName spec is
+    ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+    ##   GKE, AWS & OpenStack)
+    ##
+    size: 20Gi
+
+  ## Configure resource requests and limits
+  ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
+  ##
+  resources:
+    requests:
+      memory: 1024Mi
+      cpu: 1
+    limits:
+      memory: 32Gi
+      cpu: 4
+
+  ## Configure the ingress object to hook into existing infastructure
+  ## ref : http://kubernetes.io/docs/user-guide/ingress/
+  ## OPTIONALLY you can set .Values.ingress.secretName to set which secret to use
+  ##
+  ingress:
+    ## see influxdb2 ingress
+    enabled: false
+
+  oauth:
+    ## This is a lie: see below.
+    enabled: false
+  ## OAuth Settings for OAuth Providers
+  ## We do not set these here.  What we do is set:
+  ##  - TOKEN_SECRET
+  ##  - GH_CLIENT_ID
+  ##  - GH_CLIENT_SECRET
+  ##  - GH_ORGS
+  ## in the environment.  The secrets should come from the "monitoring"
+  ## secret, which is a VaultSecret, and the rest can just be injected
+  ## into the deployment env directly.
+
+  ## Extra environment variables that will be passed onto deployment pods
+  env:
+    BASE_PATH: /chronograf
+    CUSTOM_AUTO_REFRESH: "1s=1000"
+    GH_CLIENT_ID: "a12e66e2a1d213b2bb17"
+    GH_ORGS: "lsst-sqre"
+    HOST_PAGE_DISABLED: true
+    INFLUXDB_URL: "https://monitoring.lsst.codes"
+    INFLUXDB_ORG: "square"
+  ## INFLUX_TOKEN should be in the monitoring secret as well as
+  ## TOKEN_SECRET and GH_CLIENT_SECRET
+  envFromSecret: monitoring
+  updateStrategy:
+    type: Recreate
