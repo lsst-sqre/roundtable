@@ -46,6 +46,8 @@ neophile:
       - owner: "lsst-sqre"
         repo: "semaphore"
       - owner: "lsst-sqre"
+        repo: "sherlock"
+      - owner: "lsst-sqre"
         repo: "strimzi-registry-operator"
       - owner: "lsst-sqre"
         repo: "templatebot"
