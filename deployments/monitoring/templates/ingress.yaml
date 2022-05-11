@@ -17,10 +17,10 @@ spec:
           - path: /chronograf
             pathType: Prefix
             backend:
-              serviceName: chronograf
+              serviceName: monitoring-chronograf
               servicePort: 80
           - path: /
             pathType: Prefix
             backend:
-              serviceName: influxdb2
+              serviceName: monitoring-influxdb2
               servicePort: http
