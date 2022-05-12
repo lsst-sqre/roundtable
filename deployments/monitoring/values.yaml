@@ -82,8 +82,9 @@ chronograf:
     HOST_PAGE_DISABLED: true
     INFLUXDB_URL: "https://monitoring.lsst.codes"
     INFLUXDB_ORG: "square"
-  ## INFLUX_TOKEN should be in the monitoring secret as well as
-  ## TOKEN_SECRET and GH_CLIENT_SECRET
+  ## INFLUXDB_TOKEN should be in the monitoring secret as well as
+  ## TOKEN_SECRET and GH_CLIENT_SECRET.  Note that INFLUX_TOKEN is for
+  ## InfluxDBv1 and INFLUXDB_TOKEN is for v2.
   envFromSecret: monitoring
   updateStrategy:
     type: Recreate
