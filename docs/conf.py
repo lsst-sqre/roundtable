@@ -116,6 +116,10 @@ rst_epilog = """
    :target: https://cd.roundtable.lsst.codes/applications/events
    :alt: Events app status
 
+.. |monitoring-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=monitoring
+   :target: https://cd.roundtable.lsst.codes/applications/monitoring
+   :alt: Monitoring app status
+
 .. |app-land-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=app-land
    :target: https://cd.roundtable.lsst.codes/applications/app-land
    :alt: App Land app status
