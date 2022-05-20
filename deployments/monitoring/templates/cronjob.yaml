@@ -1,0 +1,24 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: bucketmapper
+  namespace: monitoring
+spec:
+  schedule: "*/15 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: bucketmapper
+            image: {{ .Values.cronjob.image.repository }}:{{ .Values.cronjob.image.tag }}"
+            env:
+              - name: "INFLUXDB_TOKEN"
+                valueFrom:
+                  secretKeyRef:
+                    name: "monitoring"
+                    key: "INFLUXDB_TOKEN"
+              - name: "INFLUXDB_ORG"
+                value: "square"
+              - name: "INFLUXDB_URL"
+                value: "https://monitoring.lsst.codes"
