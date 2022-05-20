@@ -9,9 +9,10 @@ spec:
     spec:
       template:
         spec:
+          restartPolicy: Never
           containers:
           - name: bucketmapper
-            image: {{ .Values.cronjob.image.repository }}:{{ .Values.cronjob.image.tag }}"
+            image: "{{ .Values.cronjob.image.repository }}:{{ .Values.cronjob.image.tag }}"
             env:
               - name: "INFLUXDB_TOKEN"
                 valueFrom:
