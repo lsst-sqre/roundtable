@@ -9,6 +9,8 @@ neophile:
       - owner: "lsst-sqre"
         repo: "checkerboard"
       - owner: "lsst-sqre"
+        repo: "crawlspace"
+      - owner: "lsst-sqre"
         repo: "datalinker"
       - owner: "lsst-sqre"
         repo: "documenteer"
