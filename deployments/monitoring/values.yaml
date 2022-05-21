@@ -95,4 +95,4 @@ cronjob:
     # -- repository for bucket-mapper
     repository: ghcr.io/lsst-sqre/influx-bucket-mapper
     # -- tag for bucket-mapper
-    tag: 0.1.0
+    tag: 0.1.2

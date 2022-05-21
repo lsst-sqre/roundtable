@@ -23,3 +23,5 @@ spec:
                 value: "square"
               - name: "INFLUXDB_URL"
                 value: "https://monitoring.lsst.codes"
+              # - name: "DEBUG"
+              #   value: "set to non-empty to enable debug logging"
