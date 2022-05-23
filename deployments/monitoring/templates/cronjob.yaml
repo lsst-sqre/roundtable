@@ -10,9 +10,19 @@ spec:
       template:
         spec:
           restartPolicy: Never
+          automountServiceAccountToken: false
           containers:
           - name: bucketmapper
             image: "{{ .Values.cronjob.image.repository }}:{{ .Values.cronjob.image.tag }}"
+            securityContext:
+              allowPrivilegeEscalation: false
+              runAsNonRoot: true
+              runAsUser: 405
+              runAsGroup: 100
+              capabilities:
+                drop:
+                  - all
+              readOnlyRootFilesystem: true
             env:
               - name: "INFLUXDB_TOKEN"
                 valueFrom:
