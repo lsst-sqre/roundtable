@@ -17,6 +17,7 @@ Although this documentation is openly available, application developers shouldn'
    events/index
    ingress-nginx/index
    kube-prometheus-stack/index
+   monitoring/index
    strimzi/index
    vault/index
    vault-secrets-operator/index

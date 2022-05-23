@@ -1,0 +1,37 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: bucketmapper
+  namespace: monitoring
+spec:
+  schedule: "*/15 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: Never
+          automountServiceAccountToken: false
+          containers:
+          - name: bucketmapper
+            image: "{{ .Values.cronjob.image.repository }}:{{ .Values.cronjob.image.tag }}"
+            securityContext:
+              allowPrivilegeEscalation: false
+              runAsNonRoot: true
+              runAsUser: 405
+              runAsGroup: 100
+              capabilities:
+                drop:
+                  - all
+              readOnlyRootFilesystem: true
+            env:
+              - name: "INFLUXDB_TOKEN"
+                valueFrom:
+                  secretKeyRef:
+                    name: "monitoring"
+                    key: "INFLUXDB_TOKEN"
+              - name: "INFLUXDB_ORG"
+                value: "square"
+              - name: "INFLUXDB_URL"
+                value: "https://monitoring.lsst.codes"
+              # - name: "DEBUG"
+              #   value: "set to non-empty to enable debug logging"
