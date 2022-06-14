@@ -6,9 +6,6 @@ vault:
     enabled: false
 
   server:
-    image:
-      tag: "1.9.0"
-
     ingress:
       enabled: true
       annotations:
