@@ -5,6 +5,8 @@ metadata:
 data:
   url: https://cd.roundtable.lsst.codes
   statusbadge.enabled: 'true'
+  resource.compareoptions: |
+    ignoreAggregatedRoles: true
   # Dex handles OAuth single-sign-on (SSO).
   dex.config: |
     connectors:
