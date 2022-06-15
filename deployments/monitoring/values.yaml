@@ -89,6 +89,74 @@ chronograf:
   updateStrategy:
     type: Recreate
 
+telegraf-ds:
+  env:
+    # This pulls HOSTNAME from the node, not the pod.
+    - name: HOSTNAME
+      valueFrom:
+        fieldRef:
+          fieldPath: spec.nodeName
+    # In test clusters where hostnames are resolved in /etc/hosts on each node,
+    # the HOSTNAME is not resolvable from inside containers
+    # So inject the host IP as well
+    - name: HOSTIP
+      valueFrom:
+        fieldRef:
+          fieldPath: status.hostIP
+    # Mount the host filesystem and set the appropriate env variables.
+    # ref: https://github.com/influxdata/telegraf/blob/master/docs/FAQ.md
+    # HOST_PROC is required by the cpu, disk, diskio, kernel and processes input plugins
+    - name: "HOST_PROC"
+      value: "/hostfs/proc"
+    # HOST_SYS is required by the diskio plugin
+    - name: "HOST_SYS"
+      value: "/hostfs/sys"
+    - name: "HOST_MOUNT_PREFIX"
+      value: "/hostfs"
+    - name: "INFLUXDB_TOKEN"
+      valueFrom:
+        secretKeyRef:
+          name: "monitoring"
+          key: "INFLUXDB_TOKEN"
+    - name: "INFLUXDB_ORG"
+      value: "square"
+    - name: "INFLUXDB_URL"
+      value: "https://monitoring.lsst.codes"
+  override_config:
+    toml: |+
+      [global_tags]
+        cluster = "roundtable"
+      [agent]
+        interval = "120s"
+        flush_interval = "120s"
+        collection_jitter = "10s"
+        logfile = ""
+        metric_batch_size = 10000
+        metric_buffer_limit = 100000
+      [[inputs.mem]]
+
+      [[inputs.diskio]]
+      [[inputs.kernel]]
+      [[inputs.mem]]
+      [[inputs.net]]
+      [[inputs.processes]]
+      [[inputs.swap]]
+      [[inputs.system]]
+      
+      [[inputs.cpu]]
+      percpu = true
+      totalcpu = true
+      collect_cpu_time = false
+      report_active = false
+
+      [[inputs.disk]]
+      ignore_fs = ["tmpfs", "devtmpfs", "devfs", "iso9660", "overlay", "aufs", "squashfs"]
+      [[outputs.influxdb_v2]]
+        urls = [ "$INFLUXDB_URL" ]
+        bucket = "roundtable_internal_"
+        organization = "$INFLUXDB_ORG"
+        token = "$INFLUXDB_TOKEN"
+
 cronjob:
   # -- image for bucket-mapping and restart-mapping cronjob
   image:
