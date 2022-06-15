@@ -90,9 +90,9 @@ chronograf:
     type: Recreate
 
 cronjob:
-  # -- image for bucket-mapping cronjob
+  # -- image for bucket-mapping and restart-mapping cronjob
   image:
-    # -- repository for bucket-mapper
-    repository: ghcr.io/lsst-sqre/influx-bucket-mapper
-    # -- tag for bucket-mapper
-    tag: 0.1.3
+    # -- repository for rubin-influx-tools
+    repository: ghcr.io/lsst-sqre/rubin-influx-tools
+    # -- tag for rubin-influx-tools
+    tag: 0.1.2
