@@ -163,4 +163,4 @@ cronjob:
     # -- repository for rubin-influx-tools
     repository: ghcr.io/lsst-sqre/rubin-influx-tools
     # -- tag for rubin-influx-tools
-    tag: 0.1.3
+    tag: 0.1.5
