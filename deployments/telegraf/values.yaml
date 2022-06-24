@@ -1,0 +1,32 @@
+telegraf:
+  # Remove processors, inputs, and outputs: use supplied config instead.
+  config:
+    processors: []
+    inputs: []
+    outputs: []
+  args:
+  - "--config"
+  - "/etc/telegraf-config/telegraf.conf"
+  # We need the additional rules for prometheus scraping.
+  rbac:
+    clusterWide: true
+  env:
+  - name: "INFLUX_TOKEN"
+    valueFrom:
+      secretKeyRef:
+        name: "telegraf"
+        key: "influx-token"
+  - name: "INFLUXDB_ORG"
+    value: "square"
+  - name: "INFLUXDB_URL"
+    value: "https://monitoring.lsst.codes"
+  service:
+    enabled: false
+  tplVersion: 2
+  volumes:
+  - name: telegraf-config
+    configMap:
+      name: telegraf-config
+  mountPoints:
+  - name: telegraf-config
+    mountPath: /etc/telegraf-config
