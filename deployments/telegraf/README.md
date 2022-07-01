@@ -6,7 +6,7 @@ SQuaRE packaging of telegraf app
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://helm.influxdata.com | telegraf | 1.8.1 |
+| https://helm.influxdata.com | telegraf | 1.8.18 |
 
 ## Values
 
