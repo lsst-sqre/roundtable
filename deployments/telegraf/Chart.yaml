@@ -1,0 +1,8 @@
+apiVersion: v2
+name: telegraf
+version: 1.8.18
+description: SQuaRE packaging of telegraf app
+dependencies:
+  - name: telegraf
+    version: 1.8.18
+    repository: https://helm.influxdata.com
