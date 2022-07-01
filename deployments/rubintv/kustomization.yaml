@@ -5,8 +5,8 @@ namespace: events
 
 images:
   - name: lsstsqre/rubintv
-    newTag: tickets-DM-35341
+    newTag: 0.1.13
 
 resources:
-  - github.com/lsst-sqre/rubin-tv.git//manifests/base?ref=0.1.4
+  - github.com/lsst-sqre/rubin-tv.git//manifests/base?ref=0.1.13
   - resources/secret.yaml
