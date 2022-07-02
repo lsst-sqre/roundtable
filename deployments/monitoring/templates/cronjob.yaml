@@ -28,7 +28,7 @@ spec:
                 valueFrom:
                   secretKeyRef:
                     name: "monitoring"
-                    key: "INFLUXDB_TOKEN"
+                    key:  "influx-alert-token"
               - name: "INFLUXDB_ORG"
                 value: "square"
               - name: "INFLUXDB_URL"
