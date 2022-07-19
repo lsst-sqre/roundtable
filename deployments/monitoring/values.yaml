@@ -12,6 +12,8 @@ influxdb2:
     # This is a lie.  We define our own ingress template that knows how
     # to route to both influxdb2 and chronograf, and use it.
     enabled: false
+  livenessProbe:
+    failureThreshold: 10
 
 chronograf:
   ## Image Settings
