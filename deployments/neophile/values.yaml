@@ -16,10 +16,11 @@ neophile:
         repo: "documenteer"
       - owner: "lsst-sqre"
         repo: "gafaelfawr"
-      - owner: "lsst-sqre"
-        repo: "kafka-aggregator"
-      - owner: "lsst-sqre"
-        repo: "kafka-connect-manager"
+      # Disabled while Kafka requires Python 3.9
+      # - owner: "lsst-sqre"
+      #   repo: "kafka-aggregator"
+      # - owner: "lsst-sqre"
+      #   repo: "kafka-connect-manager"
       - owner: "lsst-sqre"
         repo: "lsst-templatebot-aide"
       - owner: "lsst-sqre"
@@ -51,8 +52,9 @@ neophile:
         repo: "sherlock"
       - owner: "lsst-sqre"
         repo: "strimzi-registry-operator"
-      - owner: "lsst-sqre"
-        repo: "templatebot"
+      # Disabled while Kafka requires Python 3.9
+      # - owner: "lsst-sqre"
+      #   repo: "templatebot"
       - owner: "lsst-sqre"
         repo: "templatekit"
       # Ignore during active development
