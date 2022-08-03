@@ -5,6 +5,7 @@ metadata:
   namespace: monitoring
 spec:
   schedule: "*/15 * * * *"
+  successfulJobsHistoryLimit: 1
   jobTemplate:
     spec:
       template:
@@ -52,6 +53,7 @@ metadata:
   namespace: monitoring
 spec:
   schedule: "3-59/15 * * * *"
+  successfulJobsHistoryLimit: 1
   jobTemplate:
     spec:
       template:
@@ -90,6 +92,7 @@ metadata:
   name: taskmaker
   namespace: monitoring
 spec:
+  successfulJobsHistoryLimit: 1
   schedule: "6-59/15 * * * *"
   jobTemplate:
     spec:
