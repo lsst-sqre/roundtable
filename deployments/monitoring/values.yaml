@@ -160,9 +160,9 @@ telegraf-ds:
         token = "$INFLUXDB_TOKEN"
 
 cronjob:
-  # -- image for bucket-mapping and restart-mapping cronjob
+  # -- image for monitoring-related cronjobs
   image:
     # -- repository for rubin-influx-tools
     repository: ghcr.io/lsst-sqre/rubin-influx-tools
     # -- tag for rubin-influx-tools
-    tag: 0.1.19
+    tag: 0.1.20
