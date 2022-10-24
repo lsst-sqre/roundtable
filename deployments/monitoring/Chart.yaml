@@ -4,7 +4,7 @@ version: 1.1.0
 description: SQuaRE packaging of monitoring apps
 dependencies:
   - name: influxdb2
-    version: 2.1.0
+    version: 2.1.1
     repository: https://helm.influxdata.com/
   - name: chronograf
     version: 1.2.5
