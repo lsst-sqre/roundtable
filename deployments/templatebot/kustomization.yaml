@@ -15,8 +15,8 @@ patches:
   - patches/templatebot-aide-configmap.yaml
   - patches/templatebot-aide-deployment.yaml
 
-# images:
-#   - name: lsstsqre/templatebot
-#     newTag: tickets-DM-32710
+images:
   - name: lsstsqre/templatebot-aide
     newTag: 0.5.0
+#   - name: lsstsqre/templatebot
+#     newTag: tickets-DM-32710
