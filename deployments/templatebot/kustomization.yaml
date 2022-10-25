@@ -7,7 +7,7 @@ resources:
   - resources/templatebot-vaultsecret.yaml
   - resources/templatebot-aide-vaultsecret.yaml
   - github.com/lsst-sqre/templatebot.git//manifests/base?ref=0.2.0
-  - github.com/lsst-sqre/lsst-templatebot-aide.git//manifests/base?ref=0.4.0
+  - github.com/lsst-sqre/lsst-templatebot-aide.git//manifests/base?ref=0.5.0
 
 patches:
   - patches/templatebot-configmap.yaml
@@ -18,5 +18,5 @@ patches:
 # images:
 #   - name: lsstsqre/templatebot
 #     newTag: tickets-DM-32710
-#   - name: lsstsqre/templatebot-aide
-#     newTag: tickets-DM-32710
+  - name: lsstsqre/templatebot-aide
+    newTag: 0.5.0
