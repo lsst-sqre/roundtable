@@ -30,6 +30,14 @@ influxdb2:
   readinessProbe:
     periodSeconds: 10
     failureThreshold: 80
+  # -- We need some more memory than the default.
+  resources:
+    limits:
+      cpu: 2.0
+      memory: 4Gi
+    requests:
+      cpu: 250m
+      memory: 256Mi
 
 chronograf:
   ## Image Settings
