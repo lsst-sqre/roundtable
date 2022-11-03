@@ -20,24 +20,33 @@ influxdb2:
     initialDelaySeconds: 30
     periodSeconds: 10
     failureThreshold: 60
-  # -- InfluxDB2 liveness probe.  The startup probe doesn't seem to be
-  # respected.
+  # -- InfluxDB2 liveness probe.
   livenessProbe:
     periodSeconds: 10
-    failureThreshold: 80
-  # -- InfluxDB2 readiness probe.  The container keeps keeling over
-  # after two minutes.
-  readinessProbe:
-    periodSeconds: 10
-    failureThreshold: 80
+    failureThreshold: 10
   # -- We need some more memory than the default.
   resources:
     limits:
-      cpu: 2.0
-      memory: 8Gi
+      cpu: 4.0
+      memory: 30Gi
     requests:
-      cpu: 0.5
-      memory: 2Gi
+      cpu: 1.0
+      memory: 1Gi
+  # -- Schedule onto the monitoring pool
+  tolerations:
+  - key: "dedicated"
+    operator: "Equal"
+    value: "monitoring"
+    effect: "NoExecute"
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: "dedicated"
+            operator: "In"
+            values:
+            - "monitoring"
 
 chronograf:
   ## Image Settings
@@ -75,8 +84,24 @@ chronograf:
       memory: 1024Mi
       cpu: 1
     limits:
-      memory: 32Gi
+      memory: 30Gi
       cpu: 4
+
+  # -- Schedule onto the monitoring pool
+  tolerations:
+  - key: "dedicated"
+    operator: "Equal"
+    value: "monitoring"
+    effect: "NoExecute"
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: "dedicated"
+            operator: "In"
+            values:
+            - "monitoring"
 
   ## Configure the ingress object to hook into existing infastructure
   ## ref : http://kubernetes.io/docs/user-guide/ingress/
@@ -182,6 +207,16 @@ telegraf-ds:
         bucket = "roundtable_internal_"
         organization = "$INFLUXDB_ORG"
         token = "$INFLUXDB_TOKEN"
+  # -- Allow schedule onto all pools
+  tolerations:
+  - key: "dedicated"
+    operator: "Equal"
+    value: "monitoring"
+    effect: "NoExecute"
+  - key: "dedicated"
+    operator: "Equal"
+    value: "events"
+    effect: "NoExecute"
 
 cronjob:
   # -- image for monitoring-related cronjobs
@@ -190,3 +225,18 @@ cronjob:
     repository: ghcr.io/lsst-sqre/rubin-influx-tools
     # -- tag for rubin-influx-tools
     tag: 0.1.23
+  # -- Schedule onto the monitoring pool
+  tolerations:
+  - key: "dedicated"
+    operator: "Equal"
+    value: "monitoring"
+    effect: "NoExecute"
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: "dedicated"
+            operator: "In"
+            values:
+            - "monitoring"
