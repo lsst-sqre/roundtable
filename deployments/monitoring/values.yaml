@@ -34,10 +34,10 @@ influxdb2:
   resources:
     limits:
       cpu: 2.0
-      memory: 4Gi
+      memory: 8Gi
     requests:
-      cpu: 250m
-      memory: 256Mi
+      cpu: 0.5
+      memory: 2Gi
 
 chronograf:
   ## Image Settings
