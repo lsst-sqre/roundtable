@@ -230,7 +230,7 @@ cronjob:
   - key: "dedicated"
     operator: "Equal"
     value: "monitoring"
-    effect: "NoExecute"
+    effect: "NoSchedule"
   affinity:
     nodeAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
