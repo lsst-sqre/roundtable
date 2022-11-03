@@ -17,7 +17,14 @@ influxdb2:
   # to start up and check its shards, and that will cause a crash loop.
   startupProbe:
     enabled: true
+    initialDelaySeconds: 30
+    periodSeconds: 10
     failureThreshold: 60
+  # -- InfluxDB2 liveness probe.  The startup probe doesn't seem to be
+  # respected.
+  livenessProbe:
+    periodSeconds: 10
+    failureThreshold: 80
 
 chronograf:
   ## Image Settings
