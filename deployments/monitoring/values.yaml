@@ -16,6 +16,7 @@ influxdb2:
   # because when influx has many full shards, it takes a very long time
   # to start up and check its shards, and that will cause a crash loop.
   startupProbe:
+    enabled: true
     failureThreshold: 60
 
 chronograf:
