@@ -25,6 +25,11 @@ influxdb2:
   livenessProbe:
     periodSeconds: 10
     failureThreshold: 80
+  # -- InfluxDB2 readiness probe.  The container keeps keeling over
+  # after two minutes.
+  readinessProbe:
+    periodSeconds: 10
+    failureThreshold: 80
 
 chronograf:
   ## Image Settings
