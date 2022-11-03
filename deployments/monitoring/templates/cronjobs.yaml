@@ -12,6 +12,14 @@ spec:
         spec:
           restartPolicy: Never
           automountServiceAccountToken: false
+          {{- with .Values.cronjob.tolerations }}
+          tolerations:
+{{ toYaml . | indent 12 }}
+          {{- end }}
+          {{- with .Values.cronjob.affinity }}
+          affinity:
+{{ toYaml . | indent 12 }}
+          {{- end }}
           containers:
           - name: bucketmaker
             image: "{{ .Values.cronjob.image.repository }}:{{ .Values.cronjob.image.tag }}"
@@ -60,6 +68,14 @@ spec:
         spec:
           restartPolicy: Never
           automountServiceAccountToken: false
+          {{- with .Values.cronjob.tolerations }}
+          tolerations:
+{{ toYaml . | indent 12 }}
+          {{- end }}
+          {{- with .Values.cronjob.affinity }}
+          affinity:
+{{ toYaml . | indent 12 }}
+          {{- end }}
           containers:
           - name: bucketmapper
             image: "{{ .Values.cronjob.image.repository }}:{{ .Values.cronjob.image.tag }}"
@@ -100,6 +116,14 @@ spec:
         spec:
           restartPolicy: Never
           automountServiceAccountToken: false
+          {{- with .Values.cronjob.tolerations }}
+          tolerations:
+{{ toYaml . | indent 12 }}
+          {{- end }}
+          {{- with .Values.cronjob.affinity }}
+          affinity:
+{{ toYaml . | indent 12 }}
+          {{- end }}
           containers:
           - name: taskmaker
             image: "{{ .Values.cronjob.image.repository }}:{{ .Values.cronjob.image.tag }}"
