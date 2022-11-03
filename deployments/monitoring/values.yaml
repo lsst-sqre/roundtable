@@ -37,7 +37,7 @@ influxdb2:
   - key: "dedicated"
     operator: "Equal"
     value: "monitoring"
-    effect: "NoExecute"
+    effect: "NoSchedule"
   affinity:
     nodeAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
@@ -92,7 +92,7 @@ chronograf:
   - key: "dedicated"
     operator: "Equal"
     value: "monitoring"
-    effect: "NoExecute"
+    effect: "NoSchedule"
   affinity:
     nodeAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
@@ -212,7 +212,7 @@ telegraf-ds:
   - key: "dedicated"
     operator: "Equal"
     value: "monitoring"
-    effect: "NoExecute"
+    effect: "NoSchedule"
   - key: "dedicated"
     operator: "Equal"
     value: "events"
