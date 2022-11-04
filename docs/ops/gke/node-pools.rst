@@ -11,15 +11,20 @@ Node pools for the Roundtable GKE cluster
      - vCPU / node
      - Memory (GB) / node
    * - :ref:`default-pool`
-     - 4
+     - 6
      - n1-standard-2
      - 2
      - 7.5
    * - :ref:`events <events-pool>`
-     - 3
+     - 4
      - n1-standard-2
      - 2
      - 7.5
+   * - :ref:`monitoring <monitoring-pool>`
+     - 2
+     - e2-standard-8
+     - 8
+     - 32
 
 .. _default-pool:
 
@@ -63,3 +68,35 @@ Nodes in this pool are also tainted:
    * - ``NoExecute``
      - ``dedicated``
      - ``events``
+
+.. _monitoring-pool:
+
+monitoring node pool
+====================
+
+`Console link <https://console.cloud.google.com/kubernetes/nodepool/us-central1-a/roundtable/monitoring?project=plasma-geode-127520>`__
+
+The ``monitoring`` node pool is dedicated to the components of our
+:doc:`monitoring <../monitoring/index>` application, chiefly
+InfluxDBv2 and Chronograf.
+Nodes in this pool are labeled:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Key
+     - Value
+   * - ``dedicated``
+     - ``monitoring``
+
+Nodes in this pool are also tainted:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Effect
+     - Key
+     - Value
+   * - ``NoSchedule``
+     - ``dedicated``
+     - ``monitoring``
