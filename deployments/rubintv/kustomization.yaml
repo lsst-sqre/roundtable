@@ -10,3 +10,6 @@ images:
 resources:
   - github.com/lsst-sqre/rubin-tv.git//manifests/base?ref=0.4.0
   - resources/secret.yaml
+
+patches:
+  - patches/deployment.yaml
