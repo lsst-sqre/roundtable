@@ -19,7 +19,7 @@ VPC-native
 ==========
 
 The Roundtable cluster is `VPC-native <https://cloud.google.com/kubernetes-engine/docs/how-to/alias-ips>`_ (alias IP) **enabled**.
-VPC-native networking is necessary for connecting to Google Cloud Platform's managed datastores such as Cloud Memory Store (`connection docs <https://cloud.google.com/memorystore/docs/redis/connecting-redis-instance#connecting-cluster>`__) and Cloud SQL (`connection docs <https://cloud.google.com/sql/docs/postgres/connect-kubernetes-engine#private-ip>`__).
+VPC-native networking is necessary for connecting to Google Cloud Platform's managed datastores such as Cloud Memory Store (`connection docs <https://cloud.google.com/memorystore/docs/redis/connect-redis-instance#connecting-cluster>`__) and Cloud SQL (`connection docs <https://cloud.google.com/sql/docs/postgres/connect-kubernetes-engine#private-ip>`__).
 
 Stackdriver monitoring
 ======================
@@ -32,7 +32,7 @@ See the `Stackdriver Kubernetes Engine Monitoring <https://cloud.google.com/stac
 Istio
 =====
 
-At this time the `Istio on GKE <https://cloud.google.com/istio/docs/>`_ is **disabled**.
+At this time the `Istio on GKE <https://cloud.google.com/istio/docs/istio-on-gke>`_ is **disabled**.
 We trialled Istio early in the Roundtable deployment, and decided to focus on more traditional ingress and continuous deployment in the initial phase.
 As Roundtable matures, we may revisit using a service mesh on Roundtable.
 

@@ -42,7 +42,7 @@ Fixing this will require the manual intervention explained below.
 It's good practice to check if Vault itself has an update each time the Vault Helm chart is updated.
 
 To upgrade Vault itself, first change the pinned version in the ``server.image.tag`` setting in `/deployments/vault/values.yaml <https://github.com/lsst-sqre/roundtable/blob/master/deployments/vault/values.yaml>`__.
-Then, after that change is merged and Argo CD has applied the changes in Kubernetes, follow the `Vault upgrade instructions <https://www.vaultproject.io/docs/platform/k8s/helm/run#upgrading-vault-servers>`__.
+Then, after that change is merged and Argo CD has applied the changes in Kubernetes, follow the `Vault upgrade instructions <https://developer.hashicorp.com/vault/docs/platform/k8s/helm/run#upgrading-vault-servers>`__.
 You can skip the ``helm upgrade`` step, since Argo CD has already made the equivalent change.
 Where those instructions say to delete a pod, deleting it through Argo CD works correctly.
 You don't need to resort to ``kubectl``.

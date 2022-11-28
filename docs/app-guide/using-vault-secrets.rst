@@ -84,7 +84,7 @@ Get write access to Vault
 -------------------------
 
 1. Install Vault on your computer.
-   You can either `download Vault from Hashicorp <https://www.vaultproject.io/downloads>`__ or install it with a package manager like `Homebrew <https://brew.sh>`_ on macOS: ``brew install vault``.
+   You can either `download Vault from Hashicorp <https://developer.hashicorp.com/vault/downloads>`__ or install it with a package manager like `Homebrew <https://brew.sh>`_ on macOS: ``brew install vault``.
 
 2. Obtain a "write" token scoped for the applicable Vault secret path:
 
@@ -150,7 +150,7 @@ You can create a Vault secret with these two keys using a `vault kv put`_ comman
    See the `Vault kv put documentation`_ for details.
 
 .. _Vault kv put documentation:
-.. _vault kv put: https://www.vaultproject.io/docs/commands/kv/put
+.. _vault kv put: https://developer.hashicorp.com/vault/docs/commands/kv/put
 
 .. _vault-update-a-secret:
 
@@ -170,7 +170,7 @@ This command will allow you to update one or more key-value pairs at your applic
 
 For more information, see the `Vault kv patch documentation`_.
 
-.. _Vault kv patch documentation: https://www.vaultproject.io/docs/commands/kv/patch
+.. _Vault kv patch documentation: https://developer.hashicorp.com/vault/docs/commands/kv/patch
 
 .. _vault-vaultsecret:
 
