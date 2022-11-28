@@ -43,7 +43,6 @@ If the IP address ever changes, at least the following DNS records in AWS Route 
 - roundtable.lsst.codes
 - cd.roundtable.lsst.codes
 - grpc.cd.roundtable.lsst.codes
-- monitoring.roundtable.lsst.codes
 - keeper.lsst.codes
 - vault.lsst.codes
 - vault-1.lsst.codes

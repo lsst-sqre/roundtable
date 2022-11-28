@@ -57,9 +57,6 @@ data:
     # For Vault Secrets Operator
     - url: https://ricoberger.github.io/helm-charts/
       name: ricoberger
-    # For Prometheus
-    - url: https://prometheus-community.github.io/helm-charts
-      name: prometheus-community
     # For the Grafana subchart for Prometheus
     - url: https://grafana.github.io/helm-charts
       name: grafana

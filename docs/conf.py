@@ -104,10 +104,6 @@ rst_epilog = """
    :target: https://cd.roundtable.lsst.codes/applications/cert-manager
    :alt: cert-manager app status
 
-.. |kube-prometheus-stack-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=kube-prometheus-stack
-   :target: https://cd.roundtable.lsst.codes/applications/kube-prometheus-stack
-   :alt: Prometheus app status
-
 .. |strimzi-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=strimzi
    :target: https://cd.roundtable.lsst.codes/applications/strimzi
    :alt: Strimzi app status
@@ -135,7 +131,6 @@ rst_epilog = """
 .. _Helm: https://helm.sh
 .. _Kustomize: https://kustomize.io
 .. _Argo CD: https://argoproj.github.io/argo-cd/
-.. _Prometheus: https://prometheus.io
 .. _Grafana: https://grafana.com/grafana
 .. _lsst-sqre GitHub organization: https://github.com/lsst-sqre
 .. _roundtable-ops team: https://github.com/orgs/lsst-sqre/teams/roundtable-ops
@@ -153,7 +148,6 @@ linkcheck_timeout = 5  # seconds
 linkcheck_ignore = [
     r'^https://console.cloud.google.com',
     r'^https://cd.roundtable.lsst.codes',
-    r'^https://monitoring.roundtable.lsst.codes',
     r'^https://github.com/organizations/lsst-sqre/settings/',
     r'^https://github.com/lsst-sqre/roundtable/settings/',
     r'^http://localhost',
