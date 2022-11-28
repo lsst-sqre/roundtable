@@ -18,8 +18,6 @@ At the same time, applications in the Roundtable are decentralized, and have a l
 
    * - Deployment dashboard
      - https://cd.roundtable.lsst.codes
-   * - Monitoring dashboard
-     - https://monitoring.roundtable.lsst.codes
    * - Documentation
      - https://roundtable.lsst.io
 

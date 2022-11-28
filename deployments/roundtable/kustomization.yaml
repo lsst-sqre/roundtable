@@ -10,7 +10,6 @@ resources:
   - resources/events-dev-ns.yaml
   # Applications
   - resources/argo-cd.yaml
-  - resources/kube-prometheus-stack.yaml
   - resources/strimzi.yaml
   - resources/events-dev.yaml
   - resources/events.yaml
