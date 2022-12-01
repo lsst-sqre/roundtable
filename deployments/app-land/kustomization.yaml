@@ -23,6 +23,7 @@ resources:
   - resources/sherlock-frontend.yaml
   - resources/ook.yaml
   - resources/rubintv.yaml
+  - resources/rubintv-dev.yaml
   # Test versions of apps; to re-enable these also re-enable the events API
   # for the sqrbot-jsick Slack API (via the Slack app admin API).
   # - resources/sqrbot-jsick.yaml
