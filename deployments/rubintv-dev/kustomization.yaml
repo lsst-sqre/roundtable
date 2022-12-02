@@ -13,4 +13,5 @@ resources:
   - resources/ingress.yaml
 
 patches:
+  - patches/configmap.yaml
   - patches/deployment.yaml
