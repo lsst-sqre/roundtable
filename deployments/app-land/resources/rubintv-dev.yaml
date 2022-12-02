@@ -18,7 +18,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-  path: deployments/rubintv-dev
+    path: deployments/rubintv-dev
     repoURL: https://github.com/lsst-sqre/roundtable
     targetRevision: HEAD
   syncPolicy:
