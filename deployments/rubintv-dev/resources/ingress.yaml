@@ -1,17 +1,15 @@
-apiVersion: networking.k8s.io/v1
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: rubintv-dev
+  annotations:
+    kubernetes.io/ingress.class: 'nginx'
 spec:
-  ingressClassName: 'nginx'
   rules:
     - host: roundtable.lsst.codes
       http:
         paths:
           - path: /rubintv-dev
-            pathType: Prefix
             backend:
-              service:
-                name: rubintv
-                port:
-                  number: 8080
+              serviceName: rubintv
+              servicePort: 8080
