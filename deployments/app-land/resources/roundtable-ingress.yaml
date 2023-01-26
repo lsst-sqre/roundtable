@@ -1,49 +1,73 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: roundtable-ingress
   namespace: events
   annotations:
-    kubernetes.io/ingress.class: "nginx"
     cert-manager.io/cluster-issuer: "letsencrypt-issuer"
 spec:
+  ingressClassName: "nginx"
   tls:
     - hosts:
-      - roundtable.lsst.codes
-      secretName: roundtable-ingress-tls
+        - "roundtable.lsst.codes"
+      secretName: "roundtable-ingress-tls"
   rules:
-    - host: roundtable.lsst.codes
+    - host: "roundtable.lsst.codes"
       http:
         paths:
-          - path: /1password
+          - path: "/1password"
+            pathType: Prefix
             backend:
-              serviceName: 1password-connect
-              servicePort: 8080
-          - path: /checkerboard
+              service:
+                name: "1password-connect"
+                port:
+                  number: 8080
+          - path: "/checkerboard"
+            pathType: Prefix
             backend:
-              serviceName: checkerboard
-              servicePort: 8080
-          - path: /ltdevents
+              service:
+                name: "checkerboard"
+                port:
+                  number: 8080
+          - path: "/ltdevents"
+            pathType: Prefix
             backend:
-              serviceName: ltdevents
-              servicePort: 8080
-          - path: /safirdemo
+              service:
+                name: "ltdevents"
+                port:
+                  number: 8080
+          - path: "/safirdemo"
+            pathType: Prefix
             backend:
-              serviceName: safirdemo
-              servicePort: 8080
-          - path: /sqrbot-jr
+              service:
+                name: "safirdemo"
+                port:
+                  number: 8080
+          - path: "/sqrbot-jr"
+            pathType: Prefix
             backend:
-              serviceName: sqrbot-jr
-              servicePort: 8080
-          - path: /sqrbot-jsick
+              service:
+                name: "sqrbot-jr"
+                port:
+                  number: 8080
+          - path: "/sqrbot-jsick"
+            pathType: Prefix
             backend:
-              serviceName: sqrbot-jsick
-              servicePort: 8080
-          - path: /segwarides
+              service:
+                name: "sqrbot-jsick"
+                port:
+                  number: 8080
+          - path: "/segwarides"
+            pathType: Prefix
             backend:
-              serviceName: segwarides
-              servicePort: 8080
-          - path: /rubintv
+              service:
+                name: "segwarides"
+                port:
+                  number: 8080
+          - path: "/rubintv"
+            pathType: Prefix
             backend:
-              serviceName: rubintv
-              servicePort: 8080
+              service:
+                name: "rubintv"
+                port:
+                  number: 8080
