@@ -15,6 +15,10 @@ spec:
     - host: roundtable.lsst.codes
       http:
         paths:
+          - path: /1password
+            backend:
+              serviceName: 1password-connect
+              servicePort: 8080
           - path: /checkerboard
             backend:
               serviceName: checkerboard
