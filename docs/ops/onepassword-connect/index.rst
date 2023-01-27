@@ -6,9 +6,9 @@
    :widths: 10,40
 
    * - Deployment
-     - |1password-connect-status|
+     - |onepassword-connect-status|
    * - Edit on GitHub
-     - `/deployments/1password-connect <https://github.com/lsst-sqre/roundtable/tree/master/deployments/1password-connect>`__
+     - `/deployments/onepassword-connect <https://github.com/lsst-sqre/roundtable/tree/master/deployments/onepassword-connect>`__
    * - Type
      - Helm_
    * - Parent app
@@ -16,7 +16,7 @@
 
 .. rubric:: Overview
 
-The ``1password-connect`` application is an installation of `1Password Connect Server <https://developer.1password.com/docs/connect>`__.
+The ``onepassword-connect`` application is an installation of `1Password Connect Server <https://developer.1password.com/docs/connect>`__.
 This server provides a REST API to a 1Password vault, which is used by `Phalanx <https://phalanx.lsst.io/>`__ for secrets management for the deployments run by SQuaRE.
 
 .. rubric:: Bootstrapping the Application
