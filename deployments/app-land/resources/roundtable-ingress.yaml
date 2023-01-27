@@ -15,13 +15,6 @@ spec:
     - host: "roundtable.lsst.codes"
       http:
         paths:
-          - path: "/1password"
-            pathType: Prefix
-            backend:
-              service:
-                name: "onepassword-connect"
-                port:
-                  number: 8080
           - path: "/checkerboard"
             pathType: Prefix
             backend:
