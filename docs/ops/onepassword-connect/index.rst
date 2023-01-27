@@ -1,6 +1,6 @@
-######################################
-1password-connect app deployment guide
-######################################
+########################################
+onepassword-connect app deployment guide
+########################################
 
 .. list-table::
    :widths: 10,40
