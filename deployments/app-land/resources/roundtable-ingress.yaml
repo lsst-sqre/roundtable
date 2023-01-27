@@ -19,7 +19,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: "1password-connect"
+                name: "onepassword-connect"
                 port:
                   number: 8080
           - path: "/checkerboard"
