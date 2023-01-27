@@ -1,6 +1,7 @@
 connect:
-  # -- Name of secret containing the 1Password credentials
-  credentialsName: "op-credentials"
+  connect:
+    # -- Name of secret containing the 1Password credentials
+    credentialsName: "op-credentials"
 
-  # -- Name of key inside secret containing 1Password credentials
-  credentialsKey: "op-session"
+    # -- Name of key inside secret containing 1Password credentials
+    credentialsKey: "op-session"
