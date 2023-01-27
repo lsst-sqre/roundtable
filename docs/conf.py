@@ -128,9 +128,9 @@ rst_epilog = """
    :target: https://cd.roundtable.lsst.codes/applications/vault-secrets-operator
    :alt: Vault Secrets Operator app status
 
-.. |1password-connect-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=1password-connect
-   :target: https://cd.roundtable.lsst.codes/applications/1password-connect
-   :alt: 1password-connect app status
+.. |onepassword-connect-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=onepassword-connect
+   :target: https://cd.roundtable.lsst.codes/applications/onepassword-connect
+   :alt: onepassword-connect app status
 
 .. _Helm: https://helm.sh
 .. _Kustomize: https://kustomize.io
