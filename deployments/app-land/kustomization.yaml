@@ -5,16 +5,16 @@ resources:
   # Ingress
   - resources/roundtable-ingress.yaml
   # Namespaces
-  - resources/1password-connect-ns.yaml
   - resources/lsst-the-docs-ns.yaml
   - resources/monitoring-ns.yaml
+  - resources/onepassword-connect-ns.yaml
   - resources/telegraf-ns.yaml
   # Applications
-  - resources/1password-connect.yaml
   - resources/checkerboard.yaml
   - resources/lsst-the-docs.yaml
   - resources/ltdevents.yaml
   - resources/monitoring.yaml
+  - resources/onepassword-connect.yaml
   - resources/telegraf.yaml
   - resources/neophile.yaml
   - resources/safirdemo.yaml

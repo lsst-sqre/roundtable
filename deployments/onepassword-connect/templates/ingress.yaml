@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: "onepassword-ingress"
+  namespace: "onepassword-connect"
+spec:
+  ingressClassName: "nginx"
+  rules:
+    - host: "roundtable.lsst.codes"
+      http:
+        paths:
+          - path: "/1password"
+            pathType: Prefix
+            backend:
+              service:
+                name: "onepassword-connect"
+                port:
+                  number: 8080
