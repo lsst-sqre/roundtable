@@ -20,3 +20,4 @@ Although this documentation is openly available, application developers shouldn'
    strimzi/index
    vault/index
    vault-secrets-operator/index
+   1password-connect/index
