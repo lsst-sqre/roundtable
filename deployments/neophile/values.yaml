@@ -18,8 +18,10 @@ neophile:
         repo: "gafaelfawr"
       - owner: "lsst-sqre"
         repo: "jupyterlab-controller"
-      - owner: "lsst-sqre"
-        repo: "kafka-aggregator"
+      # faust-avro depends on an ancient version of fastavro, which does not
+      # have wheels for Python 3.11
+      # - owner: "lsst-sqre"
+      #   repo: "kafka-aggregator"
       - owner: "lsst-sqre"
         repo: "kafka-connect-manager"
       - owner: "lsst-sqre"
