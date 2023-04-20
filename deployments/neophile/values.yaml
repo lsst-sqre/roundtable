@@ -42,6 +42,8 @@ neophile:
       - owner: "lsst-sqre"
         repo: "ook"
       - owner: "lsst-sqre"
+        repo: "rsp-restspawner"
+      - owner: "lsst-sqre"
         repo: "rubin-tv"
       - owner: "lsst-sqre"
         repo: "safir"
