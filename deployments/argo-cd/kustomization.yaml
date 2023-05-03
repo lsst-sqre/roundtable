@@ -5,10 +5,6 @@ resources:
 - https://github.com/argoproj/argo-cd/manifests/cluster-install?ref=v2.6.7
 - resources/argocd-ui-ingress.yaml
 - resources/argocd-grpc-ingress.yaml
-- resources/argocd-metrics.yaml
-- resources/argocd-server-metrics.yaml
-- resources/argocd-repo-server-metrics.yaml
-- resources/argocd-grafana-dashboard-cm.yaml
 
 patchesStrategicMerge:
 - patches/argocd-cm.yaml
