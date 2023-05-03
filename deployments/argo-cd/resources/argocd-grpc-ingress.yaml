@@ -1,12 +1,12 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: argocd-grpc
   annotations:
-    kubernetes.io/ingress.class: "nginx"
     nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
     cert-manager.io/cluster-issuer: "letsencrypt-issuer"
 spec:
+  ingressClassName: "nginx"
   tls:
     - hosts:
       - grpc.cd.roundtable.lsst.codes
@@ -16,6 +16,9 @@ spec:
       http:
         paths:
           - path: /
+            pathType: Prefix
             backend:
-              serviceName: argocd-server
-              servicePort: https
+              service:
+                name: argocd-server
+                port:
+                  name: https
