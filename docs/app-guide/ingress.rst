@@ -19,15 +19,15 @@ That ingress definition should look something like this:
 
 .. code-block:: yaml
 
-   apiVersion: networking.k8s.io/v1beta1
+   apiVersion: networking.k8s.io/v1
    kind: Ingress
    metadata:
      name: <app-name>
      namespace: <app-namespace>
      annotations:
-       kubernetes.io/ingress.class: nginx
        cert-manager.io/cluster-issuer: letsencrypt-issuer
    spec:
+     ingressClassName: nginx
      tls:
        - hosts:
            - <fqdn>
@@ -37,9 +37,12 @@ That ingress definition should look something like this:
          http:
            paths:
              - path: /
+               pathType: Prefix
                backend:
-                 serviceName: <app-name>
-                 servicePort: <app-port>
+                 service:
+                   name: <app-name>
+                   port:
+                     number: <app-port>
 
 Replace ``<app-name>`` with the name of your application, ``<app-namespace>`` with the namespace the app is running in, ``<app-port>`` with the port on which it's running, and ``<fqdn>`` with the domain name to use (which should be a subdomain of ``lsst.codes`` and normally of ``roundtable.lsst.codes``).
 
@@ -60,8 +63,10 @@ Add the route definition for your service as an additional item in that list:
 
    - path: /<app-name>
      backend:
-       serviceName: <app-name>
-       servicePort: <app-port>
+       service:
+         name: <app-name>
+         port:
+           number: <app-port>
 
 Replace ``<app-name>`` with the name of your application and ``<app-port>`` with the port on which it's running.
 The requirement that the path match the application name is not strictly required, but it is strongly preferred.

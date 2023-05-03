@@ -1,14 +1,14 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: sherlock
   annotations:
-    kubernetes.io/ingress.class: "nginx"
     ingress.kubernetes.io/app-root: "/"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
     cert-manager.io/cluster-issuer: "letsencrypt-issuer"
 spec:
+  ingressClassName: "nginx"
   tls:
     - hosts:
       - status.lsst.codes
@@ -18,6 +18,9 @@ spec:
       http:
         paths:
           - path: /
+            pathType: Prefix
             backend:
-              serviceName: sherlock
-              servicePort: sherlock-http
+              service:
+                name: sherlock
+                port:
+                  name: sherlock-http
