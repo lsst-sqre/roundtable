@@ -5,8 +5,6 @@ neophile:
     githubUser: "sqrbot"
     repositories:
       - owner: "lsst-sqre"
-        repo: "cachemachine"
-      - owner: "lsst-sqre"
         repo: "checkerboard"
       - owner: "lsst-sqre"
         repo: "crawlspace"
@@ -31,11 +29,7 @@ neophile:
       - owner: "lsst-sqre"
         repo: "mobu"
       - owner: "lsst-sqre"
-        repo: "moneypenny"
-      - owner: "lsst-sqre"
         repo: "neophile"
-      - owner: "lsst-sqre"
-        repo: "nublado2"
       # Ignore during active development
       # - owner: "lsst-sqre"
       #   repo: "noteburst"
