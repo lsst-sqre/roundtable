@@ -10,7 +10,7 @@ resources:
   - resources/kafka.yaml
   # Schema Registry
   - resources/schemaregistry-user.yaml
-  - github.com/lsst-sqre/strimzi-registry-operator.git//manifests?ref=0.4.1
+  - github.com/lsst-sqre/strimzi-registry-operator.git//manifests?ref=0.6.0
   - resources/schemaregistry.yaml
   - resources/schemas-topic.yaml
   # Kafka topics
