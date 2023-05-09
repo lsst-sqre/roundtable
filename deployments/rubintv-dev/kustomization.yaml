@@ -12,6 +12,6 @@ resources:
   - resources/secret.yaml
   - resources/ingress.yaml
 
-patches:
+patchesStrategicMerge:
   - patches/configmap.yaml
   - patches/deployment.yaml
