@@ -8,7 +8,7 @@ images:
     newTag: develop
 
 resources:
-  - github.com/lsst-sqre/rubin-tv.git//manifests/base?ref=develop
+  - github.com/lsst-sqre/rubin-tv.git//manifests/base?ref=tickets/DM-37830
   - resources/secret.yaml
   - resources/ingress.yaml
 
