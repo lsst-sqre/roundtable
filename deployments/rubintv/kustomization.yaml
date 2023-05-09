@@ -11,5 +11,5 @@ resources:
   - github.com/lsst-sqre/rubin-tv.git//manifests/base?ref=1.1.0
   - resources/secret.yaml
 
-patches:
+patchesStrategicMerge:
   - patches/deployment.yaml
