@@ -9,7 +9,5 @@ spec:
       - name: argocd-server
         # Run argocd-server in "insecure" mode to allow ingress to do TLS.
         command:
-        - argocd-server
-        - --insecure
-        - --staticassets
-        - /shared/app
+        - /usr/local/bin/argocd-server
+        - --insecure=true
