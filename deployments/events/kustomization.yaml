@@ -29,7 +29,7 @@ resources:
   - resources/ltdevents-user.yaml
   - resources/ook-user.yaml
 
-patches:
+patchesStrategicMerge:
   - patches/strimzi-registry-operator-deployment.yaml
 
 namespace: events
