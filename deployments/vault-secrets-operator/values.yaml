@@ -10,5 +10,7 @@ vault-secrets-operator:
         secretKeyRef:
           name: vault-secrets-operator
           key: VAULT_TOKEN_LEASE_DURATION
+  serviceAccount:
+    createSecret: false
   vault:
     address: "https://vault.lsst.codes"
