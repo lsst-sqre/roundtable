@@ -8,7 +8,7 @@ resources:
 - resources/keeper-ingress.yaml
 - github.com/lsst-sqre/ltd-dasher.git//manifests?ref=0.1.11
 
-patches:
+patchesStrategicMerge:
   - patches/keeper-cm.yaml
   - patches/keeper-deployment.yaml
   - patches/dasher-deployment.yaml

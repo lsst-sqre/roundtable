@@ -12,6 +12,6 @@ resources:
   - resources/vaultsecret.yaml
   - github.com/lsst-sqre/sqrbot-jr.git//manifests/base?ref=0.6.0
 
-patches:
+patchesStrategicMerge:
   - patches/configmap.yaml
   - patches/deployment.yaml
