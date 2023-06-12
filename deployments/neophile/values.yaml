@@ -33,8 +33,8 @@ neophile:
       # Ignore during active development
       # - owner: "lsst-sqre"
       #   repo: "noteburst"
-      - owner: "lsst-sqre"
-        repo: "ook"
+      # - owner: "lsst-sqre"
+      #   repo: "ook"
       - owner: "lsst-sqre"
         repo: "rsp-jupyter-extensions"
       - owner: "lsst-sqre"
