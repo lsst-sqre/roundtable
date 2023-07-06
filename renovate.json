@@ -8,9 +8,9 @@
   ],
   "packageRules": [
     {
-      "matchFileNames": [
-        "deployments/sqrbot-jsick/**",
-        "deployments/templatebot-jsick/**"
+      "matchPaths": [
+        "deployments/sqrbot-jsick",
+        "deployments/templatebot-jsick"
       ],
       "enabled": false
     }
