@@ -127,7 +127,7 @@ chronograf:
   ## Extra environment variables that will be passed onto deployment pods
   env:
     CUSTOM_AUTO_REFRESH: "1s=1000"
-    GH_CLIENT_ID: "a12e66e2a1d213b2bb17"
+    GH_CLIENT_ID: "dd015b963316790fc3f5"
     GH_ORGS: "lsst-sqre"
     HOST_PAGE_DISABLED: true
     INFLUXDB_URL: "https://monitoring.lsst.codes"
