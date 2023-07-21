@@ -126,7 +126,6 @@ chronograf:
 
   ## Extra environment variables that will be passed onto deployment pods
   env:
-    BASE_PATH: /
     CUSTOM_AUTO_REFRESH: "1s=1000"
     GH_CLIENT_ID: "a12e66e2a1d213b2bb17"
     GH_ORGS: "lsst-sqre"
