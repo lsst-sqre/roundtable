@@ -9,18 +9,13 @@ spec:
   tls:
     - hosts:
       - monitoring.lsst.codes
+      - influxdb2.lsst.codes
+      - panopticon.lsst.codes
       secretName: monitoring-tls
   rules:
     - host: monitoring.lsst.codes
       http:
         paths:
-          - path: /chronograf
-            pathType: Prefix
-            backend:
-              service:
-                name: monitoring-chronograf
-                port:
-                  number: 80
           - path: /
             pathType: Prefix
             backend:
@@ -28,3 +23,13 @@ spec:
                 name: monitoring-influxdb2
                 port:
                   name: http
+    - host: panopticon.lsst.codes
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: monitoring-chronograf
+                port:
+                  number: 80
