@@ -4,5 +4,5 @@ version: 1.8.18
 description: SQuaRE packaging of telegraf app
 dependencies:
   - name: telegraf
-    version: 1.8.30
+    version: 1.8.31
     repository: https://helm.influxdata.com
