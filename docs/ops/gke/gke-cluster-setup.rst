@@ -32,7 +32,7 @@ See the `Stackdriver Kubernetes Engine Monitoring <https://cloud.google.com/stac
 Istio
 =====
 
-At this time the `Istio on GKE <https://cloud.google.com/istio/docs/istio-on-gke>`_ is **disabled**.
+At this time the `Anthos Service Mesh <https://cloud.google.com/service-mesh/docs>`_ is **disabled**.
 We trialled Istio early in the Roundtable deployment, and decided to focus on more traditional ingress and continuous deployment in the initial phase.
 As Roundtable matures, we may revisit using a service mesh on Roundtable.
 
