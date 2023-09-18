@@ -7,14 +7,12 @@ resources:
   # Namespaces
   - resources/lsst-the-docs-ns.yaml
   - resources/monitoring-ns.yaml
-  - resources/onepassword-connect-ns.yaml
   - resources/telegraf-ns.yaml
   # Applications
   - resources/checkerboard.yaml
   - resources/lsst-the-docs.yaml
   - resources/ltdevents.yaml
   - resources/monitoring.yaml
-  - resources/onepassword-connect.yaml
   - resources/telegraf.yaml
   - resources/sqrbot.yaml
   - resources/sqrbot-jr.yaml

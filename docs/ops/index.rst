@@ -20,4 +20,3 @@ Although this documentation is openly available, application developers shouldn'
    strimzi/index
    vault/index
    vault-secrets-operator/index
-   onepassword-connect/index
