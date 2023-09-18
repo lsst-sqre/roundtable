@@ -29,14 +29,14 @@ Listeners and authentication
 ============================
 
 The cluster has an internal listener on port ``9093``, which supports mutual TLS authentication between the client and brokers.
-See `Creating a Kafka user with mutual TLS authentication <https://strimzi.io/docs/operators/latest/configuring.html#con-securing-client-authentication-str>`_ for details on how create a ``KafkaUser`` resource and use the corresponding Kubernetes ``Secret`` resource with client TLS certificates.
+See `Creating a Kafka user with mutual TLS authentication <https://strimzi.io/docs/operators/latest/deploying#con-securing-client-authentication-str>`_ for details on how create a ``KafkaUser`` resource and use the corresponding Kubernetes ``Secret`` resource with client TLS certificates.
 
 Authorization
 =============
 
 Authorization is enabled for this cluster.
 This means that that Kafka clients need a corresponding ``KafkaUser`` resource with corresponding access permissions.
-See the `Strimzi Authorization documentation <https://strimzi.io/docs/operators/latest/configuring.html#assembly-securing-kafka-clients-str>`_ for more information.
+See the `Strimzi Authorization documentation <https://strimzi.io/docs/operators/latest/deploying#con-securing-client-authorization-str>`_ for more information.
 
 Kafka configuration
 ===================
