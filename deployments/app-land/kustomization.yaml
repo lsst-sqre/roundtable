@@ -16,7 +16,6 @@ resources:
   - resources/monitoring.yaml
   - resources/onepassword-connect.yaml
   - resources/telegraf.yaml
-  - resources/safirdemo.yaml
   - resources/sqrbot.yaml
   - resources/sqrbot-jr.yaml
   - resources/templatebot.yaml

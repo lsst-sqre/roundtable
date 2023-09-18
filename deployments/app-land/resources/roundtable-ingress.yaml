@@ -29,13 +29,6 @@ spec:
                 name: "ltdevents"
                 port:
                   number: 8080
-          - path: "/safirdemo"
-            pathType: Prefix
-            backend:
-              service:
-                name: "safirdemo"
-                port:
-                  number: 8080
           - path: "/sqrbot-jr"
             pathType: Prefix
             backend:
