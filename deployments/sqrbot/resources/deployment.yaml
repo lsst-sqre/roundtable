@@ -15,7 +15,8 @@ spec:
       containers:
         - name: sqrbot
           imagePullPolicy: "Always"
-          image: "ghcr.io/lsst-sqre/sqrbot:0.10.6"
+          # image: "ghcr.io/lsst-sqre/sqrbot:0.10.6"
+          image: "lsstsqre/sqrbot:latest"
           env:
             - name: HUBOT_NAME
               value: "sqrbot"
