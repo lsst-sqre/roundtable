@@ -17,7 +17,8 @@ patchesStrategicMerge:
 
 images:
   - name: lsstsqre/templatebot-aide
-    newTag: 0.6.0
+    # newTag: 0.6.0
+    newTag: tickets-DM-41781
     newName: ghcr.io/lsst-sqre/templatebot-aide
 #   - name: lsstsqre/templatebot
 #     newTag: tickets-DM-32710
