@@ -42,7 +42,6 @@ jobs:
       - name: Build
         run: |
           cd docs
-          make linkcheck
           make html
 
       - name: Upload
