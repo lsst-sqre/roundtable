@@ -8,7 +8,7 @@ images:
     newTag: 1.2.0
 
 resources:
-  - github.com/lsst-sqre/rubin-tv.git//manifests/base?ref=1.2.0
+  - github.com/lsst-sqre/rubin-tv.git//manifests/base?ref=v2.0.2
   - resources/secret.yaml
 
 patchesStrategicMerge:
