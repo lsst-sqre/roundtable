@@ -9,7 +9,6 @@ resources:
   - resources/monitoring-ns.yaml
   - resources/telegraf-ns.yaml
   # Applications
-  - resources/checkerboard.yaml
   - resources/lsst-the-docs.yaml
   - resources/ltdevents.yaml
   - resources/monitoring.yaml
