@@ -16,7 +16,6 @@ resources:
   - resources/sqrbot-jr.yaml
   - resources/templatebot.yaml
   - resources/segwarides.yaml
-  - resources/sherlock-frontend.yaml
   - resources/ook.yaml
   - resources/rubintv.yaml
   - resources/rubintv-dev.yaml
