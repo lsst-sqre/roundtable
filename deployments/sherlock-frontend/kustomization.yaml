@@ -1,8 +1,0 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-
-namespace: sherlock
-
-resources:
-  - github.com/lsst-sqre/sherlock-frontend.git//manifests/base?ref=0.0.19
-  - resources/sherlock-ingress.yaml
