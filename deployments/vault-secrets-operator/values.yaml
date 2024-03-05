@@ -13,4 +13,4 @@ vault-secrets-operator:
   serviceAccount:
     createSecret: false
   vault:
-    address: "https://vault.lsst.codes"
+    address: "https://vault.lsst.cloud"
