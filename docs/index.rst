@@ -2,12 +2,12 @@
 Roundtable
 ##########
 
-An application platform by SQuaRE
-=================================
+An obsolete application platform by SQuaRE
+==========================================
 
 At SQuaRE, we love building bots, microservices, and apps that help the `LSST Project`_ get its work done.
-Roundtable is a new initiative to bring many of these services under one roof to leverage common resources, like a Kubernetes cluster, HTTP ingress for APIs, Kafka for event-based apps, monitoring and logging, and continuous deployment patterns.
-At the same time, applications in the Roundtable are decentralized, and have a large amount of latitude to be developed and deployed independently.
+Roundtable was once a new initiative to bring many of these services under one roof to leverage common resources, like a Kubernetes cluster, HTTP ingress for APIs, Kafka for event-based apps, monitoring and logging, and continuous deployment patterns.
+It has since been supplanted by `Phalanx <https://phalanx.lsst.io>`__, which contains a ``Roundtable`` project.  All new development of Roundtable applications should be done within Phalanx, and we are actively working on sunsetting Original Roundtable.
 
 Overview
 ========

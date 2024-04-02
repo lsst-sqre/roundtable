@@ -7,7 +7,7 @@ These secrets include API keys and tokens that let your application access secur
 You can't include this information inside your application's code base or GitOps deployment manifests because it would be exposed in our open source GitHub repositories.
 Instead, you want your application to have these secrets available only when needed: at runtime inside the Roundtable Kubernetes cluster.
 
-Applications can use Roundtable's Vault_ service to store and access secrets within Kubernetes.
+Applications can use (Phalanx) Roundtable's Vault_ service to store and access secrets within Kubernetes.
 By using Vault, Roundtable applications can use a completely public GitOps approach to deployments while ensuring that secret information like passwords and API tokens never leave the Kubernetes cluster.
 
 This page includes an overview of the Vault system along with procedures for using Vault in your application's deployment.
@@ -36,6 +36,8 @@ Read `DMTN-112: LSST DM Vault <https://dmtn-112.lsst.io>`__ for more information
 
 Paths for application secrets
 -----------------------------
+
+Note that the following only applies to Original Roundtable.  In general, new applications should be using Phalanx, which has `its own method of managing Vault secrets <https://phalanx.lsst.io/developers/helm-chart/define-secrets.html>`__.
 
 Every application stores its secrets at a specific **path** within the Vault service.
 Paths keep secrets organized and also helps control access with tokens.
@@ -96,7 +98,7 @@ Get write access to Vault
 
    .. code-block:: bash
 
-      export VAULT_ADDR="https://vault.lsst.codes"
+      export VAULT_ADDR="https://vault.lsst.cloud"
       export VAULT_TOKEN=<token id>
 
 .. important::

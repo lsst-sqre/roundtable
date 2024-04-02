@@ -44,9 +44,6 @@ If the IP address ever changes, at least the following DNS records in AWS Route 
 - cd.roundtable.lsst.codes
 - grpc.cd.roundtable.lsst.codes
 - keeper.lsst.codes
-- vault.lsst.codes
-- vault-1.lsst.codes
-- vault-2.lsst.codes
 
 Searching for the old IP address on the Route 53 hosted domain page for lsst.codes is the best way to find any records.
 The Route 53 console breaks the records up into multiple pages of results.
