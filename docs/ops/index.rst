@@ -18,5 +18,4 @@ Although this documentation is openly available, application developers shouldn'
    ingress-nginx/index
    monitoring/index
    strimzi/index
-   vault/index
    vault-secrets-operator/index

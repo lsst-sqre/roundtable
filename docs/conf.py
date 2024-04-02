@@ -120,10 +120,6 @@ rst_epilog = """
    :target: https://cd.roundtable.lsst.codes/applications/app-land
    :alt: App Land app status
 
-.. |vault-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=vault
-   :target: https://cd.roundtable.lsst.codes/applications/vault
-   :alt: Vault app status
-
 .. |vault-secrets-operator-status| image:: https://cd.roundtable.lsst.codes/api/badge?name=vault-secrets-operator
    :target: https://cd.roundtable.lsst.codes/applications/vault-secrets-operator
    :alt: Vault Secrets Operator app status
