@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: Namespace
-# This is necessary because telegraf and telegraf-ds cannot share a namespace
-metadata:
-  name: telegraf
-spec:
-  finalizers:
-    - kubernetes

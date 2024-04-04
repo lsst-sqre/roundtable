@@ -16,6 +16,5 @@ Although this documentation is openly available, application developers shouldn'
    cert-manager/index
    events/index
    ingress-nginx/index
-   monitoring/index
    strimzi/index
    vault-secrets-operator/index

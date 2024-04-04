@@ -6,13 +6,9 @@ resources:
   - resources/roundtable-ingress.yaml
   # Namespaces
   - resources/lsst-the-docs-ns.yaml
-  - resources/monitoring-ns.yaml
-  - resources/telegraf-ns.yaml
   # Applications
   - resources/lsst-the-docs.yaml
   - resources/ltdevents.yaml
-  - resources/monitoring.yaml
-  - resources/telegraf.yaml
   - resources/sqrbot-jr.yaml
   - resources/templatebot.yaml
   - resources/segwarides.yaml
