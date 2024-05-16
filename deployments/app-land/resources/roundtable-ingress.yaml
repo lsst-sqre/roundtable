@@ -50,10 +50,3 @@ spec:
                 name: "segwarides"
                 port:
                   number: 8080
-          - path: "/rubintv"
-            pathType: Prefix
-            backend:
-              service:
-                name: "rubintv"
-                port:
-                  number: 8080
