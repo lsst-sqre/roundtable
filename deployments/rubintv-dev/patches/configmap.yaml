@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: rubintv
-data:
-  SAFIR_NAME: 'rubintv-dev'
