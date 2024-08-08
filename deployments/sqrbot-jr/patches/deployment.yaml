@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: sqrbot
 spec:
+  replicas: 0
   template:
     spec:
       containers:
