@@ -4,7 +4,6 @@ kind: Deployment
 metadata:
   name: keeper-api
 spec:
-  replicas: 0
   template:
     spec:
       containers:
