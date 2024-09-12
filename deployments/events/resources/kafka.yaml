@@ -5,7 +5,7 @@ metadata:
   name: events
 spec:
   kafka:
-    version: 2.3.0
+    version: 3.2.0
     replicas: 3
     listeners:
     - name: tls
