@@ -1,13 +1,12 @@
 ---
-apiVersion: kafka.strimzi.io/v1beta1
+apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaTopic
 metadata:
-  name: "ltd.events"
+  name: ltd.events
   labels:
     strimzi.io/cluster: events
 spec:
   partitions: 8
   replicas: 3
   config:
-    # http://kafka.apache.org/documentation/#topicconfigs
-    retention.ms: 2592000000 # 30 days
+    retention.ms: 2592000000

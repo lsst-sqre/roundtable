@@ -1,7 +1,5 @@
 ---
-# For the ook-queue consumer group
-# This user reads ltd.events and writes to ook.queue
-apiVersion: kafka.strimzi.io/v1beta1
+apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaUser
 metadata:
   name: kafkauser-ook-queue
@@ -13,49 +11,44 @@ spec:
   authorization:
     type: simple
     acls:
-      # Produce ook.ingest
-      - resource:
-          type: topic
-          name: "ook.ingest"
-          patternType: literal
-        operation: "Write"
-        type: "allow"
-      - resource:
-          type: topic
-          name: "ook.ingest"
-          patternType: literal
-        operation: "Describe"
-        type: "allow"
-      # Access ook-queue consumer group
-      - resource:
-          type: "group"
-          name: "ook-queue"
-          patternType: "literal"
-        operation: "Describe"
-        type: "allow"
-      - resource:
-          type: "group"
-          name: "ook-queue"
-          patternType: "literal"
-        operation: "Read"
-        type: "allow"
-      # Consume the ltd.events topic
-      - resource:
-          type: "topic"
-          name: "ltd.events"
-          patternType: "literal"
-        operation: "Read"
-        type: "allow"
-      - resource:
-          type: "topic"
-          name: "ltd.events"
-          patternType: "literal"
-        operation: "Describe"
-        type: "allow"
+    - resource:
+        type: topic
+        name: ook.ingest
+        patternType: literal
+      operation: Write
+      type: allow
+    - resource:
+        type: topic
+        name: ook.ingest
+        patternType: literal
+      operation: Describe
+      type: allow
+    - resource:
+        type: group
+        name: ook-queue
+        patternType: literal
+      operation: Describe
+      type: allow
+    - resource:
+        type: group
+        name: ook-queue
+        patternType: literal
+      operation: Read
+      type: allow
+    - resource:
+        type: topic
+        name: ltd.events
+        patternType: literal
+      operation: Read
+      type: allow
+    - resource:
+        type: topic
+        name: ltd.events
+        patternType: literal
+      operation: Describe
+      type: allow
 ---
-# For the ook-ingest consumer group
-# This user reads ook.queue
-apiVersion: kafka.strimzi.io/v1beta1
+apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaUser
 metadata:
   name: kafkauser-ook-ingest
@@ -67,29 +60,27 @@ spec:
   authorization:
     type: simple
     acls:
-      # Access ook-ingest consumer group
-      - resource:
-          type: "group"
-          name: "ook-ingest"
-          patternType: "literal"
-        operation: "Describe"
-        type: "allow"
-      - resource:
-          type: "group"
-          name: "ook-ingest"
-          patternType: "literal"
-        operation: "Read"
-        type: "allow"
-      # Consume the ook.ingest topic
-      - resource:
-          type: "topic"
-          name: "ook.ingest"
-          patternType: "literal"
-        operation: "Read"
-        type: "allow"
-      - resource:
-          type: "topic"
-          name: "ook.ingest"
-          patternType: "literal"
-        operation: "Describe"
-        type: "allow"
+    - resource:
+        type: group
+        name: ook-ingest
+        patternType: literal
+      operation: Describe
+      type: allow
+    - resource:
+        type: group
+        name: ook-ingest
+        patternType: literal
+      operation: Read
+      type: allow
+    - resource:
+        type: topic
+        name: ook.ingest
+        patternType: literal
+      operation: Read
+      type: allow
+    - resource:
+        type: topic
+        name: ook.ingest
+        patternType: literal
+      operation: Describe
+      type: allow

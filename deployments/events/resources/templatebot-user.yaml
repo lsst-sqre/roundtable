@@ -1,5 +1,5 @@
 ---
-apiVersion: kafka.strimzi.io/v1beta1
+apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaUser
 metadata:
   name: kafkauser-templatebot
@@ -11,99 +11,92 @@ spec:
   authorization:
     type: simple
     acls:
-      # Access templatebot consumer group
-      - resource:
-          type: group
-          name: "templatebot"
-          patternType: literal
-        operation: "Describe"
-        type: allow
-      - resource:
-          type: group
-          name: "templatebot"
-          patternType: literal
-        operation: "Read"
-        type: allow
-      # consume the sqrbot.interaction topic
-      - resource:
-          type: topic
-          name: "sqrbot.interaction"
-          patternType: literal
-        operation: "Read"
-        type: allow
-      - resource:
-          type: topic
-          name: "sqrbot.interaction"
-          patternType: literal
-        operation: "Describe"
-        type: allow
-      # Consume the sqrbot.message.im topic
-      - resource:
-          type: topic
-          name: "sqrbot.message.im"
-          patternType: literal
-        operation: "Read"
-        type: allow
-      - resource:
-          type: topic
-          name: "sqrbot.message.im"
-          patternType: literal
-        operation: "Describe"
-        type: allow
-      # Consume the app_mention topic
-      - resource:
-          type: topic
-          name: "sqrbot.app.mention"
-          patternType: literal
-        operation: "Read"
-        type: allow
-      - resource:
-          type: topic
-          name: "sqrbot.app.mention"
-          patternType: literal
-        operation: "Describe"
-        type: allow
-      # Consume the render-ready topic
-      - resource:
-          type: topic
-          name: "templatebot.render-ready"
-          patternType: literal
-        operation: "Read"
-        type: allow
-      - resource:
-          type: topic
-          name: "templatebot.render-ready"
-          patternType: literal
-        operation: "Describe"
-        type: allow
-      # Produce the prerender topic
-      - resource:
-          type: topic
-          name: "templatebot.prerender"
-          patternType: literal
-        operation: "Write"
-        type: allow
-      - resource:
-          type: topic
-          name: "templatebot.prerender"
-          patternType: literal
-        operation: "Describe"
-        type: allow
-      # Produce the postrender topic
-      - resource:
-          type: topic
-          name: "templatebot.postrender"
-          patternType: literal
-        operation: "Write"
-        type: allow
-      - resource:
-          type: topic
-          name: "templatebot.postrender"
-          patternType: literal
-        operation: "Describe"
-        type: allow
+    - resource:
+        type: group
+        name: templatebot
+        patternType: literal
+      operation: Describe
+      type: allow
+    - resource:
+        type: group
+        name: templatebot
+        patternType: literal
+      operation: Read
+      type: allow
+    - resource:
+        type: topic
+        name: sqrbot.interaction
+        patternType: literal
+      operation: Read
+      type: allow
+    - resource:
+        type: topic
+        name: sqrbot.interaction
+        patternType: literal
+      operation: Describe
+      type: allow
+    - resource:
+        type: topic
+        name: sqrbot.message.im
+        patternType: literal
+      operation: Read
+      type: allow
+    - resource:
+        type: topic
+        name: sqrbot.message.im
+        patternType: literal
+      operation: Describe
+      type: allow
+    - resource:
+        type: topic
+        name: sqrbot.app.mention
+        patternType: literal
+      operation: Read
+      type: allow
+    - resource:
+        type: topic
+        name: sqrbot.app.mention
+        patternType: literal
+      operation: Describe
+      type: allow
+    - resource:
+        type: topic
+        name: templatebot.render-ready
+        patternType: literal
+      operation: Read
+      type: allow
+    - resource:
+        type: topic
+        name: templatebot.render-ready
+        patternType: literal
+      operation: Describe
+      type: allow
+    - resource:
+        type: topic
+        name: templatebot.prerender
+        patternType: literal
+      operation: Write
+      type: allow
+    - resource:
+        type: topic
+        name: templatebot.prerender
+        patternType: literal
+      operation: Describe
+      type: allow
+    - resource:
+        type: topic
+        name: templatebot.postrender
+        patternType: literal
+      operation: Write
+      type: allow
+    - resource:
+        type: topic
+        name: templatebot.postrender
+        patternType: literal
+      operation: Describe
+      type: allow
 ---
-apiVersion: kafka.strimzi.io/v1beta1
+apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaUser
 metadata:
   name: kafkauser-templatebot-aide
@@ -115,55 +108,51 @@ spec:
   authorization:
     type: simple
     acls:
-      # Common for consumers
-      - resource:
-          type: group
-          name: "templatebot-aide"
-          patternType: literal
-        operation: "Describe"
-        type: allow
-      - resource:
-          type: group
-          name: "templatebot-aide"
-          patternType: literal
-        operation: "Read"
-        type: allow
-      # Consume the prerender topic
-      - resource:
-          type: topic
-          name: "templatebot.prerender"
-          patternType: literal
-        operation: "Read"
-        type: allow
-      - resource:
-          type: topic
-          name: "templatebot.prerender"
-          patternType: literal
-        operation: "Describe"
-        type: allow
-      # Consume the postrender topic
-      - resource:
-          type: topic
-          name: "templatebot.postrender"
-          patternType: literal
-        operation: "Read"
-        type: allow
-      - resource:
-          type: topic
-          name: "templatebot.postrender"
-          patternType: literal
-        operation: "Describe"
-        type: allow
-      # Produce the render-ready topic
-      - resource:
-          type: topic
-          name: "templatebot.render-ready"
-          patternType: literal
-        operation: "Write"
-        type: allow
-      - resource:
-          type: topic
-          name: "templatebot.render-ready"
-          patternType: literal
-        operation: "Describe"
-        type: allow
+    - resource:
+        type: group
+        name: templatebot-aide
+        patternType: literal
+      operation: Describe
+      type: allow
+    - resource:
+        type: group
+        name: templatebot-aide
+        patternType: literal
+      operation: Read
+      type: allow
+    - resource:
+        type: topic
+        name: templatebot.prerender
+        patternType: literal
+      operation: Read
+      type: allow
+    - resource:
+        type: topic
+        name: templatebot.prerender
+        patternType: literal
+      operation: Describe
+      type: allow
+    - resource:
+        type: topic
+        name: templatebot.postrender
+        patternType: literal
+      operation: Read
+      type: allow
+    - resource:
+        type: topic
+        name: templatebot.postrender
+        patternType: literal
+      operation: Describe
+      type: allow
+    - resource:
+        type: topic
+        name: templatebot.render-ready
+        patternType: literal
+      operation: Write
+      type: allow
+    - resource:
+        type: topic
+        name: templatebot.render-ready
+        patternType: literal
+      operation: Describe
+      type: allow

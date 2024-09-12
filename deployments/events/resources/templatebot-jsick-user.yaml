@@ -1,5 +1,5 @@
 ---
-apiVersion: kafka.strimzi.io/v1beta1
+apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaUser
 metadata:
   name: kafkauser-templatebot-jsick
@@ -11,112 +11,104 @@ spec:
   authorization:
     type: simple
     acls:
-      # Access templatebot-jsick-2 consumer group
-      - resource:
-          type: group
-          name: "templatebot-jsick-2"
-          patternType: literal
-        operation: "Describe"
-        type: allow
-      - resource:
-          type: group
-          name: "templatebot-jsick-2"
-          patternType: literal
-        operation: "Read"
-        type: allow
-      # Access templatebot-jsick-3 consumer group
-      - resource:
-          type: group
-          name: "templatebot-jsick-3"
-          patternType: literal
-        operation: "Describe"
-        type: allow
-      - resource:
-          type: group
-          name: "templatebot-jsick-3"
-          patternType: literal
-        operation: "Read"
-        type: allow
-      # consume the sqrbot.jsick.interaction topic
-      - resource:
-          type: topic
-          name: "sqrbot.jsick.interaction"
-          patternType: literal
-        operation: "Read"
-        type: allow
-      - resource:
-          type: topic
-          name: "sqrbot.jsick.interaction"
-          patternType: literal
-        operation: "Describe"
-        type: allow
-      # Consume the sqrbot.jsick.message.im topic
-      - resource:
-          type: topic
-          name: "sqrbot.jsick.message.im"
-          patternType: literal
-        operation: "Read"
-        type: allow
-      - resource:
-          type: topic
-          name: "sqrbot.jsick.message.im"
-          patternType: literal
-        operation: "Describe"
-        type: allow
-      # Consume the app_mention topic
-      - resource:
-          type: topic
-          name: "sqrbot.jsick.app.mention"
-          patternType: literal
-        operation: "Read"
-        type: allow
-      - resource:
-          type: topic
-          name: "sqrbot.jsick.app.mention"
-          patternType: literal
-        operation: "Describe"
-        type: allow
-      # Consume the render-ready topic
-      - resource:
-          type: topic
-          name: "templatebot.jsick.render-ready"
-          patternType: literal
-        operation: "Read"
-        type: allow
-      - resource:
-          type: topic
-          name: "templatebot.jsick.render-ready"
-          patternType: literal
-        operation: "Describe"
-        type: allow
-      # Produce the prerender topic
-      - resource:
-          type: topic
-          name: "templatebot.jsick.prerender"
-          patternType: literal
-        operation: "Write"
-        type: allow
-      - resource:
-          type: topic
-          name: "templatebot.jsick.prerender"
-          patternType: literal
-        operation: "Describe"
-        type: allow
-      # Produce the postrender topic
-      - resource:
-          type: topic
-          name: "templatebot.jsick.postrender"
-          patternType: literal
-        operation: "Write"
-        type: allow
-      - resource:
-          type: topic
-          name: "templatebot.jsick.postrender"
-          patternType: literal
-        operation: "Describe"
-        type: allow
+    - resource:
+        type: group
+        name: templatebot-jsick-2
+        patternType: literal
+      operation: Describe
+      type: allow
+    - resource:
+        type: group
+        name: templatebot-jsick-2
+        patternType: literal
+      operation: Read
+      type: allow
+    - resource:
+        type: group
+        name: templatebot-jsick-3
+        patternType: literal
+      operation: Describe
+      type: allow
+    - resource:
+        type: group
+        name: templatebot-jsick-3
+        patternType: literal
+      operation: Read
+      type: allow
+    - resource:
+        type: topic
+        name: sqrbot.jsick.interaction
+        patternType: literal
+      operation: Read
+      type: allow
+    - resource:
+        type: topic
+        name: sqrbot.jsick.interaction
+        patternType: literal
+      operation: Describe
+      type: allow
+    - resource:
+        type: topic
+        name: sqrbot.jsick.message.im
+        patternType: literal
+      operation: Read
+      type: allow
+    - resource:
+        type: topic
+        name: sqrbot.jsick.message.im
+        patternType: literal
+      operation: Describe
+      type: allow
+    - resource:
+        type: topic
+        name: sqrbot.jsick.app.mention
+        patternType: literal
+      operation: Read
+      type: allow
+    - resource:
+        type: topic
+        name: sqrbot.jsick.app.mention
+        patternType: literal
+      operation: Describe
+      type: allow
+    - resource:
+        type: topic
+        name: templatebot.jsick.render-ready
+        patternType: literal
+      operation: Read
+      type: allow
+    - resource:
+        type: topic
+        name: templatebot.jsick.render-ready
+        patternType: literal
+      operation: Describe
+      type: allow
+    - resource:
+        type: topic
+        name: templatebot.jsick.prerender
+        patternType: literal
+      operation: Write
+      type: allow
+    - resource:
+        type: topic
+        name: templatebot.jsick.prerender
+        patternType: literal
+      operation: Describe
+      type: allow
+    - resource:
+        type: topic
+        name: templatebot.jsick.postrender
+        patternType: literal
+      operation: Write
+      type: allow
+    - resource:
+        type: topic
+        name: templatebot.jsick.postrender
+        patternType: literal
+      operation: Describe
+      type: allow
 ---
-apiVersion: kafka.strimzi.io/v1beta1
+apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaUser
 metadata:
   name: kafkauser-templatebot-aide-jsick
@@ -128,55 +120,51 @@ spec:
   authorization:
     type: simple
     acls:
-      # Common for consumers
-      - resource:
-          type: group
-          name: "templatebot-aide-jsick"
-          patternType: literal
-        operation: "Describe"
-        type: allow
-      - resource:
-          type: group
-          name: "templatebot-aide-jsick"
-          patternType: literal
-        operation: "Read"
-        type: allow
-      # Consume the prerender topic
-      - resource:
-          type: topic
-          name: "templatebot.jsick.prerender"
-          patternType: literal
-        operation: "Read"
-        type: allow
-      - resource:
-          type: topic
-          name: "templatebot.jsick.prerender"
-          patternType: literal
-        operation: "Describe"
-        type: allow
-      # Consume the postrender topic
-      - resource:
-          type: topic
-          name: "templatebot.jsick.postrender"
-          patternType: literal
-        operation: "Read"
-        type: allow
-      - resource:
-          type: topic
-          name: "templatebot.jsick.postrender"
-          patternType: literal
-        operation: "Describe"
-        type: allow
-      # Produce the render-ready topic
-      - resource:
-          type: topic
-          name: "templatebot.jsick.render-ready"
-          patternType: literal
-        operation: "Write"
-        type: allow
-      - resource:
-          type: topic
-          name: "templatebot.jsick.render-ready"
-          patternType: literal
-        operation: "Describe"
-        type: allow
+    - resource:
+        type: group
+        name: templatebot-aide-jsick
+        patternType: literal
+      operation: Describe
+      type: allow
+    - resource:
+        type: group
+        name: templatebot-aide-jsick
+        patternType: literal
+      operation: Read
+      type: allow
+    - resource:
+        type: topic
+        name: templatebot.jsick.prerender
+        patternType: literal
+      operation: Read
+      type: allow
+    - resource:
+        type: topic
+        name: templatebot.jsick.prerender
+        patternType: literal
+      operation: Describe
+      type: allow
+    - resource:
+        type: topic
+        name: templatebot.jsick.postrender
+        patternType: literal
+      operation: Read
+      type: allow
+    - resource:
+        type: topic
+        name: templatebot.jsick.postrender
+        patternType: literal
+      operation: Describe
+      type: allow
+    - resource:
+        type: topic
+        name: templatebot.jsick.render-ready
+        patternType: literal
+      operation: Write
+      type: allow
+    - resource:
+        type: topic
+        name: templatebot.jsick.render-ready
+        patternType: literal
+      operation: Describe
+      type: allow
