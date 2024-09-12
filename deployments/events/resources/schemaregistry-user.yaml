@@ -1,4 +1,5 @@
-apiVersion: kafka.strimzi.io/v1beta1
+---
+apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaUser
 metadata:
   name: schemaregistry
@@ -8,36 +9,29 @@ spec:
   authentication:
     type: tls
   authorization:
-    # Official docs on authorizations required for the Schema Registry:
-    # https://docs.confluent.io/current/schema-registry/security/index.html#authorizing-access-to-the-schemas-topic
     type: simple
     acls:
-      # Allow all operations on the registry-schemas topic
-      # Read, Write, and DescribeConfigs are known to be required
-      - resource:
-          type: topic
-          name: "registry-schemas"
-          patternType: literal
-        operation: All
-        type: allow
-      # Allow all operations on the schema-registry* group
-      - resource:
-          type: group
-          name: "schema-registry"
-          patternType: prefix
-        operation: All
-        type: allow
-      # Allow Describe on the __consumer_offsets topic
-      # (The official docs also mention DescribeConfigs?)
-      - resource:
-          type: topic
-          name: "__consumer_offsets"
-          patternType: literal
-        operation: "Describe"
-        type: allow
-      - resource:
-          type: topic
-          name: "__consumer_offsets"
-          patternType: literal
-        operation: "DescribeConfigs"
-        type: allow
+    - resource:
+        type: topic
+        name: registry-schemas
+        patternType: literal
+      operation: All
+      type: allow
+    - resource:
+        type: group
+        name: schema-registry
+        patternType: prefix
+      operation: All
+      type: allow
+    - resource:
+        type: topic
+        name: __consumer_offsets
+        patternType: literal
+      operation: Describe
+      type: allow
+    - resource:
+        type: topic
+        name: __consumer_offsets
+        patternType: literal
+      operation: DescribeConfigs
+      type: allow

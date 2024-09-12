@@ -1,7 +1,8 @@
+---
 apiVersion: roundtable.lsst.codes/v1beta1
 kind: StrimziSchemaRegistry
 metadata:
   name: schemaregistry
 spec:
-  strimzi-version: v1beta1
+  strimzi-version: v1beta2
   listener: tls

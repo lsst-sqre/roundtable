@@ -1,12 +1,12 @@
-apiVersion: kafka.strimzi.io/v1beta1
+---
+apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaTopic
 metadata:
-  name: "registry-schemas"
+  name: registry-schemas
   labels:
     strimzi.io/cluster: events
 spec:
   partitions: 1
   replicas: 3
   config:
-    # http://kafka.apache.org/documentation/#topicconfigs
-    cleanup.policy: "compact"
+    cleanup.policy: compact

@@ -1,4 +1,5 @@
-apiVersion: kafka.strimzi.io/v1beta1
+---
+apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaUser
 metadata:
   name: kafkauser-ltdevents
@@ -10,16 +11,15 @@ spec:
   authorization:
     type: simple
     acls:
-      # Produce ltd.events
-      - resource:
-          type: topic
-          name: "ltd.events"
-          patternType: literal
-        operation: "Write"
-        type: allow
-      - resource:
-          type: topic
-          name: "ltd.events"
-          patternType: literal
-        operation: "Describe"
-        type: allow
+    - resource:
+        type: topic
+        name: ltd.events
+        patternType: literal
+      operation: Write
+      type: allow
+    - resource:
+        type: topic
+        name: ltd.events
+        patternType: literal
+      operation: Describe
+      type: allow

@@ -1,78 +1,72 @@
 ---
-apiVersion: kafka.strimzi.io/v1beta1
+apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaTopic
 metadata:
-  name: "sqrbot.interaction"
+  name: sqrbot.interaction
   labels:
     strimzi.io/cluster: events
 spec:
   partitions: 4
   replicas: 3
   config:
-    # http://kafka.apache.org/documentation/#topicconfigs
-    retention.ms: 1800000  # 30 minutes
+    retention.ms: 1800000
 ---
-apiVersion: kafka.strimzi.io/v1beta1
+apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaTopic
 metadata:
-  name: "sqrbot.app.mention"
+  name: sqrbot.app.mention
   labels:
     strimzi.io/cluster: events
 spec:
   partitions: 16
   replicas: 3
   config:
-    # http://kafka.apache.org/documentation/#topicconfigs
-    retention.ms: 1800000  # 30 minutes
+    retention.ms: 1800000
 ---
-apiVersion: kafka.strimzi.io/v1beta1
+apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaTopic
 metadata:
-  name: "sqrbot.message.channels"
+  name: sqrbot.message.channels
   labels:
     strimzi.io/cluster: events
 spec:
   partitions: 16
   replicas: 3
   config:
-    # http://kafka.apache.org/documentation/#topicconfigs
-    retention.ms: 1800000  # 30 minutes
+    retention.ms: 1800000
 ---
-apiVersion: kafka.strimzi.io/v1beta1
+apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaTopic
 metadata:
-  name: "sqrbot.message.groups"
+  name: sqrbot.message.groups
   labels:
     strimzi.io/cluster: events
 spec:
   partitions: 16
   replicas: 3
   config:
-    # http://kafka.apache.org/documentation/#topicconfigs
-    retention.ms: 1800000  # 30 minutes
+    retention.ms: 1800000
 ---
-apiVersion: kafka.strimzi.io/v1beta1
+apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaTopic
 metadata:
-  name: "sqrbot.message.im"
+  name: sqrbot.message.im
   labels:
     strimzi.io/cluster: events
 spec:
   partitions: 16
   replicas: 3
   config:
-    # http://kafka.apache.org/documentation/#topicconfigs
-    retention.ms: 1800000  # 30 minutes
+    retention.ms: 1800000
 ---
-apiVersion: kafka.strimzi.io/v1beta1
+apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaTopic
 metadata:
-  name: "sqrbot.message.mpim"
+  name: sqrbot.message.mpim
   labels:
     strimzi.io/cluster: events
 spec:
   partitions: 16
   replicas: 3
   config:
-    # http://kafka.apache.org/documentation/#topicconfigs
-    retention.ms: 1800000  # 30 minutes
+    retention.ms: 1800000

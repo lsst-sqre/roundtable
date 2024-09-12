@@ -1,4 +1,5 @@
-apiVersion: kafka.strimzi.io/v1beta1
+---
+apiVersion: kafka.strimzi.io/v1beta2
 kind: KafkaUser
 metadata:
   name: kafkauser-sqrbot-jsick
@@ -10,15 +11,15 @@ spec:
   authorization:
     type: simple
     acls:
-      - resource:
-          type: topic
-          name: "sqrbot.jsick"
-          patternType: prefix
-        operation: "Write"
-        type: allow
-      - resource:
-          type: topic
-          name: "sqrbot.jsick"
-          patternType: prefix
-        operation: "Describe"
-        type: allow
+    - resource:
+        type: topic
+        name: sqrbot.jsick
+        patternType: prefix
+      operation: Write
+      type: allow
+    - resource:
+        type: topic
+        name: sqrbot.jsick
+        patternType: prefix
+      operation: Describe
+      type: allow
