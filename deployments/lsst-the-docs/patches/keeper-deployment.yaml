@@ -9,12 +9,6 @@ spec:
       containers:
         - name: app
           env:
-            - name: LTD_EVENTS_URL
-              value: "http://ltdevents.events:8080/webhook"
-        - name: app
-          env:
-            - name: LTD_EVENTS_URL
-              value: "http://ltdevents.events:8080/webhook"
             - name: LTD_KEEPER_PROXY_FIX
               valueFrom:
                 configMapKeyRef:
@@ -49,8 +43,6 @@ spec:
       containers:
         - name: app
           env:
-            - name: LTD_EVENTS_URL
-              value: "http://ltdevents.events:8080/webhook"
             - name: LTD_KEEPER_PROXY_FIX
               valueFrom:
                 configMapKeyRef:
