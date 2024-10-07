@@ -10,7 +10,7 @@ commonLabels:
 
 resources:
   - resources/vaultsecret.yaml
-  - github.com/lsst-sqre/sqrbot-jr.git//manifests/base?ref=0.6.0
+  - github.com/lsst-sqre/sqrbot-jr.git//manifests/base?ref=0.10.0
 
 patchesStrategicMerge:
   - patches/configmap.yaml
