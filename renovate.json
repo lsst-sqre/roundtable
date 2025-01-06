@@ -1,6 +1,6 @@
 {
   "extends": [
-    "config:base"
+    "config:recommended"
   ],
   "prConcurrentLimit": 5,
   "schedule": [
@@ -8,7 +8,7 @@
   ],
   "packageRules": [
     {
-      "matchPaths": [
+      "matchFileNames": [
         "deployments/sqrbot-jsick",
         "deployments/templatebot-jsick"
       ],
