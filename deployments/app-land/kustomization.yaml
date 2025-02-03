@@ -9,10 +9,4 @@ resources:
   # Applications
   - resources/lsst-the-docs.yaml
   - resources/ltdevents.yaml
-  - resources/sqrbot-jr.yaml
-  - resources/templatebot.yaml
   - resources/segwarides.yaml
-  # Test versions of apps; to re-enable these also re-enable the events API
-  # for the sqrbot-jsick Slack API (via the Slack app admin API).
-  # - resources/sqrbot-jsick.yaml
-  # - resources/templatebot-jsick.yaml
