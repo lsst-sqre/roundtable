@@ -6,7 +6,7 @@ namespace: events
 resources:
   - resources/templatebot-vaultsecret.yaml
   - resources/templatebot-aide-vaultsecret.yaml
-  - github.com/lsst-sqre/templatebot.git//manifests/base?ref=0.2.0
+  - github.com/lsst-sqre/templatebot.git//manifests/base?ref=0.5.1
   - github.com/lsst-sqre/lsst-templatebot-aide.git//manifests/base?ref=0.7.0
 
 patchesStrategicMerge:
