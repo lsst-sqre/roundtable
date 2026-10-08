@@ -9,4 +9,5 @@ resources:
   # Applications
   - resources/lsst-the-docs.yaml
   - resources/ltdevents.yaml
-  - resources/segwarides.yaml
+  # Disable Segwarides deployment
+  # - resources/segwarides.yaml
