@@ -25,6 +25,11 @@ jobs:
   docs:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      id-token: write
+      pull-requests: write
+
     steps:
       - uses: actions/checkout@v7
 
@@ -37,17 +42,19 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install -r docs/requirements.txt
-          python -m pip install "ltd-conveyor<2.0.0"
 
       - name: Build
         run: |
           cd docs
           make html
 
-      - name: Upload
+      - name: Upload to Docverse
+        uses: lsst-sqre/docverse-upload@v1
+        with:
+          org: rubin
+          project: roundtable
+          dir: docs/_build/html
+          token: ${{ secrets.DOCVERSE_TOKEN }}
+          github-token: ${{ github.token }}
+          comment-on-pr: "true"
         if: ${{ github.event_name == 'push' }}
-        env:
-          LTD_PASSWORD: ${{ secrets.LTD_PASSWORD }}
-          LTD_USERNAME: ${{ secrets.LTD_USERNAME }}
-        run: |
-          ltd upload --gh --dir docs/_build/html --product roundtable
